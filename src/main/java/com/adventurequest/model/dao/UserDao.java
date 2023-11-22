@@ -3,8 +3,6 @@ package com.adventurequest.model.dao;
 import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.util.ConnectionManager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -36,6 +34,10 @@ public class UserDao implements Dao<String, UserEntity> {
                  password = ? ,
                  email = ?
             """;
+    private static final String SAVE_SQL = """
+               INSERT INTO "user"(username, password, email)
+               VALUES (? , ? , ?)
+            """;
 
     private UserDao() {
     }
@@ -60,31 +62,67 @@ public class UserDao implements Dao<String, UserEntity> {
         }
     }
 
+    @Override
+    public Optional<UserEntity> findByUsername(String username) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(FIND_BY_USERNAME_SQL)) {
+            preparedStatement.setObject(1, username);
+            var resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return Optional.of(buildUser(resultSet));
+            }
+            return Optional.empty();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean delete(String username) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(DELETE_SQL)) {
+            preparedStatement.setObject(1, username);
+            return preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean update(UserEntity entity) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(UPDATE_SQL)) {
+            preparedStatement.setObject(1, entity.getUsername());
+            preparedStatement.setObject(2, entity.getPassword());
+            preparedStatement.setObject(3, entity.getEmail());
+            return preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public Optional<UserEntity> save(UserEntity entity) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(SAVE_SQL)) {
+            preparedStatement.setObject(1, entity.getUsername());
+            preparedStatement.setObject(2, entity.getPassword());
+            preparedStatement.setObject(3, entity.getEmail());
+            var resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return Optional.of(buildUser(resultSet));
+            }
+            return Optional.empty();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private UserEntity buildUser(ResultSet resultSet) throws SQLException {
         return new UserEntity(
                 resultSet.getObject("username", String.class),
                 resultSet.getObject("password", String.class),
                 resultSet.getObject("email", String.class)
         );
-    }
-
-    @Override
-    public Optional<UserEntity> findByUsername(String Username) {
-        return Optional.empty();
-    }
-
-    @Override
-    public boolean delete(String Username) {
-        return false;
-    }
-
-    @Override
-    public void update(UserEntity entity) {
-
-    }
-
-    @Override
-    public UserEntity save(UserEntity entity) {
-        return null;
     }
 }

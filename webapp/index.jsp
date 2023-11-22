@@ -26,7 +26,7 @@
 
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account?<a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a></p>
+        <p>Don't have an account?   <a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a></p>
 <%--        <p>Don't have an account? <a href="WEB-INF/jsp/registration.jsp" class="register-button">Register here</a></p>--%>
     </div>
 </div>

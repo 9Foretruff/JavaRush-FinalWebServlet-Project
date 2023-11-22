@@ -14,14 +14,15 @@ VALUES ('Admin', '7777', 'admin@gmail.com');
 
 CREATE TABLE "quest-info"
 (
-    id BIGSERIAL PRIMARY KEY ,
-    name_of_quest VARCHAR(50) UNIQUE NOT NULL ,
-    difficult VARCHAR(20) NOT NULL,
-    choices quest UNIQUE NOT NULL
+    id            BIGSERIAL PRIMARY KEY,
+    name_of_quest VARCHAR(50) UNIQUE NOT NULL,
+    difficult     VARCHAR(20)        NOT NULL,
+    choices       quest UNIQUE       NOT NULL
 );
 
 CREATE TABLE "quest"
 (
-    id BIGINT NOT NULL ,
-    level INT NOT NULL
+    id    BIGINT NOT NULL,
+    level INT    NOT NULL
 )
+

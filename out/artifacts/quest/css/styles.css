@@ -94,6 +94,7 @@ p {
     pointer-events: none;
 }
 
+
 form {
     display: flex;
     flex-direction: column;
@@ -128,6 +129,7 @@ button {
 /* Добавим стили для изменения цвета при наведении на кнопку Login */
 button:hover {
     background-color: #d5004d; /* Измененный цвет при наведении */
+    transform: scale(1.1);
 }
 
 .button-link {

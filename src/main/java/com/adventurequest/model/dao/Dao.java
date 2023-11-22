@@ -6,11 +6,11 @@ import java.util.Optional;
 public interface Dao<K, T> {
     List<T> findAll();
 
-    Optional<T> findByUsername(K Username);
+    Optional<T> findByUsername(K username);
 
-    boolean delete(K Username);
+    boolean delete(K username);
 
-    void update(T entity);
+    boolean update(T entity);
 
-    T save(T entity);
+    Optional<T> save(T entity);
 }
