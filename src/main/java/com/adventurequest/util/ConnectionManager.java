@@ -22,7 +22,7 @@ public final class ConnectionManager {
 
     private static void loadDriver() {
         try {
-            Class.forName(DRIVER_KEY);
+            Class.forName(PropertiesUtil.get(DRIVER_KEY));
         } catch (ClassNotFoundException cause) {
             throw new LoadDriverException("Exception while loading driver", cause);
         }

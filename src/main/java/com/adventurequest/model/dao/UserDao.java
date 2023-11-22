@@ -3,6 +3,7 @@ package com.adventurequest.model.dao;
 import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.util.ConnectionManager;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,27 +16,27 @@ public class UserDao implements Dao<String, UserEntity> {
 
     private static final String FIND_ALL_SQL = """
                 SELECT username, password, email
-                FROM user
+                FROM adventure_quest_schema.user
             """;
 
     private static final String FIND_BY_USERNAME_SQL = """
                 SELECT username, password, email
-                FROM user
+                FROM adventure_quest_schema.user
                 WHERE username LIKE ?
             """;
     private static final String DELETE_SQL = """
                 DELETE 
-                FROM "user"
+                FROM adventure_quest_schema.user
                 WHERE username LIKE ? 
             """;
     private static final String UPDATE_SQL = """
-                UPDATE "user"
+                UPDATE adventure_quest_schema.user
                 SET username = ? ,
                  password = ? ,
                  email = ?
             """;
     private static final String SAVE_SQL = """
-               INSERT INTO "user"(username, password, email)
+               INSERT INTO adventure_quest_schema.user(username, password, email)
                VALUES (? , ? , ?)
             """;
 
@@ -102,17 +103,20 @@ public class UserDao implements Dao<String, UserEntity> {
     }
 
     @Override
-    public Optional<UserEntity> save(UserEntity entity) {
+    public boolean save(UserEntity entity) {
         try (var connection = ConnectionManager.get();
-             var preparedStatement = connection.prepareStatement(SAVE_SQL)) {
+             var preparedStatement = connection.prepareStatement(SAVE_SQL);
+             var preparedStatement1 = connection.prepareStatement(FIND_BY_USERNAME_SQL)) {
+            preparedStatement1.setObject(1,entity.getUsername());
+            var execute = preparedStatement1.executeQuery();
+            if (execute.next()){
+                return false;
+            }
             preparedStatement.setObject(1, entity.getUsername());
             preparedStatement.setObject(2, entity.getPassword());
             preparedStatement.setObject(3, entity.getEmail());
-            var resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                return Optional.of(buildUser(resultSet));
-            }
-            return Optional.empty();
+            var executed = preparedStatement.executeUpdate();
+            return executed > 0;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

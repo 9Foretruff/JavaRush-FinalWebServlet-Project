@@ -12,5 +12,5 @@ public interface Dao<K, T> {
 
     boolean update(T entity);
 
-    Optional<T> save(T entity);
+    boolean save(T entity);
 }

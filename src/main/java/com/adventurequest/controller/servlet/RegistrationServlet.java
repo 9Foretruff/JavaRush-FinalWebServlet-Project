@@ -1,5 +1,7 @@
 package com.adventurequest.controller.servlet;
 
+import com.adventurequest.model.entity.UserEntity;
+import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -12,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/registration")
 public class RegistrationServlet extends HttpServlet {
+    private final UserService userService = UserService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -20,20 +23,23 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        RequestDispatcher dispatcher = req.getRequestDispatcher(JspHelper.get("registration-result"));
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String confirmPassword = req.getParameter("confirmPassword");
         String email = req.getParameter("email");
-
-        // Ваша логика обработки регистрации
-       // boolean registrationSuccessful = /* Реализуйте вашу логику */;
-
-        // Установить атрибуты для передачи данных в JSP
+        if (!password.equals(confirmPassword)) {
+            req.setAttribute("registrationSuccessful", -1);
+            dispatcher.forward(req, resp);
+        }
+        UserEntity userEntity = new UserEntity(username, password, email);
+        var result = userService.save(userEntity);
         req.setAttribute("username", username);
-        req.setAttribute("registrationSuccessful", true);
-
-        // Перенаправить пользователя на страницу с результатом
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/registration-result.jsp");
+        if (result) {
+            req.setAttribute("registrationSuccessful", 1);
+        } else {
+            req.setAttribute("registrationSuccessful", 0);
+        }
         dispatcher.forward(req, resp);
     }
 

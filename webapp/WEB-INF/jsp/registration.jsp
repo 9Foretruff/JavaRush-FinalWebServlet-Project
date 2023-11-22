@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Page</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/registration.css">
 </head>
 
 <body>
@@ -27,6 +27,7 @@
             <input type="email" id="email" name="email" required>
 
             <button type="submit" class="register-button">Register</button>
+            <a href="${pageContext.request.contextPath}/" class="register-button">Go Back to Home Page</a>
         </div>
     </form>
 </div>
