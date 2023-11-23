@@ -14,7 +14,6 @@ public class UserService {
 
     private UserService() {
     }
-
     public List<UserDto> findAll() {
         return userDao.findAll().stream()
                 .map(userEntity -> UserDto.builder()

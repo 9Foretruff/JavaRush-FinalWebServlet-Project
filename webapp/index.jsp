@@ -17,7 +17,7 @@
 
     <!-- Табличка регистрации и логина -->
     <div class="login-table">
-        <form action="processLogin.jsp" method="post">
+        <form action="${pageContext.request.contextPath}/login" method="post">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 

@@ -5,15 +5,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Login Failed</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/login-failed.css">
 </head>
 
 <body>
 <h1 class="neon-title">Login Failed</h1>
 <div class="container">
     <div class="login-table">
-        <p>Login success.</p>
-        <a href="${pageContext.request.contextPath}/menu" class="button-link">Go to main page</a>
+        <p>Invalid username or password. Please try again.</p>
+        <a href="${pageContext.request.contextPath}/" class="button-link">Go Back to Login</a>
     </div>
 </div>
 </body>

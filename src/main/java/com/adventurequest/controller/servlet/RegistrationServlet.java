@@ -14,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/registration")
 public class RegistrationServlet extends HttpServlet {
+    private static final int SAME_PASSWORD = -1;
     private final UserService userService = UserService.getInstance();
 
     @Override
@@ -29,8 +30,9 @@ public class RegistrationServlet extends HttpServlet {
         String confirmPassword = req.getParameter("confirmPassword");
         String email = req.getParameter("email");
         if (!password.equals(confirmPassword)) {
-            req.setAttribute("registrationSuccessful", -1);
+            req.setAttribute("registrationSuccessful", SAME_PASSWORD);
             dispatcher.forward(req, resp);
+            return;
         }
         UserEntity userEntity = new UserEntity(username, password, email);
         var result = userService.save(userEntity);
