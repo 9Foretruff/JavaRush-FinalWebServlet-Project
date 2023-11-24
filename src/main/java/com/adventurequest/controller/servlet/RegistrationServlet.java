@@ -9,16 +9,19 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
 @WebServlet(urlPatterns = "/registration")
 public class RegistrationServlet extends HttpServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationServlet.class);
     private static final int SAME_PASSWORD = -1;
     private final UserService userService = UserService.getInstance();
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LOGGER.info("User get registration page");
         req.getRequestDispatcher(JspHelper.get("registration")).forward(req, resp);
     }
 

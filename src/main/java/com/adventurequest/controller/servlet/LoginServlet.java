@@ -19,7 +19,6 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-
         dispatcher.forward(req,resp);
     }
 }

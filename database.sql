@@ -24,5 +24,4 @@ CREATE TABLE "quest"
 (
     id    BIGINT NOT NULL,
     level INT    NOT NULL
-)
-
+);

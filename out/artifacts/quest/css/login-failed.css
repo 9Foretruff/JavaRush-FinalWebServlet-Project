@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://wallpaperaccess.com/full/1652734.jpg");
+    background: url("../img/login-failed.jpg");
     overflow-x: hidden;
     background-size: cover;
     background-repeat: no-repeat;

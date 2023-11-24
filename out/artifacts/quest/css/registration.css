@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://wallpaper.dog/large/20466509.jpg");
+    background: url("../img/registration.jpg");
     overflow-x: hidden;
     background-size: cover;
     background-repeat: no-repeat;

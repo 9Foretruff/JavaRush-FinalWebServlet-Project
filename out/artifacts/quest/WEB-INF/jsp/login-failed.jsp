@@ -14,8 +14,10 @@
     <div class="login-table">
         <p>Invalid username or password. Please try again.</p>
         <a href="${pageContext.request.contextPath}/" class="button-link">Go Back to Login</a>
+        <p>Don't have an account?   <a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a></p>
     </div>
 </div>
+
 </body>
 
 </html>
