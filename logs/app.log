@@ -1,5 +1,0 @@
-2023-11-24 18:58:57,758 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-14] User get registration page
-2023-11-24 18:59:15,394 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-20] User get registration page
-2023-11-24 18:59:15,549 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-12] User get registration page
-2023-11-24 18:59:15,706 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-19] User get registration page
-2023-11-24 18:59:15,843 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-13] User get registration page

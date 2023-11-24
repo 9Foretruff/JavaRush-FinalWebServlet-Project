@@ -3,11 +3,17 @@
     <Appenders>
 
         <Console name="LogToConsole" target="SYSTEM_OUT">
-            <PatternLayout disableAnsi="false" pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+            <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n"/>
         </Console>
 
-        <File name="LogToFile" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\app.log">
-            <PatternLayout>
+        <File name="LoginLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\login.log">
+            <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n">
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
+
+        <File name="RegistrationLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\registration.log">
+            <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n">
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
         </File>
@@ -15,14 +21,17 @@
     </Appenders>
 
     <Loggers>
-        <!-- avoid duplicated logs with additivity=false -->
-<!--        <Logger name="com.adventurequest" level="debug" additivity="false">-->
-<!--            <AppenderRef ref="LogToConsole"/>-->
-<!--        </Logger>-->
+
+        <Logger name="com.adventurequest.controller.servlet.RegistrationServlet" level="debug">
+            <AppenderRef ref="RegistrationLogs"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.LoginServlet" level="debug">
+            <AppenderRef ref="LoginLogs"/>
+        </Logger>
 
         <Root level="info">
-<!--            <AppenderRef ref="LogToConsole"/>-->
-            <AppenderRef ref="LogToFile"/>
+            <AppenderRef ref="LogToConsole"/>
         </Root>
 
     </Loggers>

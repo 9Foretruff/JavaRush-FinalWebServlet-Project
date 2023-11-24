@@ -24,6 +24,12 @@ public class UserDao implements Dao<String, UserEntity> {
                 FROM adventure_quest_schema.user
                 WHERE username LIKE ?
             """;
+
+    private static final String FIND_BY_USERNAME_AND_EMAIL_SQL = """
+                SELECT username, password, email
+                FROM adventure_quest_schema.user
+                WHERE username LIKE ? OR EMAIL LIKE ?
+            """;
     private static final String DELETE_SQL = """
                 DELETE 
                 FROM adventure_quest_schema.user
@@ -106,8 +112,9 @@ public class UserDao implements Dao<String, UserEntity> {
     public boolean save(UserEntity entity) {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(SAVE_SQL);
-             var preparedStatement1 = connection.prepareStatement(FIND_BY_USERNAME_SQL)) {
+             var preparedStatement1 = connection.prepareStatement(FIND_BY_USERNAME_AND_EMAIL_SQL)) {
             preparedStatement1.setObject(1,entity.getUsername());
+            preparedStatement1.setObject(2,entity.getEmail());
             var execute = preparedStatement1.executeQuery();
             if (execute.next()){
                 return false;
