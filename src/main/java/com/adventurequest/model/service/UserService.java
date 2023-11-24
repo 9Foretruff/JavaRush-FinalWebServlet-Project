@@ -23,6 +23,10 @@ public class UserService {
                 ).collect(Collectors.toList());
     }
 
+    public boolean login(UserEntity userEntity){
+        return userDao.login(userEntity);
+    }
+
     public boolean save(UserEntity userEntity) {
         return userDao.save(userEntity);
     }

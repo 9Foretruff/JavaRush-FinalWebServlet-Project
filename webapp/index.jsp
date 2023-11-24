@@ -24,6 +24,9 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account?   <a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a></p>

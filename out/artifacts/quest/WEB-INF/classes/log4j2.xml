@@ -11,6 +11,7 @@
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
         </File>
+
         <File name="RegistrationLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\registration.log">
             <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n">
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
@@ -20,6 +21,7 @@
     </Appenders>
 
     <Loggers>
+
         <Logger name="com.adventurequest.controller.servlet.RegistrationServlet" level="debug">
             <AppenderRef ref="RegistrationLogs"/>
         </Logger>

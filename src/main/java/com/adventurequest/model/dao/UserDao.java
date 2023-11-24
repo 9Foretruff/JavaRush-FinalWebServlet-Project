@@ -3,6 +3,7 @@ package com.adventurequest.model.dao;
 import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.util.ConnectionManager;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -29,6 +30,12 @@ public class UserDao implements Dao<String, UserEntity> {
                 SELECT username, password, email
                 FROM adventure_quest_schema.user
                 WHERE username LIKE ? OR EMAIL LIKE ?
+            """;
+
+    private static final String LOGIN_SQL = """
+                SELECT username, password, email
+                FROM adventure_quest_schema.user
+                WHERE username LIKE ? AND password = ? AND EMAIL LIKE ?
             """;
     private static final String DELETE_SQL = """
                 DELETE 
@@ -113,10 +120,10 @@ public class UserDao implements Dao<String, UserEntity> {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(SAVE_SQL);
              var preparedStatement1 = connection.prepareStatement(FIND_BY_USERNAME_AND_EMAIL_SQL)) {
-            preparedStatement1.setObject(1,entity.getUsername());
-            preparedStatement1.setObject(2,entity.getEmail());
+            preparedStatement1.setObject(1, entity.getUsername());
+            preparedStatement1.setObject(2, entity.getEmail());
             var execute = preparedStatement1.executeQuery();
-            if (execute.next()){
+            if (execute.next()) {
                 return false;
             }
             preparedStatement.setObject(1, entity.getUsername());
@@ -129,6 +136,23 @@ public class UserDao implements Dao<String, UserEntity> {
         }
     }
 
+    public boolean login(UserEntity userEntity) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(LOGIN_SQL)) {
+            preparedStatement.setObject(1, userEntity.getUsername());
+            preparedStatement.setObject(2, userEntity.getPassword());
+            preparedStatement.setObject(3, userEntity.getEmail());
+            var execute = preparedStatement.executeQuery();
+            if (execute.next()){
+                return true;
+            }else {
+                return false;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     private UserEntity buildUser(ResultSet resultSet) throws SQLException {
         return new UserEntity(
                 resultSet.getObject("username", String.class),
@@ -136,4 +160,5 @@ public class UserDao implements Dao<String, UserEntity> {
                 resultSet.getObject("email", String.class)
         );
     }
+
 }
