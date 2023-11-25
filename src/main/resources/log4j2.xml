@@ -3,19 +3,15 @@
     <Appenders>
 
         <Console name="LogToConsole" target="SYSTEM_OUT">
-            <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n"/>
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </Console>
 
         <File name="LoginLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\login.log">
-            <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n">
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
-            </PatternLayout>
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
         <File name="RegistrationLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\registration.log">
-            <PatternLayout disableAnsi="false" pattern= "%highlight{[%-20.-40maxLen{%-5level %logger{1}.%method()}{}]}{trace=bright cyan} %msg%n">
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
-            </PatternLayout>
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
     </Appenders>
@@ -30,7 +26,7 @@
             <AppenderRef ref="LoginLogs"/>
         </Logger>
 
-        <Root level="info">
+        <Root level="debug">
             <AppenderRef ref="LogToConsole"/>
         </Root>
 

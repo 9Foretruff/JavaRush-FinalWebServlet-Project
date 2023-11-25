@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Login Failed</title>
+    <title>Login success</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 

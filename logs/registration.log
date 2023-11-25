@@ -1,4 +1,16 @@
-2023-11-24 22:20:09,474 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-8] User get registration page
-2023-11-24 22:20:30,353 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-6] User get registration page
-2023-11-24 22:21:01,868 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-6] User get registration page
-2023-11-24 22:21:45,852 INFO c.a.c.s.RegistrationServlet [http-nio-8080-exec-3] User get registration page
+[34m2023-11-25 18:54:42.333 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User get registration page
+[m[34m2023-11-25 18:54:44.944 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User get registration page
+[m[34m2023-11-25 18:54:49.225 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User sent the data for registration
+[m[33m2023-11-25 18:54:49.226 [http-nio-8080-exec-5] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User sent different passwords!
+[m[34m2023-11-25 18:54:49.226 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding to registration-result.jsp
+[m[34m2023-11-25 18:54:50.251 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User get registration page
+[m[34m2023-11-25 18:55:06.323 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User get registration page
+[m[34m2023-11-26 00:21:23.264 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User get registration page
+[m[34m2023-11-26 00:41:06.070 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - 0:0:0:0:0:0:0:1 get registration page
+[m[34m2023-11-26 00:41:29.993 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - 0:0:0:0:0:0:0:1 get registration page
+[m[34m2023-11-26 00:41:30.505 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - 0:0:0:0:0:0:0:1 get registration page
+[m[34m2023-11-26 00:41:40.909 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - 0:0:0:0:0:0:0:1 get registration page
+[m[34m2023-11-26 00:41:43.927 [http-nio-8080-exec-10] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - 0:0:0:0:0:0:0:1 get registration page
+[m[34m2023-11-26 00:42:50.251 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - null get registration page
+[m[34m2023-11-26 00:43:05.215 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - null get registration page
+[m

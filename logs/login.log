@@ -1,0 +1,3 @@
+[34m2023-11-25 18:55:04.310 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.LoginServlet - User sent the data for login
+[m[33m2023-11-25 18:55:04.574 [http-nio-8080-exec-9] WARN  com.adventurequest.controller.servlet.LoginServlet - User sent invalid data to login!
+[m

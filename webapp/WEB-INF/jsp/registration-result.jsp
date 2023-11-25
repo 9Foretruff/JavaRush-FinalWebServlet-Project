@@ -11,29 +11,29 @@
 
 <body>
 <c:choose>
-    <c:when test="${registrationSuccessful==1}">
+    <c:when test="${sessionScope.registrationSuccessful eq 1}">
         <h1 class="neon-title">Registration Successful</h1>
         <div class="container">
             <div class="login-table">
-                <p>Thank you for registering, ${username}!</p>
+                <p>Thank you for registering, ${sessionScope.username}!</p>
                 <a href="/" class="button-link">Go to Home Page</a>
             </div>
         </div>
     </c:when>
-    <c:when test="${registrationSuccessful==0}">
+    <c:when test="${sessionScope.registrationSuccessful eq 0}">
         <h1 class="neon-title">Registration Failed</h1>
         <div class="container">
             <div class="login-table">
-                <p>User already exists. Please try again.</p>
+                <p>User with username ${sessionScope.username} already exists or email ${sessionScope.email} is already in use. Please try again.</p>
                 <a href="${pageContext.request.contextPath}/registration" class="button-link">Go Back</a>
             </div>
         </div>
     </c:when>
-    <c:when test="${registrationSuccessful==-1}">
+    <c:when test="${sessionScope.registrationSuccessful eq -1}">
         <h1 class="neon-title">Registration Failed</h1>
         <div class="container">
             <div class="login-table">
-                <p>Passwords do not match. Please try again.</p>
+                <p>Passwords "${sessionScope.password}" and "${sessionScope.confirmPassword}" do not match. Please try again.</p>
                 <a href="${pageContext.request.contextPath}/registration" class="button-link">Go Back</a>
             </div>
         </div>
