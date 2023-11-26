@@ -42,15 +42,15 @@ public class LoginServlet extends HttpServlet {
         var login = userService.login(user);
 
         RequestDispatcher dispatcher;
+        var session = req.getSession();
         if (login) {
             LOGGER.info("User with IP address {} sent valid data to login!",remoteAddr);
-            var session = req.getSession();
             session.setAttribute("authenticatedUser", true);
             session.setAttribute("user", user);
             dispatcher = req.getRequestDispatcher(LOGIN_SUCCESS_JSP);
         } else {
             LOGGER.warn("User with IP address {} sent invalid data to login!",remoteAddr);
-            req.setAttribute("authenticatedUser", false);
+            session.setAttribute("authenticatedUser", false);
             dispatcher = req.getRequestDispatcher(LOGIN_FAILED_JSP);
         }
         LOGGER.debug("Forwarding user with IP address {} to registration-result.jsp",remoteAddr);
