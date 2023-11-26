@@ -1,6 +1,5 @@
 package com.adventurequest.controller.servlet;
 
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.RequestDispatcher;
@@ -44,6 +43,7 @@ public class RegistrationServlet extends HttpServlet {
 
         switch (registrationResult) {
             case UserService.PASSWORDS_DO_NOT_MATCH -> {
+                LOGGER.warn("User with IP address {} attempted registration with different passwords", remoteAddr);
                 req.getSession().setAttribute("registrationSuccessful", UserService.PASSWORDS_DO_NOT_MATCH);
             }
             case UserService.REGISTRATION_SUCCESSFUL -> {
@@ -60,5 +60,4 @@ public class RegistrationServlet extends HttpServlet {
         LOGGER.debug("Forwarding user with IP address {} to registration-result.jsp", remoteAddr);
         dispatcher.forward(req, resp);
     }
-
 }

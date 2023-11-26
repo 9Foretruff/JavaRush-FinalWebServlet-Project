@@ -1,10 +1,11 @@
 package com.adventurequest.model.dao;
 
 import com.adventurequest.model.entity.UserEntity;
+import com.adventurequest.model.exeption.DatabaseAccessException;
 import com.adventurequest.util.ConnectionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.Optional;
 public class UserDao implements Dao<String, UserEntity> {
 
     private static final UserDao INSTANCE = new UserDao();
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserDao.class);
 
     private static final String FIND_ALL_SQL = """
                 SELECT username, password, email
@@ -38,9 +40,9 @@ public class UserDao implements Dao<String, UserEntity> {
                 WHERE username LIKE ? AND password = ? AND EMAIL LIKE ?
             """;
     private static final String DELETE_SQL = """
-                DELETE 
+                DELETE
                 FROM adventure_quest_schema.user
-                WHERE username LIKE ? 
+                WHERE username LIKE ?
             """;
     private static final String UPDATE_SQL = """
                 UPDATE adventure_quest_schema.user
@@ -72,7 +74,8 @@ public class UserDao implements Dao<String, UserEntity> {
             }
             return users;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.error("Error finding all users", e);
+            throw new DatabaseAccessException("Error accessing the database", e);
         }
     }
 
@@ -87,7 +90,8 @@ public class UserDao implements Dao<String, UserEntity> {
             }
             return Optional.empty();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.error("Error finding user by username", e);
+            throw new DatabaseAccessException("Error finding user by username", e);
         }
     }
 
@@ -98,7 +102,8 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(1, username);
             return preparedStatement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.error("Error deleting user", e);
+            throw new DatabaseAccessException("Error deleting user", e);
         }
     }
 
@@ -111,7 +116,8 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(3, entity.getEmail());
             return preparedStatement.execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.error("Error updating user", e);
+            throw new DatabaseAccessException("Error updating user", e);
         }
     }
 
@@ -132,7 +138,8 @@ public class UserDao implements Dao<String, UserEntity> {
             var executed = preparedStatement.executeUpdate();
             return executed > 0;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.error("Error saving user", e);
+            throw new DatabaseAccessException("Error saving user", e);
         }
     }
 
@@ -143,13 +150,10 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(2, userEntity.getPassword());
             preparedStatement.setObject(3, userEntity.getEmail());
             var execute = preparedStatement.executeQuery();
-            if (execute.next()){
-                return true;
-            }else {
-                return false;
-            }
+            return execute.next();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            LOGGER.error("Error logging in user", e);
+            throw new DatabaseAccessException("Error logging in user", e);
         }
     }
 

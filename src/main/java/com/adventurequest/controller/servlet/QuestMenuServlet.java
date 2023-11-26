@@ -23,11 +23,10 @@ public class QuestMenuServlet extends HttpServlet {
         var session = req.getSession();
         Optional<Boolean> authenticatedUser = Optional.ofNullable((Boolean) session.getAttribute("authenticatedUser"));
         if (!authenticatedUser.orElse(false)) {
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("not-authorized"));
+//            requestDispatcher = req.getRequestDispatcher(JspHelper.get("not-authorized"));
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("main-page"));
             requestDispatcher.forward(req, resp);
         }
         var user = session.getAttribute("user");
-
-
     }
 }

@@ -14,6 +14,14 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
+        <File name="UserService" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\userService.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="UserDao" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\UserDao.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
     </Appenders>
 
     <Loggers>
@@ -24,6 +32,14 @@
 
         <Logger name="com.adventurequest.controller.servlet.LoginServlet" level="debug">
             <AppenderRef ref="LoginLogs"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.model.service.UserService" level="debug">
+            <AppenderRef ref="UserService"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.model.dao.UserDao" level="debug">
+            <AppenderRef ref="UserDao"/>
         </Logger>
 
         <Root level="debug">
