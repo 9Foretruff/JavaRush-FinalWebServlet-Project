@@ -7,10 +7,10 @@ public class UserEntity {
     private String username;
     private String password;
     private String email;
-    private Byte[] photo;
+    private byte[] photo;
     private Long gamesPlayed;
 
-    public UserEntity(String username, String password, String email, Byte[] photo, Long gamesPlayed) {
+    public UserEntity(String username, String password, String email, byte[] photo, Long gamesPlayed) {
         this.username = username;
         this.password = password;
         this.email = email;
@@ -42,11 +42,11 @@ public class UserEntity {
         this.gamesPlayed = gamesPlayed;
     }
 
-    public Byte[] getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Byte[] photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
 

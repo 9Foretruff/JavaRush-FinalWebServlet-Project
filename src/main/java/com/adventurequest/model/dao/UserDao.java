@@ -37,7 +37,7 @@ public class UserDao implements Dao<String, UserEntity> {
             """;
 
     private static final String LOGIN_SQL = """
-                SELECT username, password, email
+                SELECT username, password, email , photo , games_played
                 FROM adventure_quest_schema.user
                 WHERE username LIKE ? AND password = ? AND EMAIL LIKE ?
             """;
@@ -118,6 +118,8 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(1, entity.getUsername());
             preparedStatement.setObject(2, entity.getPassword());
             preparedStatement.setObject(3, entity.getEmail());
+            preparedStatement.setObject(4, entity.getPhoto());
+            preparedStatement.setObject(5, entity.getGamesPlayed());
             return preparedStatement.execute();
         } catch (SQLException e) {
             LOGGER.error("Error updating user", e);
@@ -149,14 +151,18 @@ public class UserDao implements Dao<String, UserEntity> {
         }
     }
 
-    public boolean login(UserEntity userEntity) {
+    public Optional<UserEntity> login(UserEntity userEntity) {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(LOGIN_SQL)) {
             preparedStatement.setObject(1, userEntity.getUsername());
             preparedStatement.setObject(2, userEntity.getPassword());
             preparedStatement.setObject(3, userEntity.getEmail());
             var execute = preparedStatement.executeQuery();
-            return execute.next();
+            if (execute.next()){
+                return Optional.of(buildUser(execute));
+            }else {
+                return Optional.empty();
+            }
         } catch (SQLException e) {
             LOGGER.error("Error logging in user", e);
             throw new DatabaseAccessException("Error logging in user", e);
@@ -165,11 +171,11 @@ public class UserDao implements Dao<String, UserEntity> {
 
     private UserEntity buildUser(ResultSet resultSet) throws SQLException {
         return new UserEntity(
-                resultSet.getObject("username", String.class),
-                resultSet.getObject("password", String.class),
-                resultSet.getObject("email", String.class),
-                resultSet.getObject("photo", Byte[].class),
-                resultSet.getObject("games_played", Long.class)
+                resultSet.getString("username"),
+                resultSet.getString("password"),
+                resultSet.getString("email"),
+                resultSet.getBytes("photo"),  // Assuming the "photo" column is of type bytea
+                resultSet.getLong("games_played")
         );
     }
 

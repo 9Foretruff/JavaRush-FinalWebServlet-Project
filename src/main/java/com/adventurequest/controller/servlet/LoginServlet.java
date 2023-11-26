@@ -37,13 +37,13 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
-        UserEntity user = new UserEntity(username, password, email);
+        UserEntity user = new UserEntity(username, password, email,null,null);
 
         var login = userService.login(user);
 
         RequestDispatcher dispatcher;
         var session = req.getSession();
-        if (login) {
+        if (login.isPresent()) {
             LOGGER.info("User with IP address {} sent valid data to login!",remoteAddr);
             session.setAttribute("authenticatedUser", true);
             session.setAttribute("user", user);

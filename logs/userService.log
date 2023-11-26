@@ -5,4 +5,6 @@
 [m[33m2023-11-26 22:17:14.500 [http-nio-8080-exec-8] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksroki.
 [m[32m2023-11-26 22:19:46.426 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maksroki logged in successfully.
 [m[32m2023-11-26 22:22:20.145 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maksroki logged in successfully.
+[m[32m2023-11-27 00:59:11.375 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks registered successfully.
+[m[32m2023-11-27 01:14:04.221 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
 [m

@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class UserService {
@@ -20,11 +21,6 @@ public class UserService {
 
     private UserService() {
     }
-
-    private boolean save(UserEntity userEntity) {
-        return userDao.save(userEntity);
-    }
-
     public List<UserDto> findAll() {
         return userDao.findAll().stream()
                 .map(userEntity -> UserDto.builder()
@@ -34,9 +30,9 @@ public class UserService {
                 ).collect(Collectors.toList());
     }
 
-    public boolean login(UserEntity userEntity) {
-        boolean result = userDao.login(userEntity);
-        if (result) {
+    public Optional<UserEntity> login(UserEntity userEntity) {
+        var result = userDao.login(userEntity);
+        if (result.isPresent()) {
             LOGGER.info("User {} logged in successfully.", userEntity.getUsername());
         } else {
             LOGGER.warn("Failed login attempt for user {}.", userEntity.getUsername());
@@ -50,7 +46,7 @@ public class UserService {
             return PASSWORDS_DO_NOT_MATCH;
         }
 
-        UserEntity user = new UserEntity(username, password, email);
+        UserEntity user = new UserEntity(username, password, email,null,null);
         var save = userDao.save(user);
         if (save) {
             LOGGER.info("User {} registered successfully.", username);
