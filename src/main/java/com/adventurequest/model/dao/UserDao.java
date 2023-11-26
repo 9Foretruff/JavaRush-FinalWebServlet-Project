@@ -3,6 +3,8 @@ package com.adventurequest.model.dao;
 import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.exeption.DatabaseAccessException;
 import com.adventurequest.util.ConnectionManager;
+import com.adventurequest.util.DefaultGamesCountUtil;
+import com.adventurequest.util.DefaultProfileImageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +20,7 @@ public class UserDao implements Dao<String, UserEntity> {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserDao.class);
 
     private static final String FIND_ALL_SQL = """
-                SELECT username, password, email
+                SELECT username, password, email, photo, games_played
                 FROM adventure_quest_schema.user
             """;
 
@@ -48,11 +50,13 @@ public class UserDao implements Dao<String, UserEntity> {
                 UPDATE adventure_quest_schema.user
                 SET username = ? ,
                  password = ? ,
-                 email = ?
+                 email = ?,
+                 photo = ?,
+                 games_played = ?
             """;
     private static final String SAVE_SQL = """
-               INSERT INTO adventure_quest_schema.user(username, password, email)
-               VALUES (? , ? , ?)
+               INSERT INTO adventure_quest_schema.user(username, password, email,photo, games_played)
+               VALUES (? , ? , ? , ? , ?)
             """;
 
     private UserDao() {
@@ -135,6 +139,8 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(1, entity.getUsername());
             preparedStatement.setObject(2, entity.getPassword());
             preparedStatement.setObject(3, entity.getEmail());
+            preparedStatement.setObject(4, DefaultProfileImageUtil.getDefaultProfileImageBytes());
+            preparedStatement.setObject(5, DefaultGamesCountUtil.getDefaultGamesCount());
             var executed = preparedStatement.executeUpdate();
             return executed > 0;
         } catch (SQLException e) {
@@ -161,7 +167,9 @@ public class UserDao implements Dao<String, UserEntity> {
         return new UserEntity(
                 resultSet.getObject("username", String.class),
                 resultSet.getObject("password", String.class),
-                resultSet.getObject("email", String.class)
+                resultSet.getObject("email", String.class),
+                resultSet.getObject("photo", Byte[].class),
+                resultSet.getObject("games_played", Long.class)
         );
     }
 

@@ -6,8 +6,12 @@ CREATE TABLE "user"
 (
     username VARCHAR(50) PRIMARY KEY,
     password VARCHAR(255)        NOT NULL,
-    email    VARCHAR(100) UNIQUE NOT NULL
+    email    VARCHAR(100) UNIQUE NOT NULL,
+    photo BYTEA NOT NULL ,
+    games_played BIGINT NOT NULL
 );
+
+DROP TABLE "user";
 
 INSERT INTO "user"(username, password, email)
 VALUES ('Admin', '7777', 'admin@gmail.com');

@@ -1,6 +1,5 @@
 <%@ page import="java.net.InetAddress" %>
 <%@ page import="java.net.UnknownHostException" %>
-<%@ page import="com.adventurequest.model.dto.UserDto" %>
 <%@ page import="com.adventurequest.model.service.UserService" %>
 <%@ page import="com.adventurequest.model.entity.UserEntity" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -15,7 +14,6 @@
     String email = user.getEmail();
     int gamesPlayed = user.getGamesPlayed();
 %>
-
 
 <!DOCTYPE html>
 <html>
@@ -53,7 +51,15 @@
     <input type="submit" value="Change Email">
 </form>
 
+<h3>Change Photo</h3>
+<form action="uploadPhoto" method="post" enctype="multipart/form-data">
+    <label for="newPhoto">Upload Photo:</label>
+    <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required>
+    <input type="submit" value="Upload Photo">
+</form>
+
 <!-- Другие формы и функциональность могут быть добавлены здесь -->
 
 </body>
 </html>
+

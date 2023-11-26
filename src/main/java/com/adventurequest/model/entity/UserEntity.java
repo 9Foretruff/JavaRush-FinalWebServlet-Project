@@ -1,25 +1,21 @@
 package com.adventurequest.model.entity;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class UserEntity {
     private String username;
     private String password;
     private String email;
+    private Byte[] photo;
+    private Long gamesPlayed;
 
-    public UserEntity(String username, String password, String email) {
+    public UserEntity(String username, String password, String email, Byte[] photo, Long gamesPlayed) {
         this.username = username;
         this.password = password;
         this.email = email;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-               "username='" + username + '\'' +
-               ", password='" + password + '\'' +
-               ", email='" + email + '\'' +
-               '}';
+        this.photo = photo;
+        this.gamesPlayed = gamesPlayed;
     }
 
     @Override
@@ -35,6 +31,23 @@ public class UserEntity {
     @Override
     public int hashCode() {
         return username != null ? username.hashCode() : 0;
+    }
+
+
+    public Long getGamesPlayed() {
+        return gamesPlayed;
+    }
+
+    public void setGamesPlayed(Long gamesPlayed) {
+        this.gamesPlayed = gamesPlayed;
+    }
+
+    public Byte[] getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(Byte[] photo) {
+        this.photo = photo;
     }
 
     public String getUsername() {
@@ -59,5 +72,16 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "UserEntity{" +
+               "username='" + username + '\'' +
+               ", password='" + password + '\'' +
+               ", email='" + email + '\'' +
+               ", photo=" + Arrays.toString(photo) +
+               ", gamesPlayed=" + gamesPlayed +
+               '}';
     }
 }
