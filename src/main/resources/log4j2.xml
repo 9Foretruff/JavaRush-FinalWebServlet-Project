@@ -22,6 +22,14 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
+        <File name="QuestMenuServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\QuestMenuServlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="ProfileServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\ProfileServlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
     </Appenders>
 
     <Loggers>
@@ -40,6 +48,14 @@
 
         <Logger name="com.adventurequest.model.dao.UserDao" level="debug">
             <AppenderRef ref="UserDao"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.QuestMenuServlet" level="debug">
+            <AppenderRef ref="QuestMenuServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.ProfileServlet" level="debug">
+            <AppenderRef ref="ProfileServlet"/>
         </Logger>
 
         <Root level="debug">

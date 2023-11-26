@@ -4,4 +4,8 @@
 [m[32m2023-11-26 19:37:10.977 [http-nio-8080-exec-19] INFO  com.adventurequest.controller.servlet.LoginServlet - User sent the data for login
 [m[32m2023-11-26 19:37:11.020 [http-nio-8080-exec-19] INFO  com.adventurequest.controller.servlet.LoginServlet - User sent valid data to login!
 [m[34m2023-11-26 19:37:11.021 [http-nio-8080-exec-19] DEBUG com.adventurequest.controller.servlet.LoginServlet - Forwarding to registration-result.jsp
+[m[34m2023-11-26 20:15:25.223 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.LoginServlet - User get login page
+[m[32m2023-11-26 20:19:01.744 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.LoginServlet - User sent the data for login
+[m[32m2023-11-26 20:19:01.793 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.LoginServlet - User sent valid data to login!
+[m[34m2023-11-26 20:19:01.793 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.LoginServlet - Forwarding to registration-result.jsp
 [m

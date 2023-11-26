@@ -24,14 +24,16 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LOGGER.debug("User get login page");
+        var remoteAddr = req.getRemoteAddr();
+        LOGGER.debug("User with IP address {} get login page",remoteAddr);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
         requestDispatcher.forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LOGGER.info("User sent the data for login");
+        var remoteAddr = req.getRemoteAddr();
+        LOGGER.info("User with IP address {} sent the data for login",remoteAddr);
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
@@ -41,17 +43,17 @@ public class LoginServlet extends HttpServlet {
 
         RequestDispatcher dispatcher;
         if (login) {
-            LOGGER.info("User sent valid data to login!");
+            LOGGER.info("User with IP address {} sent valid data to login!",remoteAddr);
             var session = req.getSession();
             session.setAttribute("authenticatedUser", true);
             session.setAttribute("user", user);
             dispatcher = req.getRequestDispatcher(LOGIN_SUCCESS_JSP);
         } else {
-            LOGGER.warn("User sent invalid data to login!");
+            LOGGER.warn("User with IP address {} sent invalid data to login!",remoteAddr);
             req.setAttribute("authenticatedUser", false);
             dispatcher = req.getRequestDispatcher(LOGIN_FAILED_JSP);
         }
-        LOGGER.debug("Forwarding to registration-result.jsp");
+        LOGGER.debug("Forwarding user with IP address {} to registration-result.jsp",remoteAddr);
         dispatcher.forward(req, resp);
     }
 }

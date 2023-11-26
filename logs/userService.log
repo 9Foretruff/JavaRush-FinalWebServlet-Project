@@ -1,3 +1,5 @@
 [33m2023-11-26 19:36:38.366 [http-nio-8080-exec-17] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user asdasa.
 [m[32m2023-11-26 19:37:11.020 [http-nio-8080-exec-19] INFO  com.adventurequest.model.service.UserService - User Admin logged in successfully.
+[m[32m2023-11-26 20:17:08.503 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maksroki registered successfully.
+[m[32m2023-11-26 20:19:01.793 [http-nio-8080-exec-6] INFO  com.adventurequest.model.service.UserService - User maksroki logged in successfully.
 [m
