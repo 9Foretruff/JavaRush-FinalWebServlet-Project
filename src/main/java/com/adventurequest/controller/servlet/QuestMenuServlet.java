@@ -26,14 +26,6 @@ public class QuestMenuServlet extends HttpServlet {
         LOGGER.debug("User with IP address {} get the menu page", remoteAddr);
 
         RequestDispatcher requestDispatcher;
-        var session = req.getSession();
-        var authenticatedUser = Optional.ofNullable((Boolean) session.getAttribute("authenticatedUser"));
-        var user = Optional.ofNullable((UserEntity) session.getAttribute("user"));
-//        if (!authenticatedUser.orElse(false) || !userService.login(user.orElse(new UserEntity(null, null, null)))) {
-//            requestDispatcher = req.getRequestDispatcher(JspHelper.get("not-authorized"));
-//            LOGGER.warn("User with IP address {} not authenticated, redirected to not-authorized page", remoteAddr);
-//            requestDispatcher.forward(req, resp);
-//        }
         requestDispatcher = req.getRequestDispatcher(JspHelper.get("main-page"));
         requestDispatcher.forward(req, resp);
     }

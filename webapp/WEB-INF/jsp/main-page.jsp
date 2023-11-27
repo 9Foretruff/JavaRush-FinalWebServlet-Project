@@ -13,7 +13,7 @@
     <h1 class="neon-title">Quest digital</h1>
 
     <div class="profile-link">
-        <a href="/profile">
+        <a href="${pageContext.request.contextPath}/profile">
             <img src="../../img/profile.png" alt="Profile">
         </a>
     </div>

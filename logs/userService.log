@@ -7,4 +7,8 @@
 [m[32m2023-11-26 22:22:20.145 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maksroki logged in successfully.
 [m[32m2023-11-27 00:59:11.375 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks registered successfully.
 [m[32m2023-11-27 01:14:04.221 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-11-27 15:59:48.201 [http-nio-8080-exec-9] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: Passwords do not match.
+[m[32m2023-11-28 00:06:36.118 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-11-28 00:06:41.994 [http-nio-8080-exec-2] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-11-28 00:06:45.035 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
 [m

@@ -7,12 +7,12 @@
 <%
     String username = (String) session.getAttribute("username");
     UserService userService = UserService.getInstance();
-    UserEntity user = userService.getUserByUsername(username);
+    UserEntity user = userService.getUserByUsername(username).orElse(new UserEntity(null, null, null, null, null));
     String ipAddress = request.getRemoteAddr();
 
-    String photoUrl = user.getPhotoUrl();
+    byte[] photoUrl = user.getPhoto();
     String email = user.getEmail();
-    int gamesPlayed = user.getGamesPlayed();
+    Long gamesPlayed = user.getGamesPlayed();
 %>
 
 <!DOCTYPE html>
@@ -30,9 +30,9 @@
 
 <%-- Информация о пользователе --%>
 <ul>
-    <li><strong>Email:</strong> <c:out value="${email}" /></li>
-    <li><strong>IP Address:</strong> <c:out value="${ipAddress}" /></li>
-    <li><strong>Games Played:</strong> <c:out value="${gamesPlayed}" /></li>
+    <li><strong>Email:</strong> <c:out value="${email}"/></li>
+    <li><strong>IP Address:</strong> <c:out value="${ipAddress}"/></li>
+    <li><strong>Games Played:</strong> <c:out value="${gamesPlayed}"/></li>
 </ul>
 
 <%-- Форма для изменения пароля --%>

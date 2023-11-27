@@ -1,6 +1,5 @@
 package com.adventurequest.model.service;
 
-import com.adventurequest.controller.servlet.RegistrationServlet;
 import com.adventurequest.model.dao.UserDao;
 import com.adventurequest.model.dto.UserDto;
 import com.adventurequest.model.entity.UserEntity;
@@ -59,5 +58,9 @@ public class UserService {
 
     public static UserService getInstance() {
         return INSTANCE;
+    }
+
+    public Optional<UserEntity> getUserByUsername(String username) {
+        return userDao.findByUsername(username);
     }
 }

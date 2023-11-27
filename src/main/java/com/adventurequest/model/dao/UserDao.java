@@ -52,7 +52,6 @@ public class UserDao implements Dao<String, UserEntity> {
                  password = ? ,
                  email = ?,
                  photo = ?,
-                 games_played = ?
             """;
     private static final String SAVE_SQL = """
                INSERT INTO adventure_quest_schema.user(username, password, email,photo, games_played)
@@ -119,7 +118,6 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(2, entity.getPassword());
             preparedStatement.setObject(3, entity.getEmail());
             preparedStatement.setObject(4, entity.getPhoto());
-            preparedStatement.setObject(5, entity.getGamesPlayed());
             return preparedStatement.execute();
         } catch (SQLException e) {
             LOGGER.error("Error updating user", e);
@@ -174,9 +172,10 @@ public class UserDao implements Dao<String, UserEntity> {
                 resultSet.getString("username"),
                 resultSet.getString("password"),
                 resultSet.getString("email"),
-                resultSet.getBytes("photo"),  // Assuming the "photo" column is of type bytea
+                resultSet.getBytes("photo"),
                 resultSet.getLong("games_played")
         );
+
     }
 
 }
