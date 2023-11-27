@@ -14,23 +14,23 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="UserService" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\userService.log">
+        <File name="UserService" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\user_service.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="UserDao" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\UserDao.log">
+        <File name="UserDao" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\user_dao.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="QuestMenuServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\QuestMenuServlet.log">
+        <File name="QuestMenuServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\quest_menu_servlet.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="ProfileServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\ProfileServlet.log">
+        <File name="ProfileServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\profile_servlet.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="AuthorizationFilter" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\AuthorizationFilter.log">
+        <File name="AuthorizationFilter" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\authorization_Filter.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 

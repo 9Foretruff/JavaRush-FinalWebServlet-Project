@@ -13,10 +13,10 @@ public final class DefaultProfileImageUtil {
     private DefaultProfileImageUtil() {
     }
 
-    public static Byte[] getDefaultProfileImageBytes() {
+    public static byte[] getDefaultProfileImageBytes() {
         try (InputStream inputStream = DefaultProfileImageUtil.class.getClassLoader().getResourceAsStream(DEFAULT_IMAGE_PATH)) {
             if (inputStream != null) {
-                return ArrayUtils.toObject(inputStream.readAllBytes());
+                return inputStream.readAllBytes();
             } else {
                 throw new ImageNullException("Default profile image not found.");
             }

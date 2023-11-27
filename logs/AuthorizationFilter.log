@@ -1,3 +1,0 @@
-[33m2023-11-28 00:10:07.542 [http-nio-8080-exec-2] WARN  com.adventurequest.controller.filter.AuthorizationFilter - User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
-[m[33m2023-11-28 00:11:18.984 [http-nio-8080-exec-5] WARN  com.adventurequest.controller.filter.AuthorizationFilter - User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
-[m
