@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<h1 class="neon-title">Login Failed</h1>
+<h1 class="neon-title">Login Success</h1>
 <div class="container">
     <div class="login-table">
         <p>Login success.</p>

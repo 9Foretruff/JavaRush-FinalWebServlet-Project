@@ -24,10 +24,11 @@ public class LogoutServlet extends HttpServlet {
         try {
             RequestDispatcher requestDispatcher;
             var remoteAddr = req.getRemoteAddr();
+            var user = req.getSession().getAttribute("user");
             LOGGER.info("Logout request received from IP address: {}", remoteAddr);
 
             HttpSession session = req.getSession(false);
-            if (session != null) {
+            if (session != null && user != null) {
                 LOGGER.info("Logging out user from IP address: {}", remoteAddr);
                 session.invalidate();
                 LOGGER.info("User successfully logged out");

@@ -46,16 +46,47 @@ body {
 }
 
 .navigation {
+    display: flex;
+    justify-content: center; /* Центруємо елементи по горизонталі */
+    align-items: center; /* Центруємо елементи по вертикалі */
     margin-top: 20px;
 }
 
 .navigation a {
+    padding: 15px 30px;
+    font-size: 24px;
+    border: 3px solid transparent; /* Додаємо прозорий обвід */
+    margin: 10px;
     text-decoration: none;
     color: #fff;
-    font-weight: bold;
-    margin: 0 15px;
+    position: relative;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .navigation a:hover {
     color: #ff4081;
+}
+
+.navigation {
+    display: flex;
+    margin-top: 20px;
+}
+
+.navigation a {
+    padding: 15px 30px;
+    font-size: 24px;
+    border: 3px solid transparent; /* Додаємо прозорий обвід */
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navigation a:hover {
+    border-color: #fff; /* Змінюємо колір обвіду при наведенні */
+    transform: scale(1.1); /* Збільшуємо кнопку при наведенні */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1),
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1);
 }

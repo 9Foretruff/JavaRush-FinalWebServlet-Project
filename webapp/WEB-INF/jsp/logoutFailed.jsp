@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1 class="neon-title">Logout Error</h1>
-    <p>There was an error during the logout process. Please try again.</p>
+    <p class="neon-title">There was an error during the logout process. Please try again.</p>
     <div class="navigation">
         <a href="${pageContext.request.contextPath}/login">Login</a>
         <a href="${pageContext.request.contextPath}/registration">Register</a>

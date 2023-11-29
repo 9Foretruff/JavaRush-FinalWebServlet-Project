@@ -9,7 +9,7 @@
 <body>
 <div class="container">
     <h1 class="neon-title">Logout Successful</h1>
-    <p>You have been successfully logged out.</p>
+    <p class="neon-title">You have been successfully logged out.</p>
     <div class="navigation">
         <a href="${pageContext.request.contextPath}/login">Login</a>
         <a href="${pageContext.request.contextPath}/registration">Register</a>
