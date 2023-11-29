@@ -25,7 +25,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
-        LOGGER.debug("User with IP address {} get login page",remoteAddr);
+        LOGGER.debug("User with IP address {} get login page", remoteAddr);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/");
         requestDispatcher.forward(req, resp);
     }
@@ -33,27 +33,28 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
-        LOGGER.info("User with IP address {} sent the data for login",remoteAddr);
+        LOGGER.info("User with IP address {} sent the data for login", remoteAddr);
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
-        UserEntity user = new UserEntity(username, password, email,null,null);
+        UserEntity user = new UserEntity(username, password, email, null, null);
 
         var login = userService.login(user);
-
+        
         RequestDispatcher dispatcher;
         var session = req.getSession();
         if (login.isPresent()) {
-            LOGGER.info("User with IP address {} sent valid data to login!",remoteAddr);
+            LOGGER.info("User with IP address {} sent valid data to login!", remoteAddr);
             session.setAttribute("authenticatedUser", true);
-            session.setAttribute("user", user);
+            session.setAttribute("user", login.get());
+
             dispatcher = req.getRequestDispatcher(LOGIN_SUCCESS_JSP);
         } else {
-            LOGGER.warn("User with IP address {} sent invalid data to login!",remoteAddr);
+            LOGGER.warn("User with IP address {} sent invalid data to login!", remoteAddr);
             session.setAttribute("authenticatedUser", false);
             dispatcher = req.getRequestDispatcher(LOGIN_FAILED_JSP);
         }
-        LOGGER.debug("Forwarding user with IP address {} to registration-result.jsp",remoteAddr);
+        LOGGER.debug("Forwarding user with IP address {} to registration-result.jsp", remoteAddr);
         dispatcher.forward(req, resp);
     }
 }

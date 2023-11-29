@@ -25,7 +25,7 @@ public class UserDao implements Dao<String, UserEntity> {
             """;
 
     private static final String FIND_BY_USERNAME_SQL = """
-                SELECT username, password, email
+                SELECT username, password, email , photo , games_played
                 FROM adventure_quest_schema.user
                 WHERE username LIKE ?
             """;
