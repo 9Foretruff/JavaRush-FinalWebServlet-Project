@@ -6,11 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images2.alphacoders.com/133/1333578.png");
+    background: url("../img/logout.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .neon-title {

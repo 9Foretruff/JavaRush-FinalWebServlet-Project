@@ -6,11 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images8.alphacoders.com/133/thumb-1920-1330685.png");
+    background: url("../img/menu.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .neon-title {

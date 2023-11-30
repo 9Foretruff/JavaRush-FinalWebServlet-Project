@@ -43,4 +43,61 @@
 [m[32m2023-11-29 23:26:51.861 [http-nio-8080-exec-7] INFO  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 has successfully registered
 [m[34m2023-11-29 23:26:51.861 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
 [m[34m2023-11-29 23:27:46.532 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[34m2023-11-29 23:49:32.853 [http-nio-8080-exec-21] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-11-29 23:49:41.215 [http-nio-8080-exec-29] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-11-29 23:49:41.223 [http-nio-8080-exec-29] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 attempted registration with different passwords
+[m[34m2023-11-29 23:49:41.223 [http-nio-8080-exec-29] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-11-29 23:49:44.074 [http-nio-8080-exec-28] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-11-29 23:49:51.085 [http-nio-8080-exec-23] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[32m2023-11-29 23:49:51.294 [http-nio-8080-exec-23] INFO  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 has successfully registered
+[m[34m2023-11-29 23:49:51.294 [http-nio-8080-exec-23] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-11-29 23:54:25.160 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-11-29 23:54:40.687 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[32m2023-11-29 23:54:40.744 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 has successfully registered
+[m[34m2023-11-29 23:54:40.744 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-11-30 00:02:08.639 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-11-30 00:02:16.821 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[32m2023-11-30 00:02:16.875 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 has successfully registered
+[m[34m2023-11-30 00:02:16.875 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-11-30 00:03:10.722 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-11-30 00:03:17.296 [http-nio-8080-exec-10] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-11-30 00:03:17.298 [http-nio-8080-exec-10] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 attempted registration with different passwords
+[m[34m2023-11-30 00:03:17.298 [http-nio-8080-exec-10] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-11-30 00:03:21.274 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[34m2023-12-01 00:50:58.219 [http-nio-8080-exec-13] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-12-01 00:51:08.952 [http-nio-8080-exec-17] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:51:09.169 [http-nio-8080-exec-17] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:51:09.169 [http-nio-8080-exec-17] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:51:12.309 [http-nio-8080-exec-1] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:51:12.349 [http-nio-8080-exec-1] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:51:12.350 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:51:12.911 [http-nio-8080-exec-14] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:51:12.947 [http-nio-8080-exec-14] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:51:12.947 [http-nio-8080-exec-14] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:51:13.144 [http-nio-8080-exec-22] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:51:13.179 [http-nio-8080-exec-22] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:51:13.179 [http-nio-8080-exec-22] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:51:13.345 [http-nio-8080-exec-12] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:51:13.380 [http-nio-8080-exec-12] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:51:13.380 [http-nio-8080-exec-12] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:52:07.501 [http-nio-8080-exec-15] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:52:07.541 [http-nio-8080-exec-15] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:52:07.541 [http-nio-8080-exec-15] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:52:09.717 [http-nio-8080-exec-20] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:52:09.933 [http-nio-8080-exec-20] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:52:09.935 [http-nio-8080-exec-20] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-12-01 00:52:14.271 [http-nio-8080-exec-22] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
+[m[32m2023-12-01 00:52:18.353 [http-nio-8080-exec-21] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:52:18.389 [http-nio-8080-exec-21] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:52:18.389 [http-nio-8080-exec-21] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:52:19.903 [http-nio-8080-exec-28] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:52:19.941 [http-nio-8080-exec-28] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:52:19.941 [http-nio-8080-exec-28] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:52:20.129 [http-nio-8080-exec-30] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:52:20.162 [http-nio-8080-exec-30] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:52:20.163 [http-nio-8080-exec-30] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-01 00:52:20.314 [http-nio-8080-exec-32] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
+[m[33m2023-12-01 00:52:20.349 [http-nio-8080-exec-32] WARN  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 did not register due to incorrect data
+[m[34m2023-12-01 00:52:20.349 [http-nio-8080-exec-32] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-12-01 00:52:21.413 [http-nio-8080-exec-25] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
 [m

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Quest</title>
-    <link rel="stylesheet" type="text/css" href="../../css/menu.css">
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
 </head>
 
 <body>

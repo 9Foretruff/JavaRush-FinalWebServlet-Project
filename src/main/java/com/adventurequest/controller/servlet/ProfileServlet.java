@@ -18,7 +18,7 @@ public class ProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
-        LOGGER.debug("User with IP address {} get the menu page", remoteAddr);
+        LOGGER.debug("User with IP address {} get the profile page", remoteAddr);
 
         RequestDispatcher requestDispatcher;
         requestDispatcher = req.getRequestDispatcher(JspHelper.get("profile"));

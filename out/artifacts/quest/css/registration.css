@@ -6,11 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/registration.jpg");
+    background: url("../img/registration.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .container {

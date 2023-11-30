@@ -6,11 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images3.alphacoders.com/132/1329519.png");
+    background: url("../img/profileBackgroud.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
 
 .neon-title,
@@ -121,7 +119,7 @@ button, input[type="submit"] {
 
 /* Добавим стили для изменения цвета при наведении на кнопку Login */
 button:hover, input[type="submit"]:hover {
-    background-color: #fff; /* Измененный цвет при наведении */
+    background-color: #8f0357; /* Измененный цвет при наведении */
 }
 
 .button-link {
