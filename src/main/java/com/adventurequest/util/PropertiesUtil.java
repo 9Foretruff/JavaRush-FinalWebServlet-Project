@@ -1,6 +1,5 @@
 package com.adventurequest.util;
 
-import com.adventurequest.util.exeption.LoadDriverException;
 import com.adventurequest.util.exeption.LoadPropertyException;
 
 import java.io.IOException;

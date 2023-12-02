@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebFilter(urlPatterns = {"/menu", "/profile"})
+@WebFilter(urlPatterns = {"/menu", "/profile","/changeEmail","/uploadPhoto","/changePassword"})
 public class AuthorizationFilter implements Filter {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthorizationFilter.class);
     private final UserService userService = UserService.getInstance();
@@ -28,17 +28,20 @@ public class AuthorizationFilter implements Filter {
         var resp = (HttpServletResponse) response;
 
         var remoteAddr = req.getRemoteAddr();
-        HttpSession session = req.getSession();
+        var session = req.getSession();
         var authenticatedUser = Optional.ofNullable((Boolean) session.getAttribute("authenticatedUser"));
         var user = Optional.ofNullable((UserEntity) session.getAttribute("user"));
+        LOGGER.debug("AuthorizationFilter: Processing request for URL {}", req.getRequestURI());
 
         if (!authenticatedUser.orElse(false) || userService.login(user.orElse(null)).isEmpty()) {
             RequestDispatcher dispatcher = req.getRequestDispatcher(JspHelper.get("not-authorized"));
-            LOGGER.warn("User with IP address {} not authenticated, redirected to not-authorized page", remoteAddr);
+            LOGGER.warn("AuthorizationFilter: User with IP address {} not authenticated, redirected to not-authorized page", remoteAddr);
             dispatcher.forward(req, resp);
         } else {
+            LOGGER.debug("AuthorizationFilter: User {} is authenticated. Continuing with the request.", user.get().getUsername());
             chain.doFilter(request, response);
         }
+
     }
 
 }

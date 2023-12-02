@@ -30,10 +30,21 @@ public class UserDao implements Dao<String, UserEntity> {
                 WHERE username LIKE ?
             """;
 
-    private static final String FIND_BY_USERNAME_AND_EMAIL_SQL = """
+    private static final String FIND_BY_USERNAME_OR_EMAIL_SQL = """
                 SELECT username, password, email
                 FROM adventure_quest_schema.user
                 WHERE username LIKE ? OR EMAIL LIKE ?
+            """;
+
+    private static final String FIND_BY_ALL_FIELD_SQL = """
+                SELECT
+                username,
+                password,
+                email,
+                photo,
+                games_played
+                FROM adventure_quest_schema.user
+                WHERE username = ? AND password = ? AND email = ?
             """;
 
     private static final String LOGIN_SQL = """
@@ -49,13 +60,40 @@ public class UserDao implements Dao<String, UserEntity> {
     private static final String UPDATE_SQL = """
                 UPDATE adventure_quest_schema.user
                 SET username = ? ,
-                 password = ? ,
-                 email = ?,
-                 photo = ?,
+                password = ? ,
+                email = ?,
+                photo = ?
+                WHERE username = ?  AND password = ?
+            """;
+
+    private static final String UPDATE_EMAIL_SQL = """
+            UPDATE adventure_quest_schema.user
+            SET email = ?
+            WHERE email = ?
+            """;
+    private static final String UPDATE_PASSWORD_SQL = """
+            UPDATE adventure_quest_schema.user
+            SET password = ?
+            WHERE username = ?
             """;
     private static final String SAVE_SQL = """
                INSERT INTO adventure_quest_schema.user(username, password, email,photo, games_played)
                VALUES (? , ? , ? , ? , ?)
+            """;
+
+    private static final String FIND_USER_BY_EMAIL_SQL = """
+            SELECT
+            username,
+            password,
+            email,
+            photo,
+            games_played
+            FROM epic_quest_db.adventure_quest_schema.user
+            WHERE email = ?
+            """;
+    private static final String FIND_EMAIL_BY_EMAIL_SQL = """
+            SELECT email FROM adventure_quest_schema.user
+            WHERE email = ?
             """;
 
     private UserDao() {
@@ -70,7 +108,7 @@ public class UserDao implements Dao<String, UserEntity> {
     public List<UserEntity> findAll() {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
-            var resultSet = preparedStatement.executeQuery();
+             var resultSet = preparedStatement.executeQuery();
             List<UserEntity> users = new ArrayList<>();
             while (resultSet.next()) {
                 users.add(buildUser(resultSet));
@@ -78,7 +116,7 @@ public class UserDao implements Dao<String, UserEntity> {
             return users;
         } catch (SQLException e) {
             LOGGER.error("Error finding all users", e);
-            throw new DatabaseAccessException("Error accessing the database", e);
+            throw new DatabaseAccessException("Error , while finding all", e);
         }
     }
 
@@ -94,7 +132,7 @@ public class UserDao implements Dao<String, UserEntity> {
             return Optional.empty();
         } catch (SQLException e) {
             LOGGER.error("Error finding user by username", e);
-            throw new DatabaseAccessException("Error finding user by username", e);
+            throw new DatabaseAccessException("Error , while finding user by username", e);
         }
     }
 
@@ -106,7 +144,7 @@ public class UserDao implements Dao<String, UserEntity> {
             return preparedStatement.execute();
         } catch (SQLException e) {
             LOGGER.error("Error deleting user", e);
-            throw new DatabaseAccessException("Error deleting user", e);
+            throw new DatabaseAccessException("Error , while deleting user", e);
         }
     }
 
@@ -121,7 +159,58 @@ public class UserDao implements Dao<String, UserEntity> {
             return preparedStatement.execute();
         } catch (SQLException e) {
             LOGGER.error("Error updating user", e);
-            throw new DatabaseAccessException("Error updating user", e);
+            throw new DatabaseAccessException("Error , while updating user", e);
+        }
+    }
+
+    public Optional<UserEntity> updateEmail(UserEntity user, String newEmail) {
+        try (var connection = ConnectionManager.get();
+             var result = connection.prepareStatement(FIND_USER_BY_EMAIL_SQL);
+             var findEmail = connection.prepareStatement(FIND_EMAIL_BY_EMAIL_SQL);
+             var update = connection.prepareStatement(UPDATE_EMAIL_SQL)) {
+
+            findEmail.setObject(1, newEmail);
+            var resultSet1 = findEmail.executeQuery();
+            if (resultSet1.next()) {
+                return Optional.empty();
+            }
+
+            update.setObject(1, newEmail);
+            update.setObject(2, user.getEmail());
+            update.executeUpdate();
+
+            result.setObject(1, newEmail);
+            var resultSet = result.executeQuery();
+            if (resultSet.next()) {
+                return Optional.of(buildUser(resultSet));
+            } else {
+                return Optional.empty();
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Error updating email for user: {}", user.getUsername(), e);
+            throw new DatabaseAccessException("Error , while updating email", e);
+        }
+    }
+
+    public Optional<UserEntity> updatePassword(UserEntity user, String newPassword) {
+        try (var connection = ConnectionManager.get();
+             var result = connection.prepareStatement(FIND_BY_USERNAME_SQL);
+             var update = connection.prepareStatement(UPDATE_PASSWORD_SQL)) {
+
+            update.setObject(1, newPassword);
+            update.setObject(2, user.getUsername());
+            update.executeUpdate();
+
+            result.setObject(1, user.getUsername());
+            var resultSet = result.executeQuery();
+            if (resultSet.next()) {
+                return Optional.of(buildUser(resultSet));
+            } else {
+                return Optional.empty();
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Error updating password for user: {}", user.getUsername(), e);
+            throw new DatabaseAccessException("Error , while updating password", e);
         }
     }
 
@@ -129,7 +218,7 @@ public class UserDao implements Dao<String, UserEntity> {
     public boolean save(UserEntity entity) {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(SAVE_SQL);
-             var preparedStatement1 = connection.prepareStatement(FIND_BY_USERNAME_AND_EMAIL_SQL)) {
+             var preparedStatement1 = connection.prepareStatement(FIND_BY_USERNAME_OR_EMAIL_SQL)) {
             preparedStatement1.setObject(1, entity.getUsername());
             preparedStatement1.setObject(2, entity.getEmail());
             var execute = preparedStatement1.executeQuery();
@@ -145,7 +234,7 @@ public class UserDao implements Dao<String, UserEntity> {
             return executed > 0;
         } catch (SQLException e) {
             LOGGER.error("Error saving user", e);
-            throw new DatabaseAccessException("Error saving user", e);
+            throw new DatabaseAccessException("Error , while saving user", e);
         }
     }
 
@@ -156,14 +245,14 @@ public class UserDao implements Dao<String, UserEntity> {
             preparedStatement.setObject(2, userEntity.getPassword());
             preparedStatement.setObject(3, userEntity.getEmail());
             var execute = preparedStatement.executeQuery();
-            if (execute.next()){
+            if (execute.next()) {
                 return Optional.of(buildUser(execute));
-            }else {
+            } else {
                 return Optional.empty();
             }
         } catch (SQLException e) {
             LOGGER.error("Error logging in user", e);
-            throw new DatabaseAccessException("Error logging in user", e);
+            throw new DatabaseAccessException("Error , while logging in user", e);
         }
     }
 
@@ -175,7 +264,5 @@ public class UserDao implements Dao<String, UserEntity> {
                 resultSet.getBytes("photo"),
                 resultSet.getLong("games_played")
         );
-
     }
-
 }

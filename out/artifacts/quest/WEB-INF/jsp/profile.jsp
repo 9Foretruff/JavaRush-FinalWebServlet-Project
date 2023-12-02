@@ -13,7 +13,7 @@
 </head>
 <body>
 <%
-    UserEntity userFromSession = (UserEntity) session.getAttribute("user");
+    UserEntity userFromSession = (UserEntity) request.getSession().getAttribute("user");
     UserService userService = UserService.getInstance();
     UserEntity user = userService.getUserByUsername(userFromSession.getUsername()).orElse(new UserEntity(null, null, null, null, null));
     byte[] photoBytes = user.getPhoto();

@@ -119,7 +119,7 @@ button, input[type="submit"] {
 
 /* Добавим стили для изменения цвета при наведении на кнопку Login */
 button:hover, input[type="submit"]:hover {
-    background-color: #8f0357; /* Измененный цвет при наведении */
+    background-color: rgb(143, 3, 87); /* Измененный цвет при наведении */
 }
 
 .button-link {

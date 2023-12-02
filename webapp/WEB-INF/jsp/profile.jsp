@@ -13,10 +13,11 @@
 </head>
 <body>
 <%
-    UserEntity userFromSession = (UserEntity) session.getAttribute("user");
+    UserEntity userFromSession = (UserEntity) request.getSession().getAttribute("user");
     UserService userService = UserService.getInstance();
     UserEntity user = userService.getUserByUsername(userFromSession.getUsername()).orElse(new UserEntity(null, null, null, null, null));
     byte[] photoBytes = user.getPhoto();
+    String password = user.getPassword();
     String username = user.getUsername();
     String email = user.getEmail();
     String ipAddress = request.getRemoteAddr();
@@ -29,11 +30,13 @@
 <table class="neon-table">
     <tr>
         <td>
-            <h2 class="neon-text">Welcome, ${sessionScope.get("user").getUsername()}!</h2>
+            <h2 class="neon-text">Welcome, <%=username%>!</h2>
 
             <img src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
 
             <ul class="neon-table">
+                <li><strong>Username:</strong> <c:out value="<%=username%>"/></li>
+                <li><strong>Password:</strong> <c:out value="<%=password%>"/></li>
                 <li><strong>Email:</strong> <c:out value="<%=email%>"/></li>
                 <li><strong>IP Address:</strong> <c:out value="<%=ipAddress%>"/></li>
                 <li><strong>Games Played:</strong> <c:out value="<%=gamesPlayed%>"/></li>
@@ -60,7 +63,7 @@
                 <input type="submit" value="Upload Photo">
             </form>
 
-            <form action="/menu" method="get">
+            <form action="${pageContext.request.contextPath}/menu" method="get">
                 <input type="submit" value="Go Back">
             </form>
 

@@ -20,6 +20,7 @@ public class UserService {
 
     private UserService() {
     }
+
     public List<UserDto> findAll() {
         return userDao.findAll().stream()
                 .map(userEntity -> UserDto.builder()
@@ -45,7 +46,7 @@ public class UserService {
             return PASSWORDS_DO_NOT_MATCH;
         }
 
-        UserEntity user = new UserEntity(username, password, email,null,null);
+        UserEntity user = new UserEntity(username, password, email, null, null);
         var save = userDao.save(user);
         if (save) {
             LOGGER.info("User {} registered successfully.", username);
@@ -62,5 +63,13 @@ public class UserService {
 
     public Optional<UserEntity> getUserByUsername(String username) {
         return userDao.findByUsername(username);
+    }
+
+    public Optional<UserEntity> changeEmail(UserEntity user, String newEmail) {
+        return userDao.updateEmail(user, newEmail);
+    }
+
+    public Optional<UserEntity> changePassword(UserEntity user, String newPassword) {
+        return userDao.updatePassword(user, newPassword);
     }
 }
