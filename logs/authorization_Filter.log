@@ -196,4 +196,62 @@
 [m[34m2023-12-02 23:37:08.264 [http-nio-8080-exec-103] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
 [m[34m2023-12-02 23:37:16.544 [http-nio-8080-exec-104] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /changePassword
 [m[34m2023-12-02 23:37:16.581 [http-nio-8080-exec-104] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-02 23:45:32.394 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /changePassword
+[m[33m2023-12-02 23:45:32.409 [http-nio-8080-exec-3] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:06:31.679 [http-nio-8080-exec-92] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-03 00:06:31.712 [http-nio-8080-exec-92] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:06:52.882 [http-nio-8080-exec-91] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 00:06:52.918 [http-nio-8080-exec-91] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:07:01.461 [http-nio-8080-exec-93] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 00:07:01.497 [http-nio-8080-exec-93] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:08:18.962 [http-nio-8080-exec-94] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 00:08:19.006 [http-nio-8080-exec-94] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:08:21.219 [http-nio-8080-exec-88] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:08:21.230 [http-nio-8080-exec-88] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:08:31.192 [http-nio-8080-exec-93] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-03 00:08:31.230 [http-nio-8080-exec-93] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:08:32.316 [http-nio-8080-exec-92] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 00:08:32.350 [http-nio-8080-exec-92] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:08:47.326 [http-nio-8080-exec-89] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 00:08:47.475 [http-nio-8080-exec-89] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:09:30.018 [http-nio-8080-exec-100] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /changePassword
+[m[34m2023-12-03 00:09:30.059 [http-nio-8080-exec-100] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:09:34.333 [http-nio-8080-exec-101] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /changeEmail
+[m[34m2023-12-03 00:09:34.369 [http-nio-8080-exec-101] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:09:37.437 [http-nio-8080-exec-102] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-03 00:09:37.473 [http-nio-8080-exec-102] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:09:38.811 [http-nio-8080-exec-103] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 00:09:38.954 [http-nio-8080-exec-103] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 00:10:16.777 [http-nio-8080-exec-101] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:10:16.778 [http-nio-8080-exec-101] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:30:59.370 [http-nio-8080-exec-68] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:30:59.370 [http-nio-8080-exec-68] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:31:32.327 [http-nio-8080-exec-63] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:31:32.338 [http-nio-8080-exec-63] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:31:33.485 [http-nio-8080-exec-69] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:31:33.485 [http-nio-8080-exec-69] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:31:34.742 [http-nio-8080-exec-71] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:31:34.743 [http-nio-8080-exec-71] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:32:27.486 [http-nio-8080-exec-72] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:32:27.498 [http-nio-8080-exec-72] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:32:50.549 [http-nio-8080-exec-70] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:32:50.560 [http-nio-8080-exec-70] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:33:16.645 [http-nio-8080-exec-68] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:33:16.656 [http-nio-8080-exec-68] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 00:33:26.307 [http-nio-8080-exec-70] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 00:33:26.307 [http-nio-8080-exec-70] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 01:04:49.354 [http-nio-8080-exec-270] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[33m2023-12-03 01:04:49.354 [http-nio-8080-exec-270] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
+[m[34m2023-12-03 01:34:26.316 [http-nio-8080-exec-395] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-03 01:34:26.354 [http-nio-8080-exec-395] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 02:15:27.360 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-03 02:15:27.503 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 02:15:28.966 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 02:15:29.001 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 02:45:29.657 [http-nio-8080-exec-120] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-03 02:45:29.692 [http-nio-8080-exec-120] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 02:45:33.793 [http-nio-8080-exec-101] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-03 02:45:33.828 [http-nio-8080-exec-101] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-03 02:45:39.991 [http-nio-8080-exec-115] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[33m2023-12-03 02:45:39.992 [http-nio-8080-exec-115] WARN  com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User with IP address 0:0:0:0:0:0:0:1 not authenticated, redirected to not-authorized page
 [m

@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/registration.jpg") no-repeat fixed;
+    background: url("https://images4.alphacoders.com/132/1321259.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -42,11 +42,12 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background-color: rgba(171, 11, 180, 0.8);
+    background: linear-gradient(to right, rgba(80, 80, 80, 0.8), rgba(182, 182, 182, 0.6)); /* Градієнт з прозорістю */
+    transform: scale(1.1);
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
-    border: 2px solid #8c147d;
+    border: 2px solid #737373;
     position: relative;
 }
 
@@ -126,7 +127,8 @@ button {
 
 /* Добавим стили для изменения цвета при наведении на кнопку Login */
 button:hover {
-    background-color: #d5004d; /* Измененный цвет при наведении */
+    transform: scale(1.2);
+    background: linear-gradient(to right, rgba(222, 222, 222, 0.8), rgba(166, 166, 166, 0.8)); /* Градієнт з прозорістю */
 }
 
 .button-link {
@@ -138,7 +140,8 @@ button:hover {
 .register-button {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: rgba(232, 67, 147, 0.6);
+    background: linear-gradient(to right, rgba(86, 86, 86, 0.8), rgba(176, 176, 176, 0.8));
+    transform: scale(1);
     color: #fff;
     border: 2px solid #ffffff;
     border-radius: 8px;
@@ -148,7 +151,7 @@ button:hover {
 }
 
 .register-button:hover {
-    background-color: #d5004d;
+    background: linear-gradient(to right, rgba(87, 87, 87, 0.8), rgba(202, 205, 210, 0.8)); /* Градієнт з прозорістю */
     transform: scale(1.1);
 }
 
@@ -235,14 +238,14 @@ button:hover {
 }
 
 button:hover {
-    background-color: #d5004d; /* Измененный цвет при наведении */
-    border-color: #d5004d; /* Измененный цвет обводки при наведении */
+    background-color: #ffffff; /* Измененный цвет при наведении */
+    border-color: #ffffff; /* Измененный цвет обводки при наведении */
 }
 
 /* Добавляем стиль для иконок социальных сетей при наведении */
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background-color: #d5004d; /* Измененный цвет фона при наведении */
+    background: linear-gradient(to right, rgba(236, 4, 4, 0.8), rgba(59, 97, 224, 0.8)); /* Градієнт з прозорістю */
     border-color: #fff; /* Измененный цвет обводки при наведении */
 }
 

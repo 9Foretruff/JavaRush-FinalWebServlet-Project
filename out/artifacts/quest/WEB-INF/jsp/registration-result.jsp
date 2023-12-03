@@ -16,7 +16,7 @@
         <div class="container">
             <div class="login-table">
                 <p>Thank you for registering, ${sessionScope.username}!</p>
-                <a href="/" class="button-link">Go to Home Page</a>
+                <a href="/" class="register-button">Go to Home Page</a>
             </div>
         </div>
     </c:when>
@@ -25,7 +25,7 @@
         <div class="container">
             <div class="login-table">
                 <p>User with username ${sessionScope.username} already exists or email ${sessionScope.email} is already in use. Please try again.</p>
-                <a href="${pageContext.request.contextPath}/registration" class="button-link">Go Back</a>
+                <a href="${pageContext.request.contextPath}/registration" class="register-button">Go Back</a>
             </div>
         </div>
     </c:when>
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="login-table">
                 <p>Passwords "${sessionScope.password}" and "${sessionScope.confirmPassword}" do not match. Please try again.</p>
-                <a href="${pageContext.request.contextPath}/registration" class="button-link">Go Back</a>
+                <a href="${pageContext.request.contextPath}/registration" class="register-button">Go Back</a>
             </div>
         </div>
     </c:when>

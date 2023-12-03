@@ -32,7 +32,7 @@
         <td>
             <h2 class="neon-text">Welcome, <%=username%>!</h2>
 
-            <img src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
+            <img class="profile-link" src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
 
             <ul class="neon-table">
                 <li><strong>Username:</strong> <c:out value="<%=username%>"/></li>
