@@ -15,7 +15,6 @@
     <p>We are glad to see you here.</p>
     <p>We hope that you enjoy your visit.</p>
 
-    <!-- Табличка регистрации и логина -->
     <div class="login-table">
         <form action="${pageContext.request.contextPath}/login" method="post">
             <label for="username">Username:</label>

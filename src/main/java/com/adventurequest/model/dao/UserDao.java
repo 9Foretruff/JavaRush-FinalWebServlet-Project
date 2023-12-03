@@ -8,6 +8,10 @@ import com.adventurequest.util.DefaultProfileImageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -76,6 +80,11 @@ public class UserDao implements Dao<String, UserEntity> {
             SET password = ?
             WHERE username = ?
             """;
+    private static final String UPDATE_PHOTO_SQL = """
+            UPDATE adventure_quest_schema.user
+            SET photo = ?
+            WHERE username = ?
+            """;
     private static final String SAVE_SQL = """
                INSERT INTO adventure_quest_schema.user(username, password, email,photo, games_played)
                VALUES (? , ? , ? , ? , ?)
@@ -108,7 +117,7 @@ public class UserDao implements Dao<String, UserEntity> {
     public List<UserEntity> findAll() {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
-             var resultSet = preparedStatement.executeQuery();
+            var resultSet = preparedStatement.executeQuery();
             List<UserEntity> users = new ArrayList<>();
             while (resultSet.next()) {
                 users.add(buildUser(resultSet));
@@ -211,6 +220,27 @@ public class UserDao implements Dao<String, UserEntity> {
         } catch (SQLException e) {
             LOGGER.error("Error updating password for user: {}", user.getUsername(), e);
             throw new DatabaseAccessException("Error , while updating password", e);
+        }
+    }
+
+    public Optional<UserEntity> updatePhoto(UserEntity user, InputStream newPhoto) {
+        try (var connection = ConnectionManager.get();
+             var update = connection.prepareStatement(UPDATE_PHOTO_SQL);
+             var result = connection.prepareStatement(FIND_BY_USERNAME_SQL)) {
+
+            update.setObject(1,newPhoto.readAllBytes());
+            update.setObject(2,user.getUsername());
+            update.executeUpdate();
+
+            result.setObject(1,user.getUsername());
+            var resultSet = result.executeQuery();
+            if (resultSet.next()){
+                return Optional.of(buildUser(resultSet));
+            }else {
+               return Optional.empty();
+            }
+        } catch (SQLException | IOException e) {
+            throw new DatabaseAccessException("Error , while updating photo", e);
         }
     }
 

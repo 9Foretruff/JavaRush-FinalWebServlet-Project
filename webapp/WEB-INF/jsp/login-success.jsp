@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login success</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/login-success.css">
 </head>
 
 <body>
@@ -13,9 +13,10 @@
 <div class="container">
     <div class="login-table">
         <p>Login success.</p>
-        <a href="${pageContext.request.contextPath}/menu" class="button-link">Go to main page</a>
+        <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to main page</a>
     </div>
 </div>
+
 </body>
 
 </html>

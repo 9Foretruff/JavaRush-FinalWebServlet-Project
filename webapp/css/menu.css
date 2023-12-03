@@ -35,7 +35,9 @@ body {
 }
 
 .profile-link img:hover {
-    transform: scale(1.2);
+    background: linear-gradient(to right, rgb(255, 183, 8), rgb(164, 4, 243));
+    transform: scale(1.1);
+    background-color: rgba(232, 67, 147, 0.6);
 }
 
 .container {
@@ -80,7 +82,7 @@ body {
     background-color: rgba(68, 68, 68, 0.8);
     padding: 10px;
     border-radius: 8px;
-    margin-top: auto;
+    margin-top: 50px;
     position: relative;
 }
 
@@ -108,18 +110,20 @@ body {
 }
 
 .social-media-bar img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     border: 2px solid #555;
     transition: transform 0.3s ease-in-out;
     background-color: rgb(255, 255, 255);
     border: 1px solid #fff;
-    border-radius: 50%;
+    border-radius: 100px;
 }
 
 .social-media-bar img:hover {
+    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
     transform: scale(1.2);
+    border-color: #ffffff;
 }
 
 .social-media-bar img::before {
@@ -158,6 +162,29 @@ body {
     pointer-events: none;
 }
 
+button:hover {
+    border-color: #ffffff;
+}
+
+.social-media-bar img:hover {
+    background: linear-gradient(to right, rgb(255, 183, 8), rgb(164, 4, 243));
+    transform: scale(1.1);
+    background-color: rgba(232, 67, 147, 0.6);
+    border-color: #fff;
+}
+
+.social-media-bar a:nth-child(3) img::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #e040fb;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
 .button-link {
     text-decoration: none;
     color: #fff;
@@ -182,13 +209,17 @@ h1, p, label, button, .footer {
     0 0 30px rgba(255, 255, 255, 1);
 }
 
+
 h1 {
-    background-color: rgba(232, 67, 147, 0.5);
+    background: linear-gradient(to right, rgb(255, 183, 8,0.82), rgb(164, 4, 243,0.82));
+    transform: scale(1.1);
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
-    border: 2px solid #d53e8c;
+    border: 2px solid #ffffff;
     position: relative;
+    width: 85%;
+    margin: auto; /* Center the element horizontally */
 }
 
 h1::before {
@@ -201,13 +232,6 @@ h1::before {
     border: 2px solid #fff;
     border-radius: 8px;
     pointer-events: none;
-}
-
-h1, .neon-text {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
-    0 0 20px rgba(255, 255, 255, 1),
-    0 0 30px rgba(255, 255, 255, 1);
 }
 
 .neon-border {

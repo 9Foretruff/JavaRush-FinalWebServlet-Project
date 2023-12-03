@@ -6,19 +6,35 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images.hdqwalls.com/wallpapers/swan-digital-art-4k-bg.jpg") no-repeat fixed;
+    background: url("../img/login-table.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
+}
+
+.input-container {
+    position: relative;
+}
+
+input {
+    display: inline-block;
+}
+
+.input-icon {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    width: 35px;
+    transform: translateY(-50%);
 }
 
 .container {
     width: 50%;
     background-color: rgba(51, 51, 51, 0.8);
-    padding: 20px;
+    padding: 65px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     text-align: center;
-    margin-top: 5vh;
+    margin-top: 15vh;
     position: relative;
 }
 
@@ -42,11 +58,12 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgb(9, 0, 255), rgb(0, 134, 217));
+    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
     transform: scale(1.1);
+    background-color: rgba(232, 67, 147, 0.6);
     padding: 15px;
     border-radius: 8px;
-    font-size: 38px;
+    font-size: 24px;
     border: 2px solid #ffffff;
     position: relative;
 }
@@ -69,6 +86,7 @@ p {
 }
 
 .login-table {
+    margin-top: 30px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -78,6 +96,18 @@ p {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.login-table::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    pointer-events: none;
 }
 
 button {
@@ -105,22 +135,11 @@ button:hover {
     font-weight: bold;
 }
 
-.login-table::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    pointer-events: none;
-}
-
 .register-button {
     margin-top: 10px;
     padding: 10px 20px;
     background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
+    transform: scale(1.1);
     color: #fff;
     border: 2px solid #ffffff;
     border-radius: 8px;
@@ -130,20 +149,23 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, rgb(9, 0, 255), rgb(0, 134, 217));
-    transform: scale(1.1);
+    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    transform: scale(1.2);
     border-color: #ffffff;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+button:hover {
+    border-color: #ffffff;
 }
 
-label {
-    margin-top: 10px;
-    font-size: 16px;
+
+.neon-title {
+    font-size: 52px;
+    margin-top: 36px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1);
 }
 
 .footer {

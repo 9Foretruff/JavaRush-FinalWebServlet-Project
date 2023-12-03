@@ -11,6 +11,7 @@
 <body>
 <div class="container">
     <h1 class="neon-title">Quest digital</h1>
+    <br>
 
     <div class="profile-link">
         <a href="${pageContext.request.contextPath}/profile">

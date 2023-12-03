@@ -26,21 +26,34 @@
 %>
 
 <h1 class="neon-title">Profile</h1>
+<br>
+<br>
+<br>
 
 <table class="neon-table">
     <tr>
         <td>
-            <h2 class="neon-text">Welcome, <%=username%>!</h2>
+            <br>
+            <h1 class="neon-text">Welcome, <%=username%>!</h1>
+            <br>
 
-            <img class="profile-link" src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
 
-            <ul class="neon-table">
-                <li><strong>Username:</strong> <c:out value="<%=username%>"/></li>
-                <li><strong>Password:</strong> <c:out value="<%=password%>"/></li>
-                <li><strong>Email:</strong> <c:out value="<%=email%>"/></li>
-                <li><strong>IP Address:</strong> <c:out value="<%=ipAddress%>"/></li>
-                <li><strong>Games Played:</strong> <c:out value="<%=gamesPlayed%>"/></li>
-            </ul>
+            <div class="center-wrapper">
+                <div class="round-image neon-border">
+                    <img src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
+                </div>
+            </div>
+            <br>
+
+            <div class="user-data">
+                <ul class="neon-table">
+                    <li><strong>Username:</strong> <c:out value="<%=username%>"/></li>
+                    <li><strong>Password:</strong> <c:out value="<%=password%>"/></li>
+                    <li><strong>Email:</strong> <c:out value="<%=email%>"/></li>
+                    <li><strong>IP Address:</strong> <c:out value="<%=ipAddress%>"/></li>
+                    <li><strong>Games Played:</strong> <c:out value="<%=gamesPlayed%>"/></li>
+                </ul>
+            </div>
 
             <h3>Change Password</h3>
             <form action="changePassword" method="post">
@@ -75,5 +88,25 @@
     </tr>
 </table>
 
+<div class="social-media-window">
+    <!-- Полоска с соцсетями -->
+    <div class="social-media-bar">
+        <a href="https://www.linkedin.com/in/maksim-rokitko-b9a722272/" target="_blank">
+            <img src="https://seeklogo.com/images/L/linkedin-black-icon-logo-ECC426C572-seeklogo.com.png"
+                 alt="linkedIn">
+        </a>
+        <a href="https://github.com/9Foretruff" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="gitHub">
+        </a>
+        <a href="https://www.instagram.com/foretruff/" target="_blank">
+            <img src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"
+                 alt="instagram">
+        </a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Made by Rokitko Maksim</p>
+</div>
 </body>
 </html>

@@ -6,6 +6,7 @@ import com.adventurequest.model.entity.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -72,4 +73,9 @@ public class UserService {
     public Optional<UserEntity> changePassword(UserEntity user, String newPassword) {
         return userDao.updatePassword(user, newPassword);
     }
+
+    public Optional<UserEntity> changePhoto(UserEntity user, InputStream newPhoto) {
+        return userDao.updatePhoto(user, newPhoto);
+    }
+
 }

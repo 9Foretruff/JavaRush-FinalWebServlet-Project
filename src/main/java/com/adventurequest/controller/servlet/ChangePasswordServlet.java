@@ -39,7 +39,7 @@ public class ChangePasswordServlet extends HttpServlet {
             requestDispatcher.forward(req,resp);
         }else {
             LOGGER.warn("Failed to change password for user {}", user.getUsername());
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-email-failed"));
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("password-change-failed"));
             requestDispatcher.forward(req,resp);
         }
     }
