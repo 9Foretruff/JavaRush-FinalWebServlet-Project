@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/login-table.png") no-repeat fixed;
+    background: url("https://images.hdqwalls.com/wallpapers/thiking-about-bf.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -58,9 +58,8 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgb(4, 42, 119), rgb(2, 169, 208));
     transform: scale(1.1);
-    background-color: rgba(232, 67, 147, 0.6);
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
@@ -110,38 +109,6 @@ p {
     pointer-events: none;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-label {
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-
-input {
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    border: 1px solid #555;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-input:focus {
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
-    transition: .3s;
-}
-
-input:focus::placeholder {
-    opacity: 0.6;
-    transition: .3s;
-}
-
 button {
     margin-top: 10px;
     padding: 10px 20px;
@@ -156,7 +123,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgb(4, 42, 119), rgb(2, 169, 208));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -167,12 +134,14 @@ button:hover {
     font-weight: bold;
 }
 
+button,
 .register-button {
     margin-top: 10px;
     padding: 10px 20px;
     background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
     transform: scale(1.1);
     color: #fff;
+    width: 63px;
     border: 2px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
@@ -180,117 +149,19 @@ button:hover {
     transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
+button:hover,
 .register-button:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgb(4, 42, 119), rgb(2, 169, 208));
     transform: scale(1.2);
     border-color: #ffffff;
 }
 
-.social-media-window {
-    background-color: rgba(68, 68, 68, 0.8);
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 50px;
-    position: relative;
-}
 
-.social-media-window::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-.social-media-bar {
-    display: flex;
-    justify-content: center;
-}
-
-.social-media-bar a {
-    margin: 0 10px;
-    text-decoration: none;
-    position: relative;
-}
-
-.social-media-bar img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #555;
-    transition: transform 0.3s ease-in-out;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #fff;
-    border-radius: 100px;
-}
-
-.social-media-bar img:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
-    transform: scale(1.2);
-    border-color: #ffffff;
-}
-
-.social-media-bar img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.social-media-bar a:nth-child(1) img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #ff4081;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.social-media-bar a:nth-child(2) img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #6200ea;
-    border-radius: 50%;
-    pointer-events: none;
-}
 
 button:hover {
     border-color: #ffffff;
 }
 
-.social-media-bar img:hover {
-    transform: scale(1.2);
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
-    border-color: #fff;
-}
-
-.social-media-bar a:nth-child(3) img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #e040fb;
-    border-radius: 50%;
-    pointer-events: none;
-}
 
 .neon-title {
     font-size: 52px;

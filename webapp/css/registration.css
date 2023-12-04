@@ -245,7 +245,7 @@ button:hover {
 /* Добавляем стиль для иконок социальных сетей при наведении */
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgba(236, 4, 4, 0.8), rgba(59, 97, 224, 0.8)); /* Градієнт з прозорістю */
+    background: linear-gradient(to right, rgb(255, 0, 105), rgb(255, 183, 0)); /* Градієнт з прозорістю */
     border-color: #fff; /* Измененный цвет обводки при наведении */
 }
 

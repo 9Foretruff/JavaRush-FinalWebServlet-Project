@@ -13,8 +13,8 @@
 <div class="container">
     <div class="login-table">
         <p>Invalid username or password. Please try again.</p>
-        <p>Want go to login menu?   <a href="${pageContext.request.contextPath}/" class="button-link">Go back here</a></p>
-        <p>Don't have an account?   <a href="${pageContext.request.contextPath}/registration" class="button-link">Register here</a></p>
+            <a href="${pageContext.request.contextPath}/" class="register-button">Go back here</a>
+            <a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a>
     </div>
 </div>
 

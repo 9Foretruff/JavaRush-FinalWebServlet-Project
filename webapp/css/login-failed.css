@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images.hdqwalls.com/download/cyberpunk-city-4k-uk-3840x2160.jpg") no-repeat fixed;
+    background: url("https://wallpapercave.com/wp/wp5433282.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -18,7 +18,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     text-align: center;
-    margin-top: 15vh;
+    margin-top: 5vh;
     position: relative;
 }
 
@@ -36,17 +36,18 @@ body {
 
 h1, p, label, button, .footer {
     color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
     0 0 20px rgba(255, 255, 255, 1),
     0 0 30px rgba(255, 255, 255, 1);
 }
 
 h1 {
-    background-color: rgba(232, 67, 147, 0.6);
+    background: linear-gradient(to right, rgb(9, 0, 255), rgb(255, 0, 252));
+    transform: scale(1.1);
     padding: 15px;
     border-radius: 8px;
-    font-size: 24px;
-    border: 2px solid #d53e8c;
+    font-size: 38px;
+    border: 2px solid #ffffff;
     position: relative;
 }
 
@@ -68,7 +69,6 @@ p {
 }
 
 .login-table {
-    margin-top: 30px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -78,6 +78,34 @@ p {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
+    transform: scale(1.1);
+    color: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    transform: scale(1.2);
+    border-color: #ffffff;
+}
+
+
+
+.button-link {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
 }
 
 .login-table::before {
@@ -92,6 +120,23 @@ p {
     pointer-events: none;
 }
 
+.register-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
+    color: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.register-button:hover {
+    background: linear-gradient(to right, rgb(9, 0, 255), rgb(255, 0, 252));
+    transform: scale(1.1);
+    border-color: #ffffff;
+}
 
 form {
     display: flex;
@@ -102,46 +147,6 @@ form {
 label {
     margin-top: 10px;
     font-size: 16px;
-}
-
-input {
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 16px;
-    border: 1px solid #555;
-    border-radius: 15px;
-}
-
-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: rgba(232, 67, 147, 0.6);
-    color: #fff;
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-/* Добавим стили для изменения цвета при наведении на кнопку Login */
-button:hover {
-    background-color: #d5004d; /* Измененный цвет при наведении */
-}
-
-.button-link {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-
-.neon-title {
-    font-size: 52px;
-    margin-top: 36px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
-    0 0 20px rgba(255, 255, 255, 1),
-    0 0 30px rgba(255, 255, 255, 1);
 }
 
 .footer {
