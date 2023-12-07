@@ -34,15 +34,15 @@
 <div class="social-media-window">
     <div class="social-media-bar">
         <a href="https://www.linkedin.com/in/maksim-rokitko-b9a722272/" target="_blank">
-            <img src="https://seeklogo.com/images/L/linkedin-black-icon-logo-ECC426C572-seeklogo.com.png"
-                 alt="linkedIn" class="neon-border">
+            <img src="img/linkenIn-logo.png"
+                 alt="linkedIn">
         </a>
         <a href="https://github.com/9Foretruff" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="gitHub" class="neon-border">
+            <img src="img/gitHub-logo.png" alt="gitHub">
         </a>
         <a href="https://www.instagram.com/foretruff/" target="_blank">
-            <img src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png"
-                 alt="instagram" class="neon-border">
+            <img src="img/instagram-logo.png"
+                 alt="instagram">
         </a>
     </div>
 </div>

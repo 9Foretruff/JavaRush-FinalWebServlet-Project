@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images5.alphacoders.com/132/1326409.png") no-repeat fixed;
+    background: url("../img/profile-background.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

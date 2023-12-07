@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images.hdqwalls.com/wallpapers/thiking-about-bf.jpg") no-repeat fixed;
+    background: url("../img/logout-success.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

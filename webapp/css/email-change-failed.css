@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images8.alphacoders.com/133/1330719.png") no-repeat fixed;
+    background: url("../img/email-change-failed.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://cdn.wallpapersafari.com/74/35/4XgZhW.png") no-repeat fixed;
+    background: url("../img/logout-failed.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

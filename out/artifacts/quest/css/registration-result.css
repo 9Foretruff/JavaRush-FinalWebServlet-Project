@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://rare-gallery.com/mocahbig/391800-sunset-anime-scenery-night-sky-silhouette-art.jpg") no-repeat fixed;
+    background: url("../img/registration-result.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

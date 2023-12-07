@@ -26,4 +26,12 @@
 [m[34m2023-12-06 17:52:27.942 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
 [m[34m2023-12-06 17:52:36.757 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
 [m[34m2023-12-06 17:52:36.794 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-08 01:12:07.099 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /menu
+[m[34m2023-12-08 01:12:07.138 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-08 01:12:07.952 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-08 01:12:07.990 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-08 01:12:15.771 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /changeEmail
+[m[34m2023-12-08 01:12:15.805 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
+[m[34m2023-12-08 01:12:38.518 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: Processing request for URL /profile
+[m[34m2023-12-08 01:12:38.554 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.filter.AuthorizationFilter - AuthorizationFilter: User maks is authenticated. Continuing with the request.
 [m
