@@ -26,7 +26,7 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <button type="submit">Login</button>
+            <button type="submit">Log in</button>
             <a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a>
         </form>
     </div>

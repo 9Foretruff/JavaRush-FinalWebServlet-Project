@@ -2,30 +2,44 @@ CREATE DATABASE epic_quest_db;
 
 CREATE SCHEMA adventure_quest_schema;
 
-CREATE TABLE "user"
+CREATE TABLE user
 (
-    username VARCHAR(50) PRIMARY KEY,
-    password VARCHAR(255)        NOT NULL,
-    email    VARCHAR(100) UNIQUE NOT NULL,
-    photo BYTEA NOT NULL ,
-    games_played BIGINT NOT NULL
+    username     VARCHAR(50) PRIMARY KEY,
+    password     VARCHAR(255)        NOT NULL,
+    email        VARCHAR(100) UNIQUE NOT NULL,
+    photo        BYTEA               NOT NULL,
+    games_played BIGINT              NOT NULL
 );
 
-DROP TABLE "user";
+DROP TABLE quest;
+CREATE TYPE difficulty AS ENUM ('Easy', 'Medium', 'Hard');
+-- фільтр что би смотрел если current quest num > this quest num - redirect to you.are.cheater.jsp
 
-INSERT INTO "user"(username, password, email)
-VALUES ('Admin', '7777', 'admin@gmail.com');
-
-CREATE TABLE "quest-info"
+CREATE TABLE quest
 (
-    id            BIGSERIAL PRIMARY KEY,
-    name_of_quest VARCHAR(50) UNIQUE NOT NULL,
-    difficult     VARCHAR(20)        NOT NULL,
-    choices       quest UNIQUE       NOT NULL
+    id          BIGSERIAL PRIMARY KEY,
+    name        VARCHAR(255) NOT NULL,
+    description TEXT         NOT NULL,
+    quest_photo BYTEA        NOT NULL,
+    difficulty  difficulty   NOT NULL,
+    author      VARCHAR(128) NOT NULL,
+    UNIQUE (name, author)
 );
 
-CREATE TABLE "quest"
+CREATE TABLE question
 (
-    id    BIGINT NOT NULL,
-    level INT    NOT NULL
+    id                        BIGSERIAL PRIMARY KEY,
+    number_of_question        INT                          NOT NULL,
+    quest_id                  BIGINT REFERENCES quest (id) NOT NULL,
+    text                      TEXT                         NOT NULL,
+    background_question_photo BYTEA                        NOT NULL,
+    last_question             BOOLEAN                      NOT NULL
+);
+
+CREATE TABLE answers
+(
+    id          SERIAL PRIMARY KEY,
+    question_id INTEGER REFERENCES question (id) NOT NULL,
+    text        TEXT                             NOT NULL,
+    is_correct  BOOLEAN                          NOT NULL
 );

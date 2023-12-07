@@ -15,7 +15,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
 
 @WebServlet("/uploadPhoto")
 @MultipartConfig(
@@ -23,8 +22,8 @@ import java.io.InputStream;
         maxFileSize = 1024 * 1024 * 10,
         maxRequestSize = 1024 * 1024 * 20
 )
-public class UploadPhotoServlet extends HttpServlet {
-    private static final Logger LOGGER = LoggerFactory.getLogger(UploadPhotoServlet.class);
+public class ChangePhotoServlet extends HttpServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ChangePhotoServlet.class);
     private final UserService userService = UserService.getInstance();
 
     @Override
@@ -61,4 +60,5 @@ public class UploadPhotoServlet extends HttpServlet {
         String contentType = part.getContentType();
         return contentType != null && contentType.startsWith("image/");
     }
+
 }

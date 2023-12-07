@@ -1,0 +1,17 @@
+[32m2023-12-06 10:04:30.311 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for login
+[m[32m2023-12-06 10:04:30.628 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent valid data to login!
+[m[34m2023-12-06 10:04:30.631 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.LoginServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-12-06 10:05:04.504 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 get login page
+[m[32m2023-12-06 10:48:36.384 [http-nio-8080-exec-9] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for login
+[m[32m2023-12-06 10:48:36.527 [http-nio-8080-exec-9] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent valid data to login!
+[m[34m2023-12-06 10:48:36.527 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.LoginServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[34m2023-12-06 10:50:16.650 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 get login page
+[m[34m2023-12-06 10:50:24.594 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 get login page
+[m[34m2023-12-06 17:52:04.989 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 get login page
+[m[32m2023-12-06 17:52:11.182 [http-nio-8080-exec-7] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for login
+[m[32m2023-12-06 17:52:11.477 [http-nio-8080-exec-7] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent valid data to login!
+[m[34m2023-12-06 17:52:11.477 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.servlet.LoginServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m[32m2023-12-08 00:22:59.264 [http-nio-8080-exec-1] INFO  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for login
+[m[33m2023-12-08 00:22:59.621 [http-nio-8080-exec-1] WARN  com.adventurequest.controller.servlet.LoginServlet - User with IP address 0:0:0:0:0:0:0:1 sent invalid data to login!
+[m[34m2023-12-08 00:22:59.622 [http-nio-8080-exec-1] DEBUG com.adventurequest.controller.servlet.LoginServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
+[m
