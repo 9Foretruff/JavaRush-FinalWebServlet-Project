@@ -18,6 +18,7 @@ import java.io.IOException;
 public class ChangePasswordServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChangePasswordServlet.class);
     private final UserService userService = UserService.getInstance();
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
@@ -27,20 +28,29 @@ public class ChangePasswordServlet extends HttpServlet {
         var user = (UserEntity) session.getAttribute("user");
         String newPassword = req.getParameter("newPassword");
         LOGGER.debug("Attempting to change password for user {} to new password ", user.getUsername());
-
-        var newUser = userService.changePassword(user,newPassword);
         RequestDispatcher requestDispatcher;
 
-        if (newUser.isPresent()){
+        if (newPassword.length() > 255) {
+            LOGGER.warn("Failed to change password for user {}", user.getUsername());
+
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-password-failed"));
+            requestDispatcher.forward(req, resp);
+            return;
+        }
+
+        var newUser = userService.changePassword(user, newPassword);
+
+        if (newUser.isPresent()) {
             LOGGER.info("Password changed successfully for user {}", newUser.get().getUsername());
-            session.setAttribute("user",newUser.get());
+            session.setAttribute("user", newUser.get());
 
             requestDispatcher = req.getRequestDispatcher(JspHelper.get("profile"));
-            requestDispatcher.forward(req,resp);
-        }else {
+            requestDispatcher.forward(req, resp);
+        } else {
             LOGGER.warn("Failed to change password for user {}", user.getUsername());
+
             requestDispatcher = req.getRequestDispatcher(JspHelper.get("password-change-failed"));
-            requestDispatcher.forward(req,resp);
+            requestDispatcher.forward(req, resp);
         }
     }
 }

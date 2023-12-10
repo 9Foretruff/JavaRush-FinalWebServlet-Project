@@ -4,4 +4,6 @@
 [m[34m2023-12-10 00:56:26.544 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.CreateQuestServlet - User with IP address 0:0:0:0:0:0:0:1 get add-quest page
 [m[34m2023-12-10 00:56:47.082 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.CreateQuestServlet - User with IP address 0:0:0:0:0:0:0:1 get add-quest page
 [m[34m2023-12-10 02:04:57.914 [http-nio-8080-exec-10] DEBUG com.adventurequest.controller.servlet.CreateQuestServlet - User with IP address 0:0:0:0:0:0:0:1 get add-quest page
+[m[34m2023-12-10 21:08:08.018 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.CreateQuestServlet - User with IP address 0:0:0:0:0:0:0:1 get add-quest page
+[m[34m2023-12-11 00:05:25.064 [http-nio-8080-exec-276] DEBUG com.adventurequest.controller.servlet.CreateQuestServlet - User with IP address 0:0:0:0:0:0:0:1 get add-quest page
 [m

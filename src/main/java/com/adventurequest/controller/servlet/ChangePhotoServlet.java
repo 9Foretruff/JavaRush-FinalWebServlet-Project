@@ -38,7 +38,6 @@ public class ChangePhotoServlet extends HttpServlet {
         RequestDispatcher requestDispatcher;
         var user = (UserEntity) session.getAttribute("user");
         Part newPhoto = req.getPart("newPhoto");
-        
         if (!isImage(newPhoto) || newPhoto.getSize() > 10485760) {
             LOGGER.warn("Failed to change photo for user {}", user.getUsername());
             requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-photo-failed"));

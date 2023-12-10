@@ -58,7 +58,7 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(255, 0, 122, 0.6), rgb(34, 0, 255));
     transform: scale(1.1);
     background-color: rgba(232, 67, 147, 0.6);
     padding: 15px;
@@ -156,7 +156,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(255, 0, 122, 0.6), rgb(34, 0, 255));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -181,7 +181,7 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(255, 0, 122, 0.6), rgb(34, 0, 255));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -229,7 +229,7 @@ button:hover {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(255, 0, 122, 0.6), rgb(34, 0, 255));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -276,7 +276,7 @@ button:hover {
 
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(255, 0, 122, 0.6), rgb(34, 0, 255));
     border-color: #fff;
 }
 

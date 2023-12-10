@@ -55,12 +55,15 @@
                 </ul>
             </div>
 
+            <br>
             <h3>Change Password</h3>
             <form action="changePassword" method="post">
                 <label for="newPassword">New Password:</label>
                 <input type="password" id="newPassword" name="newPassword" required>
                 <input type="submit" value="Change Password">
             </form>
+            <br>
+            <br>
 
             <h3>Change Email</h3>
             <form action="changeEmail" method="post">
@@ -69,12 +72,18 @@
                 <input type="submit" value="Change Email">
             </form>
 
+            <br>
+            <br>
+
             <h3>Change Photo</h3>
             <form action="uploadPhoto" method="post" enctype="multipart/form-data">
                 <label for="newPhoto">Upload Photo:</label>
                 <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required maxlength="10485760">
                 <input type="submit" value="Upload Photo">
             </form>
+
+            <br>
+            <br>
 
             <form action="${pageContext.request.contextPath}/menu" method="get">
                 <input type="submit" value="Go Back">

@@ -4,4 +4,34 @@
 [m[34m2023-12-10 15:08:38.871 [http-nio-8080-exec-16] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
 [m[34m2023-12-10 15:08:38.872 [http-nio-8080-exec-16] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
 [m[33m2023-12-10 15:08:38.932 [http-nio-8080-exec-16] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-10 22:04:17.181 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-10 22:04:17.182 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-10 22:04:17.215 [http-nio-8080-exec-5] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-10 23:16:48.494 [http-nio-8080-exec-149] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-10 23:16:48.494 [http-nio-8080-exec-149] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-10 23:16:48.534 [http-nio-8080-exec-149] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-10 23:36:16.332 [http-nio-8080-exec-209] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-10 23:36:16.332 [http-nio-8080-exec-209] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-10 23:36:16.368 [http-nio-8080-exec-209] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-10 23:44:04.563 [http-nio-8080-exec-240] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-10 23:44:04.563 [http-nio-8080-exec-240] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-10 23:44:04.596 [http-nio-8080-exec-240] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-11 00:00:05.400 [http-nio-8080-exec-248] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-11 00:00:05.400 [http-nio-8080-exec-248] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-11 00:00:05.437 [http-nio-8080-exec-248] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-11 00:00:25.100 [http-nio-8080-exec-243] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-11 00:00:25.101 [http-nio-8080-exec-243] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-11 00:00:25.133 [http-nio-8080-exec-243] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-11 00:01:08.622 [http-nio-8080-exec-258] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-11 00:01:08.622 [http-nio-8080-exec-258] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-11 00:01:08.655 [http-nio-8080-exec-258] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
+[m[34m2023-12-11 00:01:14.457 [http-nio-8080-exec-253] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-11 00:01:14.457 [http-nio-8080-exec-253] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rrokitkomaksim@gmail.com
+[m[32m2023-12-11 00:01:14.499 [http-nio-8080-exec-253] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Email changed successfully for user maks
+[m[34m2023-12-11 00:01:18.204 [http-nio-8080-exec-254] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-11 00:01:18.205 [http-nio-8080-exec-254] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[32m2023-12-11 00:01:18.241 [http-nio-8080-exec-254] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Email changed successfully for user maks
+[m[34m2023-12-11 00:04:52.932 [http-nio-8080-exec-264] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing email
+[m[34m2023-12-11 00:04:52.932 [http-nio-8080-exec-264] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Attempting to change email for user maks to new email rokitkomaksim@gmail.com
+[m[33m2023-12-11 00:04:52.965 [http-nio-8080-exec-264] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user maks
 [m

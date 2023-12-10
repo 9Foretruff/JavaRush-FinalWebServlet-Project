@@ -25,4 +25,5 @@ public class AddQuestServlet extends HttpServlet {
         var requestDispatcher = req.getRequestDispatcher(JspHelper.get("add-quest"));
         requestDispatcher.forward(req, resp);
     }
+
 }

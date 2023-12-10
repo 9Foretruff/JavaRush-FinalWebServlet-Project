@@ -51,4 +51,62 @@
 [m[34m2023-12-10 15:38:40.211 [http-nio-8080-exec-88] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
 [m[34m2023-12-10 15:38:41.217 [http-nio-8080-exec-86] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
 [m[34m2023-12-10 15:38:42.227 [http-nio-8080-exec-89] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[34m2023-12-10 22:59:06.028 [http-nio-8080-exec-11] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 22:59:06.100 [http-nio-8080-exec-11] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:00:00.461 [http-nio-8080-exec-15] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:00:00.463 [http-nio-8080-exec-15] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:00:02.859 [http-nio-8080-exec-14] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:00:02.861 [http-nio-8080-exec-14] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:00:32.935 [http-nio-8080-exec-23] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:00:32.937 [http-nio-8080-exec-23] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:00:33.939 [http-nio-8080-exec-25] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:00:33.942 [http-nio-8080-exec-25] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:00:49.176 [http-nio-8080-exec-24] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:00:49.178 [http-nio-8080-exec-24] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:01:27.641 [http-nio-8080-exec-35] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:01:27.643 [http-nio-8080-exec-35] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:02:08.249 [http-nio-8080-exec-43] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:02:08.252 [http-nio-8080-exec-43] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:02:10.920 [http-nio-8080-exec-41] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:02:10.922 [http-nio-8080-exec-41] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:02:47.010 [http-nio-8080-exec-47] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:02:47.012 [http-nio-8080-exec-47] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:02:50.445 [http-nio-8080-exec-42] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:02:50.447 [http-nio-8080-exec-42] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:03:51.216 [http-nio-8080-exec-51] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:03:51.219 [http-nio-8080-exec-51] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:05:41.799 [http-nio-8080-exec-59] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:05:41.801 [http-nio-8080-exec-59] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:06:29.187 [http-nio-8080-exec-75] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:06:29.189 [http-nio-8080-exec-75] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:07:25.688 [http-nio-8080-exec-78] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:07:25.690 [http-nio-8080-exec-78] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:08:11.092 [http-nio-8080-exec-86] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:08:11.093 [http-nio-8080-exec-86] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:09:08.218 [http-nio-8080-exec-95] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:09:08.220 [http-nio-8080-exec-95] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:10:30.735 [http-nio-8080-exec-105] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:10:30.738 [http-nio-8080-exec-105] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:10:58.221 [http-nio-8080-exec-109] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:10:58.223 [http-nio-8080-exec-109] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:11:58.573 [http-nio-8080-exec-111] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:11:58.575 [http-nio-8080-exec-111] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:13:33.862 [http-nio-8080-exec-118] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:13:33.864 [http-nio-8080-exec-118] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:14:33.463 [http-nio-8080-exec-119] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:14:33.465 [http-nio-8080-exec-119] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:14:35.896 [http-nio-8080-exec-129] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:14:35.898 [http-nio-8080-exec-129] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:14:36.593 [http-nio-8080-exec-130] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:14:36.595 [http-nio-8080-exec-130] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:16:09.667 [http-nio-8080-exec-130] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:16:09.735 [http-nio-8080-exec-130] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:16:37.016 [http-nio-8080-exec-144] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:16:37.018 [http-nio-8080-exec-144] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-10 23:44:23.085 [http-nio-8080-exec-245] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-10 23:44:23.087 [http-nio-8080-exec-245] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-11 00:01:50.808 [http-nio-8080-exec-253] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-11 00:01:50.810 [http-nio-8080-exec-253] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
+[m[34m2023-12-11 00:05:18.852 [http-nio-8080-exec-265] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - User with IP address 0:0:0:0:0:0:0:1 sent the data for changing photo
+[m[33m2023-12-11 00:05:18.854 [http-nio-8080-exec-265] WARN  com.adventurequest.controller.servlet.ChangePhotoServlet - Failed to change photo for user maks
 [m
