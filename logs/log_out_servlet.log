@@ -14,4 +14,24 @@
 [m[33m2023-12-06 10:50:09.332 [http-nio-8080-exec-10] WARN  com.adventurequest.controller.servlet.LogoutServlet - No active session found for logout request from IP address: 0:0:0:0:0:0:0:1
 [m[33m2023-12-06 10:50:09.332 [http-nio-8080-exec-10] WARN  com.adventurequest.controller.servlet.LogoutServlet - User failed logged out
 [m[34m2023-12-06 10:50:09.332 [http-nio-8080-exec-10] DEBUG com.adventurequest.controller.servlet.LogoutServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to result of logout
+[m[32m2023-12-10 02:04:44.098 [http-nio-8080-exec-10] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logout request received from IP address: 0:0:0:0:0:0:0:1
+[m[32m2023-12-10 02:04:44.098 [http-nio-8080-exec-10] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logging out user from IP address: 0:0:0:0:0:0:0:1
+[m[32m2023-12-10 02:04:44.103 [http-nio-8080-exec-10] INFO  com.adventurequest.controller.servlet.LogoutServlet - User successfully logged out
+[m[34m2023-12-10 02:04:44.103 [http-nio-8080-exec-10] DEBUG com.adventurequest.controller.servlet.LogoutServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to result of logout
+[m[32m2023-12-10 02:04:45.551 [http-nio-8080-exec-3] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logout request received from IP address: 0:0:0:0:0:0:0:1
+[m[33m2023-12-10 02:04:45.552 [http-nio-8080-exec-3] WARN  com.adventurequest.controller.servlet.LogoutServlet - No active session found for logout request from IP address: 0:0:0:0:0:0:0:1
+[m[33m2023-12-10 02:04:45.552 [http-nio-8080-exec-3] WARN  com.adventurequest.controller.servlet.LogoutServlet - User failed logged out
+[m[34m2023-12-10 02:04:45.552 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.LogoutServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to result of logout
+[m[32m2023-12-10 02:34:22.810 [http-nio-8080-exec-78] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logout request received from IP address: 0:0:0:0:0:0:0:1
+[m[32m2023-12-10 02:34:22.810 [http-nio-8080-exec-78] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logging out user from IP address: 0:0:0:0:0:0:0:1
+[m[32m2023-12-10 02:34:22.814 [http-nio-8080-exec-78] INFO  com.adventurequest.controller.servlet.LogoutServlet - User successfully logged out
+[m[34m2023-12-10 02:34:22.814 [http-nio-8080-exec-78] DEBUG com.adventurequest.controller.servlet.LogoutServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to result of logout
+[m[32m2023-12-10 02:34:33.416 [http-nio-8080-exec-41] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logout request received from IP address: 0:0:0:0:0:0:0:1
+[m[33m2023-12-10 02:34:33.416 [http-nio-8080-exec-41] WARN  com.adventurequest.controller.servlet.LogoutServlet - No active session found for logout request from IP address: 0:0:0:0:0:0:0:1
+[m[33m2023-12-10 02:34:33.416 [http-nio-8080-exec-41] WARN  com.adventurequest.controller.servlet.LogoutServlet - User failed logged out
+[m[34m2023-12-10 02:34:33.416 [http-nio-8080-exec-41] DEBUG com.adventurequest.controller.servlet.LogoutServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to result of logout
+[m[32m2023-12-10 15:07:53.118 [http-nio-8080-exec-13] INFO  com.adventurequest.controller.servlet.LogoutServlet - Logout request received from IP address: 0:0:0:0:0:0:0:1
+[m[33m2023-12-10 15:07:53.119 [http-nio-8080-exec-13] WARN  com.adventurequest.controller.servlet.LogoutServlet - No active session found for logout request from IP address: 0:0:0:0:0:0:0:1
+[m[33m2023-12-10 15:07:53.127 [http-nio-8080-exec-13] WARN  com.adventurequest.controller.servlet.LogoutServlet - User failed logged out
+[m[34m2023-12-10 15:07:53.127 [http-nio-8080-exec-13] DEBUG com.adventurequest.controller.servlet.LogoutServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to result of logout
 [m

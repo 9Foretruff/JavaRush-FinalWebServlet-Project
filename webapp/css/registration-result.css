@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/registration-result.jpg") no-repeat fixed;
+    background: url("https://images5.alphacoders.com/133/1333743.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -42,7 +42,7 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, #0d166b, #771b9e); /* Градієнт від темно-синього до пурпурного */
+    background: linear-gradient(to right, #111470, #c7135c);
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
@@ -148,8 +148,8 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, #0d166b, #771b9e); /* Градієнт від темно-синього до пурпурного */
-    transform: scale(1.1);
+    background: linear-gradient(to right, #111470, #c7135c);
+    transform: scale(1.2);
 }
 
 

@@ -42,8 +42,8 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgba(80, 80, 80, 0.8), rgba(182, 182, 182, 0.6)); /* Градієнт з прозорістю */
-    transform: scale(1.1);
+    transform: scale(1.16);
+    background: linear-gradient(to right, rgb(255, 0, 105), rgb(255, 183, 0)); /* Градієнт з прозорістю */
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
@@ -151,8 +151,8 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, rgba(87, 87, 87, 0.8), rgba(202, 205, 210, 0.8)); /* Градієнт з прозорістю */
-    transform: scale(1.1);
+    transform: scale(1.16);
+    background: linear-gradient(to right, rgb(255, 0, 105), rgb(255, 183, 0)); /* Градієнт з прозорістю */
 }
 
 .social-media-window {

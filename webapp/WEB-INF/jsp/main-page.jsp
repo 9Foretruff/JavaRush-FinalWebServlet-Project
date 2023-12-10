@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -19,12 +20,16 @@
         </a>
     </div>
 
+    <div class="login-table">
+        <a href="${pageContext.request.contextPath}/createQuest" class="add-quest-button">Create quest</a>
+    </div>
+
     <div class="quests-list">
         <h2 class="neon-title">Quests</h2>
         <ul>
             <c:forEach var="quest" items="${quests}">
                 <li>
-                    <a href="/quest?id=${quest.id}" class="neon-text">${quest.name}</a>
+                    <a href="${pageContext.request.contextPath}/quest?id=${quest.id}" class="neon-text">${quest.name}</a>
                 </li>
             </c:forEach>
         </ul>

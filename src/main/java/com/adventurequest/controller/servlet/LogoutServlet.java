@@ -32,11 +32,11 @@ public class LogoutServlet extends HttpServlet {
                 LOGGER.info("Logging out user from IP address: {}", remoteAddr);
                 session.invalidate();
                 LOGGER.info("User successfully logged out");
-                requestDispatcher = req.getRequestDispatcher(JspHelper.get("logoutSuccess"));
+                requestDispatcher = req.getRequestDispatcher(JspHelper.get("logout-success"));
             } else {
                 LOGGER.warn("No active session found for logout request from IP address: {}", remoteAddr);
                 LOGGER.warn("User failed logged out");
-                requestDispatcher = req.getRequestDispatcher(JspHelper.get("logoutFailed"));
+                requestDispatcher = req.getRequestDispatcher(JspHelper.get("logout-failed"));
             }
             LOGGER.debug("Forwarding user with IP address {} to result of logout", remoteAddr);
             requestDispatcher.forward(req, resp);

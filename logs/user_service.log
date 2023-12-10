@@ -20,4 +20,202 @@
 [m[32m2023-12-08 01:12:07.990 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
 [m[32m2023-12-08 01:12:15.805 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
 [m[32m2023-12-08 01:12:38.554 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:18:49.115 [http-nio-8080-exec-8] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:18:58.947 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:19:17.899 [http-nio-8080-exec-6] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:19:24.195 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:24:10.641 [http-nio-8080-exec-2] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:24:11.685 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:24:53.762 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:26:17.954 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:26:18.889 [http-nio-8080-exec-2] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:27:05.877 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:27:07.124 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:27:40.453 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:27:41.963 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:28:32.913 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:28:34.833 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:41:31.726 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 00:41:33.204 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:16:32.191 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:16:33.279 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:16:33.991 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:16:36.307 [http-nio-8080-exec-2] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:17:10.948 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:17:12.254 [http-nio-8080-exec-6] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:17:27.100 [http-nio-8080-exec-8] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:17:35.324 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-09 17:17:36.358 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-09 17:26:13.347 [http-nio-8080-exec-4] WARN  com.adventurequest.model.service.UserService - Registration failed for user foretruff: User already exists.
+[m[33m2023-12-09 17:26:37.256 [http-nio-8080-exec-8] WARN  com.adventurequest.model.service.UserService - Registration failed for user foretruff5: User already exists.
+[m[32m2023-12-09 17:26:47.488 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User foretruff5 registered successfully.
+[m[33m2023-12-09 17:27:07.797 [http-nio-8080-exec-5] WARN  com.adventurequest.model.service.UserService - Registration failed for user \123123: Passwords do not match.
+[m[32m2023-12-10 00:27:16.579 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:27:17.505 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:33:53.570 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:33:54.465 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:34:02.547 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:34:04.067 [http-nio-8080-exec-8] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:34:06.494 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:35:10.216 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:35:11.579 [http-nio-8080-exec-6] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:35:13.887 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:44:07.594 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:48:21.705 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:48:23.112 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:48:27.720 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:50:54.743 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:50:55.778 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:50:57.255 [http-nio-8080-exec-1] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:56:24.645 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:56:25.668 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:56:26.544 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:56:45.754 [http-nio-8080-exec-7] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 00:56:47.081 [http-nio-8080-exec-8] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:07.202 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:08.286 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:14.585 [http-nio-8080-exec-6] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:37.794 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:51.777 [http-nio-8080-exec-8] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:53.312 [http-nio-8080-exec-9] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:04:57.913 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-10 02:17:22.237 [http-nio-8080-exec-6] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user sdasda.
+[m[32m2023-12-10 02:18:04.635 [http-nio-8080-exec-4] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:18:06.329 [http-nio-8080-exec-3] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-10 02:18:51.964 [http-nio-8080-exec-2] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:19:09.786 [http-nio-8080-exec-8] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:19:56.279 [http-nio-8080-exec-5] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:19:58.972 [http-nio-8080-exec-6] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:20:18.455 [http-nio-8080-exec-2] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:20:32.557 [http-nio-8080-exec-4] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:21:29.072 [http-nio-8080-exec-2] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:22:07.540 [http-nio-8080-exec-4] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:22:55.250 [http-nio-8080-exec-11] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:23:21.488 [http-nio-8080-exec-18] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:24:03.401 [http-nio-8080-exec-13] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:24:16.983 [http-nio-8080-exec-23] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:25:18.723 [http-nio-8080-exec-28] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:25:45.713 [http-nio-8080-exec-31] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:27:06.825 [http-nio-8080-exec-37] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:27:29.392 [http-nio-8080-exec-32] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:27:31.181 [http-nio-8080-exec-38] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:27:46.801 [http-nio-8080-exec-33] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 02:28:11.140 [http-nio-8080-exec-36] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[32m2023-12-10 02:33:32.250 [http-nio-8080-exec-67] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:33:33.524 [http-nio-8080-exec-54] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-10 02:33:52.681 [http-nio-8080-exec-69] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[32m2023-12-10 02:34:00.719 [http-nio-8080-exec-74] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 02:34:21.772 [http-nio-8080-exec-77] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-10 02:34:54.581 [http-nio-8080-exec-80] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:17.787 [http-nio-8080-exec-10] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:25.694 [http-nio-8080-exec-4] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:26.775 [http-nio-8080-exec-3] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:27.492 [http-nio-8080-exec-2] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:28.033 [http-nio-8080-exec-5] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:28.367 [http-nio-8080-exec-7] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:38.284 [http-nio-8080-exec-10] WARN  com.adventurequest.model.service.UserService - Registration failed for user maks: User already exists.
+[m[33m2023-12-10 15:04:53.020 [http-nio-8080-exec-3] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user foretruff.
+[m[32m2023-12-10 15:05:09.425 [http-nio-8080-exec-6] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:05:10.714 [http-nio-8080-exec-10] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-10 15:05:17.244 [http-nio-8080-exec-4] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:06:05.707 [http-nio-8080-exec-5] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:06:07.237 [http-nio-8080-exec-7] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:06:08.436 [http-nio-8080-exec-9] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:06:09.052 [http-nio-8080-exec-6] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:06:09.769 [http-nio-8080-exec-8] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:06:21.761 [http-nio-8080-exec-10] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:07:21.530 [http-nio-8080-exec-7] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:07:22.847 [http-nio-8080-exec-1] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[33m2023-12-10 15:07:23.814 [http-nio-8080-exec-10] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maksss.
+[m[32m2023-12-10 15:08:04.443 [http-nio-8080-exec-5] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:05.761 [http-nio-8080-exec-16] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:09.908 [http-nio-8080-exec-11] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:22.203 [http-nio-8080-exec-13] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:30.091 [http-nio-8080-exec-19] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:35.391 [http-nio-8080-exec-20] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:38.871 [http-nio-8080-exec-16] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:08:48.497 [http-nio-8080-exec-11] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:02.382 [http-nio-8080-exec-17] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:03.590 [http-nio-8080-exec-13] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:04.599 [http-nio-8080-exec-18] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:13.755 [http-nio-8080-exec-14] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:14.770 [http-nio-8080-exec-15] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:15.768 [http-nio-8080-exec-19] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:23.511 [http-nio-8080-exec-20] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:24.522 [http-nio-8080-exec-16] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:25.525 [http-nio-8080-exec-11] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:32.541 [http-nio-8080-exec-12] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:09:34.032 [http-nio-8080-exec-17] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:00.091 [http-nio-8080-exec-17] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:01.216 [http-nio-8080-exec-16] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:02.683 [http-nio-8080-exec-11] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:11.581 [http-nio-8080-exec-13] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:12.604 [http-nio-8080-exec-15] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:13.600 [http-nio-8080-exec-18] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:32.710 [http-nio-8080-exec-21] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:34.822 [http-nio-8080-exec-22] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:49.287 [http-nio-8080-exec-24] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:11:50.916 [http-nio-8080-exec-25] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[33m2023-12-10 15:14:27.654 [http-nio-8080-exec-27] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[33m2023-12-10 15:14:30.666 [http-nio-8080-exec-28] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[33m2023-12-10 15:14:53.041 [http-nio-8080-exec-30] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[33m2023-12-10 15:14:53.695 [http-nio-8080-exec-32] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[33m2023-12-10 15:15:01.688 [http-nio-8080-exec-21] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[33m2023-12-10 15:15:03.117 [http-nio-8080-exec-25] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[33m2023-12-10 15:15:21.886 [http-nio-8080-exec-22] WARN  com.adventurequest.model.service.UserService - Failed login attempt for user maks.
+[m[32m2023-12-10 15:18:41.007 [http-nio-8080-exec-45] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:18:42.137 [http-nio-8080-exec-46] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:19:03.556 [http-nio-8080-exec-42] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:19:13.714 [http-nio-8080-exec-41] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:19:14.702 [http-nio-8080-exec-38] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:19:15.709 [http-nio-8080-exec-39] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:19:48.556 [http-nio-8080-exec-45] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:20:00.301 [http-nio-8080-exec-40] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:22:06.127 [http-nio-8080-exec-44] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:22:07.203 [http-nio-8080-exec-39] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:22:08.231 [http-nio-8080-exec-38] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:22:17.360 [http-nio-8080-exec-47] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:22:18.371 [http-nio-8080-exec-48] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:22:19.375 [http-nio-8080-exec-46] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:23:16.641 [http-nio-8080-exec-50] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:23:17.640 [http-nio-8080-exec-51] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:23:18.651 [http-nio-8080-exec-52] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:31:41.333 [http-nio-8080-exec-60] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:31:43.064 [http-nio-8080-exec-61] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:31:44.402 [http-nio-8080-exec-62] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:31:52.717 [http-nio-8080-exec-63] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:31:53.718 [http-nio-8080-exec-64] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:31:54.729 [http-nio-8080-exec-65] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:32:44.984 [http-nio-8080-exec-59] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:32:45.987 [http-nio-8080-exec-67] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:32:46.993 [http-nio-8080-exec-60] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:35:38.350 [http-nio-8080-exec-64] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:35:39.661 [http-nio-8080-exec-60] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:35:41.007 [http-nio-8080-exec-63] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:35:48.924 [http-nio-8080-exec-66] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:35:49.919 [http-nio-8080-exec-58] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:35:50.916 [http-nio-8080-exec-68] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:02.247 [http-nio-8080-exec-69] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:03.268 [http-nio-8080-exec-59] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:04.264 [http-nio-8080-exec-70] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:06.054 [http-nio-8080-exec-71] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:18.263 [http-nio-8080-exec-70] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:19.379 [http-nio-8080-exec-69] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:20.309 [http-nio-8080-exec-71] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:27.496 [http-nio-8080-exec-73] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:48.129 [http-nio-8080-exec-58] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:55.295 [http-nio-8080-exec-77] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:56.291 [http-nio-8080-exec-78] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:36:57.299 [http-nio-8080-exec-79] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:03.117 [http-nio-8080-exec-80] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:04.127 [http-nio-8080-exec-81] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:12.519 [http-nio-8080-exec-84] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:13.757 [http-nio-8080-exec-80] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:14.000 [http-nio-8080-exec-85] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:15.258 [http-nio-8080-exec-82] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:24.832 [http-nio-8080-exec-79] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:27.856 [http-nio-8080-exec-87] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:40.210 [http-nio-8080-exec-88] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:41.217 [http-nio-8080-exec-86] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
+[m[32m2023-12-10 15:38:42.226 [http-nio-8080-exec-89] INFO  com.adventurequest.model.service.UserService - User maks logged in successfully.
 [m

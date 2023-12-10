@@ -43,3 +43,6 @@ CREATE TABLE answers
     text        TEXT                             NOT NULL,
     is_correct  BOOLEAN                          NOT NULL
 );
+
+-- INSERT INTO question(number_of_question, quest_id, text, background_question_photo, last_question) VALUES (1,1,'ok',);
+-- INSERT INTO answers(question_id, text, is_correct) VALUES (1,'hello',true)

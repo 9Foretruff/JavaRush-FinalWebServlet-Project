@@ -246,3 +246,48 @@ h1::before {
 .neon-border:hover {
     transform: scale(1.2);
 }
+
+
+.login-table {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.9;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.login-table::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.add-quest-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
+    transform: scale(1.1);
+    color: #fff;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.add-quest-button:hover {
+    background: linear-gradient(to right, rgb(255, 183, 8,0.82), rgb(164, 4, 243,0.82));
+    transform: scale(1.2);
+    border-color: #ffffff;
+}

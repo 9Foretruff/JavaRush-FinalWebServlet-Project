@@ -29,6 +29,7 @@ public class RegistrationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
+        var session = req.getSession();
         LOGGER.info("Registration data received from user with IP address {}", remoteAddr);
 
         String username = req.getParameter("username");
@@ -38,12 +39,10 @@ public class RegistrationServlet extends HttpServlet {
 
         int registrationResult = userService.registerUser(username, password, confirmPassword, email);
 
-        req.getSession().setAttribute("username", username);
-        req.getSession().setAttribute("password", password);
-        req.getSession().setAttribute("confirmPassword", confirmPassword);
-        req.getSession().setAttribute("email", email);
-        req.getSession().setAttribute("photo", DefaultProfileImageUtil.getDefaultProfileImageBytes());
-        req.getSession().setAttribute("gamesPlayed", DefaultGamesCountUtil.getDefaultGamesCount());
+        session.setAttribute("username", username);
+        session.setAttribute("password", password);
+        session.setAttribute("confirmPassword", confirmPassword);
+        session.setAttribute("email", email);
 
         switch (registrationResult) {
             case UserService.PASSWORDS_DO_NOT_MATCH -> {

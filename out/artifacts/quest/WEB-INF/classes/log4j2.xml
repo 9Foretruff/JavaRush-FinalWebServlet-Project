@@ -6,11 +6,11 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </Console>
 
-        <File name="LoginLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\login.log">
+        <File name="LoginServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\login.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="RegistrationLogs" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\registration.log">
+        <File name="RegistrationServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\registration.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
@@ -46,7 +46,11 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="ChangePhotoServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\upload_photo_servlet.log">
+        <File name="ChangePhotoServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_photo_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="CreateQuestServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\create_quest_servlet.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
@@ -55,11 +59,11 @@
     <Loggers>
 
         <Logger name="com.adventurequest.controller.servlet.RegistrationServlet" level="debug">
-            <AppenderRef ref="RegistrationLogs"/>
+            <AppenderRef ref="RegistrationServlet"/>
         </Logger>
 
         <Logger name="com.adventurequest.controller.servlet.LoginServlet" level="debug">
-            <AppenderRef ref="LoginLogs"/>
+            <AppenderRef ref="LoginServlet"/>
         </Logger>
 
         <Logger name="com.adventurequest.model.service.UserService" level="debug">
@@ -96,6 +100,10 @@
 
         <Logger name="com.adventurequest.controller.servlet.ChangePhotoServlet" level="debug">
             <AppenderRef ref="ChangePhotoServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.CreateQuestServlet" level="debug">
+            <AppenderRef ref="CreateQuestServlet"/>
         </Logger>
 
         <Root level="debug">

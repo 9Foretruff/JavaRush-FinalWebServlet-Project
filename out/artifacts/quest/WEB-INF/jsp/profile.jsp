@@ -72,7 +72,7 @@
             <h3>Change Photo</h3>
             <form action="uploadPhoto" method="post" enctype="multipart/form-data">
                 <label for="newPhoto">Upload Photo:</label>
-                <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required>
+                <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required maxlength="10485760">
                 <input type="submit" value="Upload Photo">
             </form>
 

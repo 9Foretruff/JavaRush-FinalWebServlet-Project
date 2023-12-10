@@ -12,9 +12,9 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@WebServlet("/addQuest")
-public class AddQuestServlet extends HttpServlet {
-    private static final Logger LOGGER = LoggerFactory.getLogger(AddQuestServlet.class);
+@WebServlet("/createQuest")
+public class CreateQuestServlet extends HttpServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(CreateQuestServlet.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,7 +22,12 @@ public class AddQuestServlet extends HttpServlet {
         var session = req.getSession();
         LOGGER.debug("User with IP address {} get add-quest page", remoteAddr);
 
-        var requestDispatcher = req.getRequestDispatcher(JspHelper.get("add-quest"));
+        var requestDispatcher = req.getRequestDispatcher(JspHelper.get("creation-quest-menu"));
         requestDispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 }

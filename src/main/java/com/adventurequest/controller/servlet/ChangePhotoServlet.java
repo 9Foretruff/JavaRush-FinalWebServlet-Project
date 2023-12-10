@@ -14,7 +14,10 @@ import jakarta.servlet.http.Part;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
 
 @WebServlet("/uploadPhoto")
 @MultipartConfig(
@@ -35,9 +38,11 @@ public class ChangePhotoServlet extends HttpServlet {
         RequestDispatcher requestDispatcher;
         var user = (UserEntity) session.getAttribute("user");
         Part newPhoto = req.getPart("newPhoto");
-        if (!isImage(newPhoto)) {
+        
+        if (!isImage(newPhoto) || newPhoto.getSize() > 10485760) {
+            LOGGER.warn("Failed to change photo for user {}", user.getUsername());
             requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-photo-failed"));
-            requestDispatcher.forward(req,resp);
+            requestDispatcher.forward(req, resp);
             return;
         }
         LOGGER.debug("Attempting to change photo for user {} ", user.getUsername());
@@ -56,9 +61,15 @@ public class ChangePhotoServlet extends HttpServlet {
             requestDispatcher.forward(req, resp);
         }
     }
+
     private boolean isImage(Part part) {
-        String contentType = part.getContentType();
-        return contentType != null && contentType.startsWith("image/");
+        try {
+            InputStream input = part.getInputStream();
+            BufferedImage image = ImageIO.read(input);
+            return image != null;
+        } catch (IOException ex) {
+            return false;
+        }
     }
 
 }
