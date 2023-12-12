@@ -6,9 +6,7 @@ import java.util.Optional;
 public interface Dao<K, T> {
     List<T> findAll();
 
-    Optional<T> findByUsername(K username);
-
-    boolean delete(K username);
+    boolean delete(K id);
 
     boolean update(T entity);
 

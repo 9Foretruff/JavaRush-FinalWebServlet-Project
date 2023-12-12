@@ -37,10 +37,10 @@ public class LoginServlet extends HttpServlet {
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         String email = req.getParameter("email");
-        UserEntity user = new UserEntity(username, password, email, null, null);
+        UserEntity user = new UserEntity(null, username, password, email, null, null);
 
         var login = userService.login(user);
-        
+
         RequestDispatcher dispatcher;
         var session = req.getSession();
         if (login.isPresent()) {

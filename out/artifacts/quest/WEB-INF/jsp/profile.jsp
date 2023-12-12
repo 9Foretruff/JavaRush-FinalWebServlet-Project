@@ -15,9 +15,10 @@
 <%
     UserEntity userFromSession = (UserEntity) request.getSession().getAttribute("user");
     UserService userService = UserService.getInstance();
-    UserEntity user = userService.getUserByUsername(userFromSession.getUsername()).orElse(new UserEntity(null, null, null, null, null));
+    UserEntity user = userService.getUserByUsername(userFromSession.getUsername()).orElse(new UserEntity(null, null, null, null, null, null));
     byte[] photoBytes = user.getPhoto();
     String password = user.getPassword();
+    Long id = user.getId();
     String username = user.getUsername();
     String email = user.getEmail();
     String ipAddress = request.getRemoteAddr();
@@ -47,6 +48,7 @@
 
             <div class="user-data">
                 <ul class="neon-table">
+                    <li><strong>id:</strong> <c:out value="<%=id%>"/></li>
                     <li><strong>Username:</strong> <c:out value="<%=username%>"/></li>
                     <li><strong>Password:</strong> <c:out value="<%=password%>"/></li>
                     <li><strong>Email:</strong> <c:out value="<%=email%>"/></li>

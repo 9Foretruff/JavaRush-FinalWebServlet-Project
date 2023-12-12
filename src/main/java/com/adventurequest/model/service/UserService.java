@@ -22,6 +22,10 @@ public class UserService {
     private UserService() {
     }
 
+    public static UserService getInstance() {
+        return INSTANCE;
+    }
+
     public List<UserDto> findAll() {
         return userDao.findAll().stream()
                 .map(userEntity -> UserDto.builder()
@@ -47,7 +51,7 @@ public class UserService {
             return PASSWORDS_DO_NOT_MATCH;
         }
 
-        UserEntity user = new UserEntity(username, password, email, null, null);
+        UserEntity user = new UserEntity(null, username, password, email, null, null);
         var save = userDao.save(user);
         if (save) {
             LOGGER.info("User {} registered successfully.", username);
@@ -56,10 +60,6 @@ public class UserService {
             LOGGER.warn("Registration failed for user {}: User already exists.", username);
             return REGISTRATION_FAILED;
         }
-    }
-
-    public static UserService getInstance() {
-        return INSTANCE;
     }
 
     public Optional<UserEntity> getUserByUsername(String username) {

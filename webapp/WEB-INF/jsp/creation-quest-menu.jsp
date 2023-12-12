@@ -13,7 +13,7 @@
     <br>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/addQuest" class="add-quest-button">Instruction</a>
+        <a href="${pageContext.request.contextPath}/questInstruction" class="add-quest-button">Instruction</a>
     </div>
 
     <div class="quests-list">

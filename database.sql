@@ -2,17 +2,17 @@ CREATE DATABASE epic_quest_db;
 
 CREATE SCHEMA adventure_quest_schema;
 
-CREATE TABLE user
+CREATE TABLE "user"
 (
-    username     VARCHAR(50) PRIMARY KEY,
+    id           BIGSERIAL PRIMARY KEY,
+    username     VARCHAR(50) UNIQUE,
     password     VARCHAR(255)        NOT NULL,
     email        VARCHAR(100) UNIQUE NOT NULL,
     photo        BYTEA               NOT NULL,
     games_played BIGINT              NOT NULL
 );
 
-DROP TABLE quest;
-CREATE TYPE difficulty AS ENUM ('Easy', 'Medium', 'Hard');
+CREATE TYPE difficulty AS ENUM ('EASY', 'MEDIUM', 'HARD');
 -- фільтр что би смотрел если current quest num > this quest num - redirect to you.are.cheater.jsp
 
 CREATE TABLE quest

@@ -4,13 +4,16 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class UserEntity {
+
+    private Long id;
     private String username;
     private String password;
     private String email;
     private byte[] photo;
     private Long gamesPlayed;
 
-    public UserEntity(String username, String password, String email, byte[] photo, Long gamesPlayed) {
+    public UserEntity(Long id, String username, String password, String email, byte[] photo, Long gamesPlayed) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -25,14 +28,21 @@ public class UserEntity {
 
         UserEntity user = (UserEntity) o;
 
-        return Objects.equals(username, user.username);
+        return Objects.equals(id, user.id);
     }
 
     @Override
     public int hashCode() {
-        return username != null ? username.hashCode() : 0;
+        return id != null ? id.hashCode() : 0;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getGamesPlayed() {
         return gamesPlayed;
@@ -77,7 +87,8 @@ public class UserEntity {
     @Override
     public String toString() {
         return "UserEntity{" +
-               "username='" + username + '\'' +
+               "id=" + id +
+               ", username='" + username + '\'' +
                ", password='" + password + '\'' +
                ", email='" + email + '\'' +
                ", photo=" + Arrays.toString(photo) +

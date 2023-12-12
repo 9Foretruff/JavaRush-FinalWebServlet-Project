@@ -192,7 +192,7 @@ button:hover {
 }
 
 .footer {
-    margin-top: auto;
+    margin-top: 50px;
     padding: 20px;
     background-color: rgba(68, 68, 68, 0.8);
     color: #fff;

@@ -1,5 +1,6 @@
 package com.adventurequest.controller.servlet;
 
+import com.adventurequest.model.service.QuestService;
 import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.ServletException;
@@ -15,12 +16,15 @@ import java.io.IOException;
 @WebServlet("/createQuest")
 public class CreateQuestServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(CreateQuestServlet.class);
+    private final QuestService questService = QuestService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
         var session = req.getSession();
         LOGGER.debug("User with IP address {} get add-quest page", remoteAddr);
+        var allQuests = questService.findAll();
+        req.getSession().setAttribute("quests", allQuests);
 
         var requestDispatcher = req.getRequestDispatcher(JspHelper.get("creation-quest-menu"));
         requestDispatcher.forward(req, resp);
