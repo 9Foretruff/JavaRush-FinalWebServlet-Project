@@ -1,7 +1,6 @@
 package com.adventurequest.controller.servlet;
 
 import com.adventurequest.model.service.QuestService;
-import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

@@ -3,7 +3,6 @@ package com.adventurequest.controller.servlet;
 import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.QuestService;
-import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

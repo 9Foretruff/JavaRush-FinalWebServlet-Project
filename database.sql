@@ -37,7 +37,7 @@ CREATE TABLE question
 
 CREATE TABLE answer
 (
-    id          SERIAL PRIMARY KEY,
+    id          BIGSERIAL PRIMARY KEY,
     question_id INTEGER REFERENCES question (id) ON DELETE CASCADE NOT NULL,
     text        TEXT                             NOT NULL,
     is_correct  BOOLEAN                          NOT NULL

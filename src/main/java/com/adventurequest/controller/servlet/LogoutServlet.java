@@ -1,7 +1,6 @@
 package com.adventurequest.controller.servlet;
 
 import com.adventurequest.controller.servlet.exception.LogoutException;
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

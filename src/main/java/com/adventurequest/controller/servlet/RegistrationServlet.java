@@ -1,8 +1,6 @@
 package com.adventurequest.controller.servlet;
 
 import com.adventurequest.model.service.UserService;
-import com.adventurequest.util.DefaultGamesCountUtil;
-import com.adventurequest.util.DefaultProfileImageUtil;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
