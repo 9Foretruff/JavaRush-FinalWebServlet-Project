@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <title>Registration Page</title>
     <link rel="stylesheet" type="text/css" href="css/registration.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5455/5455480.png" type="image/png">
+    <link rel="icon" href="img/registration-icon.png" type="image/png">
 </head>
 
 <body>

@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://www.pixground.com/wp-content/uploads/2023/10/Anime-Sunset-Sky-AI-Generated-4K-Wallpaper-jpg.webp") no-repeat fixed;
+    background: url("../img/login-failed.webp") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

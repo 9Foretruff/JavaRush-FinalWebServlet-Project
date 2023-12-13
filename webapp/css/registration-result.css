@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images5.alphacoders.com/133/1333743.png") no-repeat fixed;
+    background: url("../img/registration-result.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -42,7 +42,7 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, #111470, #c7135c);
+    background: linear-gradient(to right, rgb(255, 0, 105), rgb(255, 183, 0));
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
@@ -68,7 +68,6 @@ p {
 }
 
 .login-table {
-    margin-top: 30px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
@@ -124,9 +123,9 @@ button {
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-/* Добавим стили для изменения цвета при наведении на кнопку Login */
+
 button:hover {
-    background-color: #7a7a7a; /* Измененный цвет при наведении */
+    background-color: #7a7a7a;
 }
 
 .button-link {
@@ -148,115 +147,13 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, #111470, #c7135c);
+    background: linear-gradient(to right, rgb(255, 0, 105), rgb(255, 183, 0));
     transform: scale(1.2);
-}
-
-
-.social-media-window {
-    background-color: rgba(68, 68, 68, 0.8);
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 50px;
-    position: relative;
-}
-
-.social-media-window::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    pointer-events: none;
-}
-
-.social-media-bar {
-    display: flex;
-    justify-content: center;
-}
-
-.social-media-bar a {
-    margin: 0 10px;
-    text-decoration: none;
-    position: relative;
-}
-
-.social-media-bar img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 2px solid #555;
-    transition: transform 0.3s ease-in-out;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #fff;
-    border-radius: 100px;
-}
-
-.social-media-bar img:hover {
-    transform: scale(1.2);
-}
-
-.social-media-bar img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.social-media-bar a:nth-child(1) img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #ff4081;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.social-media-bar a:nth-child(2) img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #6200ea;
-    border-radius: 50%;
-    pointer-events: none;
 }
 
 button:hover {
-    background-color: #d5004d; /* Измененный цвет при наведении */
-    border-color: #d5004d; /* Измененный цвет обводки при наведении */
-}
-
-/* Добавляем стиль для иконок социальных сетей при наведении */
-.social-media-bar img:hover {
-    transform: scale(1.2);
-    background-color: #d5004d; /* Измененный цвет фона при наведении */
-    border-color: #fff; /* Измененный цвет обводки при наведении */
-}
-
-.social-media-bar a:nth-child(3) img::before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 2px solid #e040fb;
-    border-radius: 50%;
-    pointer-events: none;
+    background-color: #d5004d;
+    border-color: #d5004d;
 }
 
 .neon-title {

@@ -15,11 +15,11 @@
 <div class="container">
     <form action="${pageContext.request.contextPath}/addQuest" method="post" enctype="multipart/form-data">
         <div class="login-table">
-            <label for="questName">Name of quest:</label>
-            <input type="text" id="questName" name="questName" maxlength="255" required>
+            <label for="questName">Name of quest (max length is 35):</label>
+            <input type="text" id="questName" name="questName" maxlength="35" required>
 
             <label for="questDescription">Description of quest:</label>
-            <textarea id="questDescription" name="questDescription" rows="4" cols="50" required></textarea>
+            <textarea id="questDescription" name="questDescription" rows="4" cols="100" required></textarea>
 
             <br>
             <label for="questPhoto">Photo of quest:</label>
@@ -34,7 +34,7 @@
             </select>
 
             <button type="submit" class="register-button">Create</button>
-            <a href="${pageContext.request.contextPath}/addQuest" class="register-button">Go Back</a>
+            <a href="${pageContext.request.contextPath}/createQuest" class="register-button">Go Back</a>
         </div>
     </form>
 </div>

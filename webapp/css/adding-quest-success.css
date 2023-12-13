@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images.alphacoders.com/133/1339872.png") no-repeat fixed;
+    background: url("../img/adding-quest-success.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

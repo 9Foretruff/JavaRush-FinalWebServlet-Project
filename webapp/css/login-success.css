@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/login-table.png") no-repeat fixed;
+    background: url("../img/login-success.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -58,9 +58,8 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(0, 247, 255, 0.6), rgb(0, 89, 255));
     transform: scale(1.1);
-    background-color: rgba(232, 67, 147, 0.6);
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
@@ -124,7 +123,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(0, 247, 255, 0.6), rgb(0, 89, 255));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -149,7 +148,7 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, rgba(232, 67, 147, 0.6), rgb(30, 10, 169));
+    background: linear-gradient(to right, rgba(0, 247, 255, 0.6), rgb(0, 89, 255));
     transform: scale(1.2);
     border-color: #ffffff;
 }

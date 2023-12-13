@@ -20,7 +20,7 @@ h1, p, label, button, .footer {
 
 h1 {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgb(255, 0, 59), rgb(0, 87, 246)); /* Используйте rgba для добавления прозрачности к цветам фона */
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
     border-color: rgba(255, 255, 255,0.6); /* То же самое для цвета границы */
 
     padding: 15px;
@@ -164,7 +164,7 @@ button, input[type="submit"] {
 /* Добавим стили для изменения цвета при наведении на кнопку Login */
 button:hover, input[type="submit"]:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgb(255, 0, 59), rgb(0, 87, 246)); /* Используйте rgba для добавления прозрачности к цветам фона */
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
 }
 
 .button-link {
@@ -242,7 +242,7 @@ button:hover, input[type="submit"]:hover {
 
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgb(255, 0, 59), rgb(0, 87, 246)); /* Используйте rgba для добавления прозрачности к цветам фона */
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
     border-color: #fff;
 }
 
@@ -288,7 +288,7 @@ button:hover {
 
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgb(255, 0, 59), rgb(0, 87, 246)); /* Используйте rgba для добавления прозрачности к цветам фона */
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
     border-color: #fff;
 }
 

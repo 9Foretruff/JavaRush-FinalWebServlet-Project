@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/logout-success.jpg") no-repeat fixed;
+    background: url("../img/logout-success.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }

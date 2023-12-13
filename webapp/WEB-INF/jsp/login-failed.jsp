@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <title>Login Failed</title>
     <link rel="stylesheet" type="text/css" href="css/login-failed.css">
+    <link rel="icon" href="img/login-failed-mark.png" type="image/png">
 </head>
 
 <body>

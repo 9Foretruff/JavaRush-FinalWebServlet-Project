@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("https://images6.alphacoders.com/133/1339166.png") no-repeat fixed;
+    background: url("../img/photo-change-failed.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -58,7 +58,7 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgb(3, 82, 206), rgb(194, 12, 130));
+    background: linear-gradient(to right, rgb(41, 175, 199), rgb(6, 57, 189));
     transform: scale(1.1);
     padding: 15px;
     border-radius: 8px;
@@ -124,7 +124,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to right, rgb(3, 82, 206), rgb(194, 12, 130));
+    background: linear-gradient(to right, rgb(41, 175, 199), rgb(6, 57, 189));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -155,7 +155,7 @@ button,
 
 button:hover,
 .register-button:hover {
-    background: linear-gradient(to right, rgb(3, 82, 206), rgb(194, 12, 130));
+    background: linear-gradient(to right, rgb(41, 175, 199), rgb(6, 57, 189));
     transform: scale(1.2);
     border-color: #ffffff;
 }

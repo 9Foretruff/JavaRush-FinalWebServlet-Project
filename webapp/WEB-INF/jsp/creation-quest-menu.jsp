@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Create quest menu</title>
-    <link rel="stylesheet" type="text/css" href="css/menu.css">
+    <link rel="stylesheet" type="text/css" href="css/creation-quest-menu.css">
 </head>
 
 <body>

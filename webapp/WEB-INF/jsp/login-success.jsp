@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Login success</title>
     <link rel="stylesheet" type="text/css" href="css/login-success.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/164/164641.png" type="image/png">
+    <link rel="icon" href="img/login-success-mark.png" type="image/png">
 </head>
 
 <body>

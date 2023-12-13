@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <title>Quest</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/295/295128.png" type="image/png">
+    <link rel="icon" href="img/start-page-icon.png" type="image/png">
 </head>
 
 <body>

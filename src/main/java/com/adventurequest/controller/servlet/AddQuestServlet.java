@@ -50,8 +50,15 @@ public class AddQuestServlet extends HttpServlet {
         byte[] questPhoto = photoPart.getInputStream().readAllBytes();
         DifficultyEnum questDifficulty = DifficultyEnum.valueOf(req.getParameter("questDifficulty").toUpperCase());
         var resultOfAdding = questService.addQuest(questName, questDescription, questPhoto, questDifficulty, user.getUsername());
-        var requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-success"));
-        requestDispatcher.forward(req,resp);
+
+        RequestDispatcher requestDispatcher;
+        if (resultOfAdding){
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-success"));
+            requestDispatcher.forward(req,resp);
+        }else {
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-failed"));
+            requestDispatcher.forward(req,resp);
+        }
     }
 
 }

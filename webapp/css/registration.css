@@ -151,7 +151,7 @@ button:hover {
 }
 
 .register-button:hover {
-    transform: scale(1.16);
+    transform: scale(1.1);
     background: linear-gradient(to right, rgb(255, 0, 105), rgb(255, 183, 0)); /* Градієнт з прозорістю */
 }
 
