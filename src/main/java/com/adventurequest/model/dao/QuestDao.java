@@ -2,11 +2,8 @@ package com.adventurequest.model.dao;
 
 import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.entity.QuestEntity;
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.exeption.DatabaseAccessException;
 import com.adventurequest.util.ConnectionManager;
-import com.adventurequest.util.DefaultGamesCountUtil;
-import com.adventurequest.util.DefaultProfileImageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

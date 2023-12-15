@@ -6,31 +6,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/start-page.png") no-repeat fixed;
+    background: url("https://images8.alphacoders.com/133/1331544.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-}
-
-.input-container {
-    position: relative;
-}
-
-input {
-    display: inline-block;
-}
-
-.input-icon {
-    position: absolute;
-    right: 10px;
-    top: 55%;
-    width: 35px;
-    transform: translateY(-50%);
 }
 
 .container {
     width: 50%;
     background-color: rgba(51, 51, 51, 0.8);
-    padding: 65px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
     text-align: center;
@@ -58,12 +42,12 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgba(54, 100, 250, 0.95), rgba(11, 191, 197, 0.95));
-    transform: scale(1.1);
+    transform: scale(1.16);
+    background: linear-gradient(to right, rgb(59, 149, 255), rgb(3, 91, 255));
     padding: 15px;
     border-radius: 8px;
     font-size: 24px;
-    border: 2px solid #ffffff;
+    border: 2px solid #737373;
     position: relative;
 }
 
@@ -109,6 +93,7 @@ p {
     pointer-events: none;
 }
 
+
 form {
     display: flex;
     flex-direction: column;
@@ -120,44 +105,29 @@ label {
     font-size: 16px;
 }
 
-
 input {
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
     border: 1px solid #555;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-input:focus {
-    box-shadow: 0 0 5px rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
-    transition: .3s;
-}
-
-input:focus::placeholder {
-    opacity: 0.6;
-    transition: .3s;
 }
 
 button {
     margin-top: 10px;
     padding: 10px 20px;
-    background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
-    transform: scale(1.1);
     color: #fff;
     border: 2px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+/* Добавим стили для изменения цвета при наведении на кнопку Login */
 button:hover {
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
     transform: scale(1.2);
-    border-color: #ffffff;
+    background: linear-gradient(to right, rgba(222, 222, 222, 0.8), rgba(166, 166, 166, 0.8)); /* Градієнт з прозорістю */
 }
 
 .button-link {
@@ -169,20 +139,34 @@ button:hover {
 .register-button {
     margin-top: 10px;
     padding: 10px 20px;
-    background: linear-gradient(to right, rgba(213, 213, 213, 0.6), rgb(70, 70, 70));
-    transform: scale(1.1);
+    background: linear-gradient(to right, rgba(86, 86, 86, 0.8), rgba(176, 176, 176, 0.8));
+    transform: scale(1);
     color: #fff;
     border: 2px solid #ffffff;
     border-radius: 8px;
     cursor: pointer;
     font-size: 18px;
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+label[for="newPhoto"],
+input[type="file"] {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input[type="file"] {
+    border: none;
+    background-color: rgba(86, 86, 86, 0.8);
+    color: #fff;
+    cursor: pointer;
+    width: 60%; /* Пропорційно обмежте ширину поля вводу, якщо потрібно */
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
-    transform: scale(1.2);
-    border-color: #ffffff;
+    transform: scale(1.16);
+    background: linear-gradient(to right, rgb(59, 149, 255), rgb(3, 91, 255));
 }
 
 .social-media-window {
@@ -228,9 +212,7 @@ button:hover {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
     transform: scale(1.2);
-    border-color: #ffffff;
 }
 
 .social-media-bar img::before {
@@ -270,12 +252,14 @@ button:hover {
 }
 
 button:hover {
+    background-color: #ffffff;
     border-color: #ffffff;
 }
 
+/* Добавляем стиль для иконок социальных сетей при наведении */
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
+    background: linear-gradient(to right, rgb(59, 149, 255), rgb(3, 91, 255));
     border-color: #fff;
 }
 
@@ -308,4 +292,61 @@ button:hover {
     border: 2px solid #555;
     text-align: center;
     font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 16px;
+    display: block;
+    text-align: left;
+}
+
+input,
+textarea,
+select {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="file"],
+select {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="file"] {
+    border: none;
+    background-color: rgba(86, 86, 86, 0.8);
+    color: #fff;
+    cursor: pointer;
+}
+
+select {
+    appearance: none;
+    padding-right: 30px;
+    background: rgba(86, 86, 86, 0.8);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 18px;
 }

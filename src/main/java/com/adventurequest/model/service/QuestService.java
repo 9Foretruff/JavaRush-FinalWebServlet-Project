@@ -1,16 +1,12 @@
 package com.adventurequest.model.service;
 
 import com.adventurequest.model.dao.QuestDao;
-import com.adventurequest.model.dao.UserDao;
-import com.adventurequest.model.dto.UserDto;
 import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.entity.QuestEntity;
-import com.adventurequest.model.entity.UserEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class QuestService {
     private static final QuestService INSTANCE = new QuestService();

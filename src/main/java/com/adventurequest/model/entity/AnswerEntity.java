@@ -61,4 +61,14 @@ public class AnswerEntity {
     public void setCorrect(Boolean correct) {
         isCorrect = correct;
     }
+
+    @Override
+    public String toString() {
+        return "AnswerEntity{" +
+               "id=" + id +
+               ", questionId=" + questionId +
+               ", text='" + text + '\'' +
+               ", isCorrect=" + isCorrect +
+               '}';
+    }
 }

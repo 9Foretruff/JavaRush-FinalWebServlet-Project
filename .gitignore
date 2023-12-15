@@ -9,6 +9,7 @@ target/
 *.ipr
 /target
 out
+logs
 
 ### Eclipse ###
 .apt_generated

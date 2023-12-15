@@ -40,7 +40,7 @@
             <input type="submit" value="Show questions">
         </form>
         <ul>
-            <c:forEach var="quest" items="${quests}">
+            <c:forEach var="quest" items="${questsions}">
                 <li>
                     <a href="${pageContext.request.contextPath}/quest?id=${quest.id}"
                        class="neon-text">${quest.name}</a>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/addQuest" class="add-quest-button">Add question to quest</a>
+        <a href="${pageContext.request.contextPath}/addQuestion" class="add-quest-button">Add question to quest</a>
     </div>
 
     <div class="quests-list">
@@ -61,7 +61,7 @@
             <input type="submit" value="Show questions">
         </form>
         <ul>
-            <c:forEach var="quest" items="${quests}">
+            <c:forEach var="quest" items="${answers}">
                 <li>
                     <a href="${pageContext.request.contextPath}/quest?id=${quest.id}"
                        class="neon-text">${quest.name}</a>
@@ -71,7 +71,7 @@
     </div>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/addQuest" class="add-quest-button">Add answer to quest</a>
+        <a href="${pageContext.request.contextPath}/addAnswer" class="add-quest-button">Add answer to quest</a>
     </div>
 
     <div class="login-table">

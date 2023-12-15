@@ -1,0 +1,6 @@
+[34m2023-12-13 15:56:05.828 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.servlet.ProfileServlet - User with IP address 0:0:0:0:0:0:0:1 get the profile page
+[m[34m2023-12-13 17:16:49.625 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.ProfileServlet - User with IP address 0:0:0:0:0:0:0:1 get the profile page
+[m[34m2023-12-13 17:17:35.822 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.ProfileServlet - User with IP address 0:0:0:0:0:0:0:1 get the profile page
+[m[34m2023-12-13 17:17:48.379 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.ProfileServlet - User with IP address 0:0:0:0:0:0:0:1 get the profile page
+[m[34m2023-12-13 17:18:09.427 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.ProfileServlet - User with IP address 0:0:0:0:0:0:0:1 get the profile page
+[m2023-12-14 21:21:25.725 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.ProfileServlet - User with IP address 0:0:0:0:0:0:0:1 get the profile page

@@ -1,0 +1,14 @@
+[34m2023-12-13 15:56:01.711 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-13 15:57:07.256 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-13 17:16:27.794 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-13 17:18:53.474 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-13 17:19:12.029 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m2023-12-14 21:20:40.794 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+2023-12-14 21:21:24.612 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[34m2023-12-15 22:46:09.629 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-16 00:52:22.473 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-16 00:54:41.200 [http-nio-8080-exec-4] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-16 00:55:18.453 [http-nio-8080-exec-7] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-16 00:56:15.042 [http-nio-8080-exec-10] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m[34m2023-12-16 01:19:12.447 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.QuestMenuServlet - User with IP address 0:0:0:0:0:0:0:1 get the menu page
+[m

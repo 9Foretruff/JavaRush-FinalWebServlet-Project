@@ -1,15 +1,12 @@
 package com.adventurequest.controller.filter;
 
-import com.adventurequest.controller.servlet.LoginServlet;
 import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
-import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,4 +42,3 @@ public class AuthorizationFilter implements Filter {
     }
 
 }
-

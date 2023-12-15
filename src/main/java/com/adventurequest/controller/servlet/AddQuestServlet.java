@@ -30,7 +30,7 @@ public class AddQuestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var remoteAddr = req.getRemoteAddr();
-        LOGGER.debug("User with IP address {} get add-quest page", remoteAddr);
+        LOGGER.debug("User with IP address {} accessed the add-quest page", remoteAddr);
         var requestDispatcher = req.getRequestDispatcher(JspHelper.get("add-quest"));
         requestDispatcher.forward(req, resp);
     }
@@ -45,19 +45,25 @@ public class AddQuestServlet extends HttpServlet {
 
         String questName = req.getParameter("questName");
         String questDescription = req.getParameter("questDescription");
+
         Part photoPart = req.getPart("questPhoto");
         byte[] questPhoto = photoPart.getInputStream().readAllBytes();
+
         DifficultyEnum questDifficulty = DifficultyEnum.valueOf(req.getParameter("questDifficulty").toUpperCase());
+
+        LOGGER.debug("Received quest data - Name: {}, Description: {}, Difficulty: {}", questName, questDescription, questDifficulty);
+
         var resultOfAdding = questService.addQuest(questName, questDescription, questPhoto, questDifficulty, user.getUsername());
 
         RequestDispatcher requestDispatcher;
-        if (resultOfAdding){
+        if (resultOfAdding) {
+            LOGGER.info("Quest successfully added by user with IP address {}", remoteAddr);
             requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-success"));
-            requestDispatcher.forward(req,resp);
-        }else {
+        } else {
+            LOGGER.warn("Failed to add quest by user with IP address {}", remoteAddr);
             requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-failed"));
-            requestDispatcher.forward(req,resp);
         }
+        requestDispatcher.forward(req, resp);
     }
 
 }

@@ -6,35 +6,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Add question</title>
-    <link rel="stylesheet" type="text/css" href="css/add-quest.css">
+    <link rel="stylesheet" type="text/css" href="css/add-question.css">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5455/5455480.png" type="image/png">
 </head>
 
 <body>
-<h1 class="neon-title">Add Quest</h1>
+<h1 class="neon-title">Add Question</h1>
 <div class="container">
     <form action="${pageContext.request.contextPath}/addQuest" method="post" enctype="multipart/form-data">
         <div class="login-table">
-            <label for="questName">Name of quest (max length is 35):</label>
-            <input type="text" id="questName" name="questName" maxlength="35" required>
+            <label for="numberOfQuestion">Number of question:</label>
+            <input type="number" id="numberOfQuestion" name="numberOfQuestion" maxlength="35" required>
 
-            <label for="questDescription">Description of quest:</label>
-            <textarea id="questDescription" name="questDescription" rows="4" cols="100" required></textarea>
-
-            <br>
-            <label for="questPhoto">Photo of quest:</label>
-            <input type="file" id="questPhoto" name="questPhoto" accept="image/*" required maxlength="10485760">
+            <label for="questionText">Text of question:</label>
+            <textarea id="questionText" name="questionText" rows="4" cols="100" required></textarea>
 
             <br>
-            <label for="questDifficulty">Difficulty of quest:</label>
-            <select id="questDifficulty" name="questDifficulty" required>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
+            <label for="backgroundQuestionPhoto">Background photo of question:</label>
+            <input type="file" id="backgroundQuestionPhoto" name="backgroundQuestionPhoto" accept="image/*" required maxlength="10485760">
+
+            <br>
+            <label for="isLastQuestion">This question is last?:</label>
+            <select id="isLastQuestion" name="isLastQuestion" required>
+                <option value="false">No</option>
+                <option value="true">Yes</option>
             </select>
 
             <button type="submit" class="register-button">Create</button>
-            <a href="${pageContext.request.contextPath}/addQuest" class="register-button">Go Back</a>
+            <a href="${pageContext.request.contextPath}/createQuest" class="register-button">Go Back</a>
         </div>
     </form>
 </div>
