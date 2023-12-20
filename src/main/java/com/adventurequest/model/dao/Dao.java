@@ -8,7 +8,5 @@ public interface Dao<K, T> {
 
     boolean delete(K id);
 
-    boolean update(T entity);
-
     boolean save(T entity);
 }

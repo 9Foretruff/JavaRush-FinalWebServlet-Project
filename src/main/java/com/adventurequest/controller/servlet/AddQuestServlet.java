@@ -41,7 +41,7 @@ public class AddQuestServlet extends HttpServlet {
         var remoteAddr = req.getRemoteAddr();
         var session = req.getSession();
         UserEntity user = (UserEntity) session.getAttribute("user");
-        LOGGER.info("Create quest data received from user with IP address {}", remoteAddr);
+        LOGGER.info("Create quest data received from {} with IP address {}", user.getUsername(), remoteAddr);
 
         String questName = req.getParameter("questName");
         String questDescription = req.getParameter("questDescription");
@@ -51,7 +51,7 @@ public class AddQuestServlet extends HttpServlet {
 
         DifficultyEnum questDifficulty = DifficultyEnum.valueOf(req.getParameter("questDifficulty").toUpperCase());
 
-        LOGGER.debug("Received quest data - Name: {}, Description: {}, Difficulty: {}", questName, questDescription, questDifficulty);
+        LOGGER.debug("Received quest data - questName: {}, questDescription: {}, questDifficulty: {}", questName, questDescription, questDifficulty);
 
         var resultOfAdding = questService.addQuest(questName, questDescription, questPhoto, questDifficulty, user.getUsername());
 

@@ -1,8 +1,7 @@
 package com.adventurequest.controller.servlet;
 
-import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.entity.UserEntity;
-import com.adventurequest.model.service.QuestService;
+import com.adventurequest.model.service.QuestionService;
 import com.adventurequest.util.JspHelper;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -25,7 +24,7 @@ import java.io.IOException;
 )
 public class AddQuestionServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(AddQuestionServlet.class);
-    private final QuestService questionService = QuestService.getInstance();
+    private final QuestionService questionService = QuestionService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -41,30 +40,27 @@ public class AddQuestionServlet extends HttpServlet {
         var remoteAddr = req.getRemoteAddr();
         var session = req.getSession();
         UserEntity user = (UserEntity) session.getAttribute("user");
-        LOGGER.info("Create question data received from user with IP address {}", remoteAddr);
+        LOGGER.info("Create question data received from {} with IP address {}", user.getUsername(), remoteAddr);
 
-        String questName = req.getParameter("numberOfQuestion");
-        String questDescription = req.getParameter("questionText");
-        String questDescription2 = req.getParameter("questionText");
-        String questDescription3 = req.getParameter("questionText");
-        //backgroundQuestionPhoto
+        Integer numberOfQuestion = Integer.valueOf(req.getParameter("numberOfQuestion"));
+        Long questId = Long.valueOf(req.getParameter("questId"));
+        String questionText = req.getParameter("questionText");
+        Boolean isLastQuestion = Boolean.valueOf(req.getParameter("isLastQuestion"));
 
-        Part photoPart = req.getPart("questPhoto");
-        byte[] questPhoto = photoPart.getInputStream().readAllBytes();
+        Part photoPart = req.getPart("backgroundQuestionPhoto");
+        byte[] backgroundQuestionPhoto = photoPart.getInputStream().readAllBytes();
 
-        DifficultyEnum questDifficulty = DifficultyEnum.valueOf(req.getParameter("questDifficulty").toUpperCase());
+        LOGGER.debug("Received question data - numberOfQuestion: {}, questId: {}, questionText: {}, isLastQuestion: {}", numberOfQuestion, questId, questionText, isLastQuestion);
 
-        LOGGER.debug("Received quest data - Name: {}, Description: {}, Difficulty: {}", questName, questDescription, questDifficulty);
-
-        var resultOfAdding = questionService.addQuest(questName, questDescription, questPhoto, questDifficulty, user.getUsername());
+        var resultOfAdding = questionService.addQuestion(numberOfQuestion, questId, questionText, backgroundQuestionPhoto, isLastQuestion);
 
         RequestDispatcher requestDispatcher;
         if (resultOfAdding) {
             LOGGER.info("Quest successfully added by user with IP address {}", remoteAddr);
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-success"));
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-question-success"));
         } else {
             LOGGER.warn("Failed to add quest by user with IP address {}", remoteAddr);
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-quest-failed"));
+            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-question-failed"));
         }
         requestDispatcher.forward(req, resp);
     }

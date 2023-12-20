@@ -13,10 +13,13 @@
 <body>
 <h1 class="neon-title">Add Question</h1>
 <div class="container">
-    <form action="${pageContext.request.contextPath}/addQuest" method="post" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/addQuestion" method="post" enctype="multipart/form-data">
         <div class="login-table">
             <label for="numberOfQuestion">Number of question:</label>
             <input type="number" id="numberOfQuestion" name="numberOfQuestion" maxlength="35" required>
+
+            <label for="questId">Quest id:</label>
+            <input type="number" id="questId" name="questId" step="1" maxlength="35" required>
 
             <label for="questionText">Text of question:</label>
             <textarea id="questionText" name="questionText" rows="4" cols="100" required></textarea>

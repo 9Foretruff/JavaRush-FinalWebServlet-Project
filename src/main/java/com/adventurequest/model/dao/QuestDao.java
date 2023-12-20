@@ -17,7 +17,13 @@ public class QuestDao implements Dao<String, QuestEntity> {
     private static final QuestDao INSTANCE = new QuestDao();
     private static final Logger LOGGER = LoggerFactory.getLogger(QuestDao.class);
     private static final String FIND_ALL_SQL = """
-                SELECT id , name , description , quest_photo  ,difficulty , author
+                SELECT
+                id,
+                name,
+                description,
+                quest_photo,
+                difficulty,
+                author
                 FROM adventure_quest_schema.quest
             """;
     private static final String DELETE_SQL = """
@@ -31,7 +37,13 @@ public class QuestDao implements Dao<String, QuestEntity> {
             """;
 
     private static final String FIND_QUEST_BY_NAME_AND_AUTHOR_SQL = """
-                SELECT id , name , description , quest_photo , difficulty , author
+                SELECT
+                id,
+                name,
+                description,
+                quest_photo,
+                difficulty,
+                author
                 FROM adventure_quest_schema.quest
                 WHERE name LIKE ? AND author LIKE ?
             """;
@@ -54,8 +66,8 @@ public class QuestDao implements Dao<String, QuestEntity> {
             }
             return quests;
         } catch (SQLException e) {
-            LOGGER.error("Error , while finding all quests", e);
-            throw new DatabaseAccessException("Error , while finding all quests", e);
+            LOGGER.error("Error while finding all quests", e);
+            throw new DatabaseAccessException("Error while finding all quests", e);
         }
     }
 
@@ -64,17 +76,11 @@ public class QuestDao implements Dao<String, QuestEntity> {
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(DELETE_SQL)) {
             preparedStatement.setObject(1, id);
-            var i = preparedStatement.executeUpdate();
-            return i > 0;
+            return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
-            LOGGER.error("Error , while finding all quests", e);
-            throw new DatabaseAccessException("Error , while finding all quests", e);
+            LOGGER.error("Failed to delete quest with id = {} due to database error", id, e);
+            throw new DatabaseAccessException("Error while deleting quest", e);
         }
-    }
-
-    @Override
-    public boolean update(QuestEntity entity) {
-        return false;
     }
 
     @Override
@@ -96,8 +102,8 @@ public class QuestDao implements Dao<String, QuestEntity> {
             var executed = save.executeUpdate();
             return executed > 0;
         } catch (SQLException e) {
-            LOGGER.error("Error , while saving quest", e);
-            throw new DatabaseAccessException("Error , while saving quest", e);
+            LOGGER.error("Error while saving quest", e);
+            throw new DatabaseAccessException("Error while saving quest", e);
         }
     }
 

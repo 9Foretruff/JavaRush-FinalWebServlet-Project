@@ -34,7 +34,7 @@ CREATE TABLE question
     quest_id                  BIGINT REFERENCES quest (id) ON DELETE CASCADE NOT NULL,
     text                      TEXT                                           NOT NULL,
     background_question_photo BYTEA                                          NOT NULL,
-    is_last_question             BOOLEAN                                        NOT NULL,
+    is_last_question          BOOLEAN                                        NOT NULL,
     UNIQUE (number_of_question, quest_id)
 );
 
@@ -43,5 +43,6 @@ CREATE TABLE answer
     id          BIGSERIAL PRIMARY KEY,
     question_id INTEGER REFERENCES question (id) ON DELETE CASCADE NOT NULL,
     text        TEXT                                               NOT NULL,
-    is_correct  BOOLEAN                                            NOT NULL
+    is_correct  BOOLEAN                                            NOT NULL,
+    UNIQUE (question_id, text)
 );

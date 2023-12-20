@@ -9,15 +9,15 @@ public class QuestionEntity {
     private Long questId;
     private String text;
     private byte[] backgroundQuestionPhoto;
-    private Boolean lastQuestion;
+    private Boolean isLastQuestion;
 
-    public QuestionEntity(Long id, Integer numberOfQuestion, Long questId, String text, byte[] backgroundQuestionPhoto, Boolean lastQuestion) {
+    public QuestionEntity(Long id, Integer numberOfQuestion, Long questId, String text, byte[] backgroundQuestionPhoto, Boolean isLastQuestion) {
         this.id = id;
         this.numberOfQuestion = numberOfQuestion;
         this.questId = questId;
         this.text = text;
         this.backgroundQuestionPhoto = backgroundQuestionPhoto;
-        this.lastQuestion = lastQuestion;
+        this.isLastQuestion = isLastQuestion;
     }
 
     @Override
@@ -75,12 +75,13 @@ public class QuestionEntity {
         this.backgroundQuestionPhoto = backgroundQuestionPhoto;
     }
 
-    public Boolean getLastQuestion() {
-        return lastQuestion;
+    public Boolean getIsLastQuestion() {
+        return isLastQuestion;
     }
 
-    public void setLastQuestion(Boolean lastQuestion) {
-        this.lastQuestion = lastQuestion;
+
+    public void setIsLastQuestion(Boolean lastQuestion) {
+        isLastQuestion = lastQuestion;
     }
 
     @Override
@@ -91,7 +92,7 @@ public class QuestionEntity {
                ", questId=" + questId +
                ", text='" + text + '\'' +
                ", backgroundQuestionPhoto=" + Arrays.toString(backgroundQuestionPhoto) +
-               ", lastQuestion=" + lastQuestion +
+               ", isLastQuestion=" + isLastQuestion +
                '}';
     }
 }

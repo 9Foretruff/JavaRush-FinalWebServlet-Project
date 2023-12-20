@@ -19,7 +19,7 @@
     <div class="quests-list">
         <h2 class="neon-title">Your quests</h2>
         <ul>
-            <c:forEach var="quest" items="${quests}">
+            <c:forEach var="quest" items="${myQuests}">
                 <li>
                     <a href="${pageContext.request.contextPath}/quest?id=${quest.id}"
                        class="neon-text">${quest.name}</a>
