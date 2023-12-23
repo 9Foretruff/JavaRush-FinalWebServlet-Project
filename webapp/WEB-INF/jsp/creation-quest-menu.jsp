@@ -13,7 +13,7 @@
     <br>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/questInstruction" class="add-quest-button">Instruction</a>
+        <a href="${pageContext.request.contextPath}/createQuestInstruction" class="add-quest-button">Instruction how to create quest</a>
     </div>
 
     <div class="quests-list">
@@ -40,9 +40,9 @@
             <input type="submit" value="Show questions">
         </form>
         <ul>
-            <c:forEach var="quest" items="${questsions}">
+            <c:forEach var="quest" items="${MyQuestsions}">
                 <li>
-                    <a href="${pageContext.request.contextPath}/quest?id=${quest.id}"
+                    <a href="${pageContext.request.contextPath}/question?id=${quest.id}"
                        class="neon-text">${quest.name}</a>
                 </li>
             </c:forEach>

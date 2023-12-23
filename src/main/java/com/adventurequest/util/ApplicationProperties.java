@@ -5,10 +5,10 @@ import com.adventurequest.util.exeption.LoadPropertyException;
 import java.io.IOException;
 import java.util.Properties;
 
-public final class PropertiesUtil {
+public final class ApplicationProperties {
     private static final Properties PROPERTIES = new Properties();
 
-    private PropertiesUtil() {
+    private ApplicationProperties() {
     }
 
     static {
@@ -16,7 +16,7 @@ public final class PropertiesUtil {
     }
 
     private static void loadProperty() {
-        try (var resourceAsStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("application.properties");) {
+        try (var resourceAsStream = ApplicationProperties.class.getClassLoader().getResourceAsStream("application.properties");) {
             PROPERTIES.load(resourceAsStream);
         } catch (IOException exception) {
             throw new LoadPropertyException("Exception while loading property",exception);

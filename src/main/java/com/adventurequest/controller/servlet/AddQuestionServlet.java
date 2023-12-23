@@ -1,9 +1,8 @@
 package com.adventurequest.controller.servlet;
 
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.QuestionService;
 import com.adventurequest.util.JspHelper;
-import jakarta.servlet.RequestDispatcher;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,44 +23,50 @@ import java.io.IOException;
 )
 public class AddQuestionServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(AddQuestionServlet.class);
+
+    private static final String SUCCESS_JSP = "adding-question-success";
+    private static final String FAILED_JSP = "adding-question-failed";
+    private static final String ERROR_PAGE_JSP = "error-page";
+    private static final String ADD_QUESTION_JSP = "add-question";
+
     private final QuestionService questionService = QuestionService.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        LOGGER.debug("User with IP address {} accessed the add-question page", remoteAddr);
-        var requestDispatcher = req.getRequestDispatcher(JspHelper.get("add-question"));
-        requestDispatcher.forward(req, resp);
+        LOGGER.debug("User {} accessed add-question page", UserSessionHelper.getUsername(req.getSession()));
+        req.getRequestDispatcher(JspHelper.get(ADD_QUESTION_JSP)).forward(req, resp);
     }
 
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        var session = req.getSession();
-        UserEntity user = (UserEntity) session.getAttribute("user");
-        LOGGER.info("Create question data received from {} with IP address {}", user.getUsername(), remoteAddr);
+        try {
+            String username = UserSessionHelper.getUsername(req.getSession());
 
-        Integer numberOfQuestion = Integer.valueOf(req.getParameter("numberOfQuestion"));
-        Long questId = Long.valueOf(req.getParameter("questId"));
-        String questionText = req.getParameter("questionText");
-        Boolean isLastQuestion = Boolean.valueOf(req.getParameter("isLastQuestion"));
+            LOGGER.info("Create question data received from user: {}", username);
 
-        Part photoPart = req.getPart("backgroundQuestionPhoto");
-        byte[] backgroundQuestionPhoto = photoPart.getInputStream().readAllBytes();
+            Integer numberOfQuestion = Integer.valueOf(req.getParameter("numberOfQuestion"));
+            Long questId = Long.valueOf(req.getParameter("questId"));
+            String questionText = req.getParameter("questionText");
+            Boolean isLastQuestion = Boolean.valueOf(req.getParameter("isLastQuestion"));
+            Part photoPart = req.getPart("backgroundQuestionPhoto");
+            byte[] backgroundQuestionPhoto = photoPart.getInputStream().readAllBytes();
 
-        LOGGER.debug("Received question data - numberOfQuestion: {}, questId: {}, questionText: {}, isLastQuestion: {}", numberOfQuestion, questId, questionText, isLastQuestion);
+            LOGGER.debug("Received question data - numberOfQuestion: {}, questId: {}, questionText: {}, isLastQuestion: {}, from user {}", numberOfQuestion, questId, questionText, isLastQuestion, username);
 
-        var resultOfAdding = questionService.addQuestion(numberOfQuestion, questId, questionText, backgroundQuestionPhoto, isLastQuestion);
+            var resultOfAdding = questionService.addQuestion(numberOfQuestion, questId, questionText, backgroundQuestionPhoto, isLastQuestion);
 
-        RequestDispatcher requestDispatcher;
-        if (resultOfAdding) {
-            LOGGER.info("Quest successfully added by user with IP address {}", remoteAddr);
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-question-success"));
-        } else {
-            LOGGER.warn("Failed to add quest by user with IP address {}", remoteAddr);
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("adding-question-failed"));
+            if (resultOfAdding) {
+                LOGGER.info("Quest successfully added by user: {}", username);
+                req.getRequestDispatcher(JspHelper.get(SUCCESS_JSP)).forward(req, resp);
+            } else {
+                LOGGER.warn("Failed to add question by user: {}", username);
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
+            }
+
+        } catch (Exception exception) {
+            LOGGER.error("Exception while adding question", exception);
+            req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
-        requestDispatcher.forward(req, resp);
     }
 }

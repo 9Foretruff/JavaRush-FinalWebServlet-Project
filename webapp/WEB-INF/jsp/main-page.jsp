@@ -28,6 +28,10 @@
         <a href="${pageContext.request.contextPath}/createQuest" class="add-quest-button">Create quest</a>
     </div>
 
+    <div class="login-table">
+        <a href="${pageContext.request.contextPath}/createQuestInstruction" class="add-quest-button">Instruction</a>
+    </div>
+
     <div class="quests-list">
         <h2 class="neon-title">Quests</h2>
         <ul>

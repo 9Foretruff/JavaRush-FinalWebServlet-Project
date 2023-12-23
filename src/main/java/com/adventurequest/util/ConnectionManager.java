@@ -22,7 +22,7 @@ public final class ConnectionManager {
 
     private static void loadDriver() {
         try {
-            Class.forName(PropertiesUtil.get(DRIVER_KEY));
+            Class.forName(ApplicationProperties.get(DRIVER_KEY));
         } catch (ClassNotFoundException cause) {
             throw new LoadDriverException("Exception while loading driver", cause);
         }
@@ -31,9 +31,9 @@ public final class ConnectionManager {
     public static Connection get(){
         try {
             return DriverManager.getConnection(
-                    PropertiesUtil.get(URL_KEY),
-                    PropertiesUtil.get(USER_KEY),
-                    PropertiesUtil.get(PASSWORD_KEY)
+                    ApplicationProperties.get(URL_KEY),
+                    ApplicationProperties.get(USER_KEY),
+                    ApplicationProperties.get(PASSWORD_KEY)
             );
         } catch (SQLException cause) {
             throw new JdbcConnectionException("Exception while making connection to database",cause);

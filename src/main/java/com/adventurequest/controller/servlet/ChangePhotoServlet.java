@@ -1,9 +1,8 @@
 package com.adventurequest.controller.servlet;
 
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
-import jakarta.servlet.RequestDispatcher;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,10 +13,7 @@ import jakarta.servlet.http.Part;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.InputStream;
 
 @WebServlet("/uploadPhoto")
 @MultipartConfig(
@@ -27,47 +23,53 @@ import java.io.InputStream;
 )
 public class ChangePhotoServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChangePhotoServlet.class);
+
+    private static final String SUCCESS_JSP = "profile";
+    private static final String FAILED_JSP = "changing-photo-failed";
+    private static final String ERROR_PAGE_JSP = "error-page";
+    private static final int MAX_FILE_SIZE = 10 * 1024 * 1024;
+
     private final UserService userService = UserService.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        var session = req.getSession();
-        LOGGER.debug("User with IP address {} sent the data for changing photo", remoteAddr);
-
-        RequestDispatcher requestDispatcher;
-        var user = (UserEntity) session.getAttribute("user");
-        Part newPhoto = req.getPart("newPhoto");
-        if (!isImage(newPhoto) || newPhoto.getSize() > 10485760) {
-            LOGGER.warn("Failed to change photo for user {}", user.getUsername());
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-photo-failed"));
-            requestDispatcher.forward(req, resp);
-            return;
-        }
-        LOGGER.debug("Attempting to change photo for user {} ", user.getUsername());
-
-        var newUser = userService.changePhoto(user, newPhoto.getInputStream());
-
-        if (newUser.isPresent()) {
-            LOGGER.info("Photo changed successfully for user {}", newUser.get().getUsername());
-            session.setAttribute("user", newUser.get());
-
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("profile"));
-            requestDispatcher.forward(req, resp);
-        } else {
-            LOGGER.warn("Failed to change photo for user {}", user.getUsername());
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-photo-failed"));
-            requestDispatcher.forward(req, resp);
-        }
-    }
-
-    private boolean isImage(Part part) {
         try {
-            InputStream input = part.getInputStream();
-            BufferedImage image = ImageIO.read(input);
-            return image != null;
-        } catch (IOException ex) {
-            return false;
+            String username = UserSessionHelper.getUsername(req.getSession());
+
+            LOGGER.info("Change photo data received from user: {}", username);
+
+            var user = UserSessionHelper.getUser(req.getSession());
+            Part newPhoto = req.getPart("newPhoto");
+            String contentType = newPhoto.getContentType();
+
+            if (!contentType.startsWith("image/")) {
+                LOGGER.warn("User: {} send invalid file type {}", username, contentType);
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
+                return;
+            }
+
+            if(newPhoto.getSize() > MAX_FILE_SIZE) {
+                LOGGER.warn("File too big , image must be under 10 MB . file size that was provided:{}",newPhoto.getSize());
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
+                return;
+            }
+
+            LOGGER.debug("Attempting to change photo for user {} ", username);
+            
+            var newUser = userService.changePhoto(user, newPhoto.getInputStream());
+
+            if (newUser.isPresent()) {
+                LOGGER.info("Photo changed successfully for user: {}", username);
+                req.getSession().setAttribute("user", newUser.get());
+                req.getRequestDispatcher(JspHelper.get(SUCCESS_JSP)).forward(req, resp);
+            } else {
+                LOGGER.warn("Failed to change photo for user: {}", username);
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
+            }
+
+        } catch (Exception exception) {
+            LOGGER.error("Exception while changing user photo", exception);
+            req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }
 

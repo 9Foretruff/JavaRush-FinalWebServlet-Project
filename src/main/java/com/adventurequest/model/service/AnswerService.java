@@ -28,7 +28,7 @@ public class AnswerService {
             LOGGER.info("Answer with question id: {} and text: {} added successfully.", questionId, text);
             return ADDING_ANSWER_SUCCESSFUL;
         } else {
-            LOGGER.warn("Answer with question id: {} and text: {} already exists.", questionId, text);
+            LOGGER.warn("Failed to add answer for question id: {} and text: {}", questionId, text);
             return ADDING_ANSWER_FAILED;
         }
     }
@@ -36,4 +36,5 @@ public class AnswerService {
     public List<AnswerEntity> findAll() {
         return answerDao.findAll();
     }
+
 }

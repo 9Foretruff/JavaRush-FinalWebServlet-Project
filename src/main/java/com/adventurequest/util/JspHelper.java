@@ -1,6 +1,6 @@
 package com.adventurequest.util;
 
-public class JspHelper {
+public final class JspHelper {
 
     private static final String JSP_FORMAT = "/WEB-INF/jsp/%s.jsp";
 

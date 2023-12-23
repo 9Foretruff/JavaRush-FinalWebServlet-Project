@@ -1,5 +1,9 @@
 DROP DATABASE IF EXISTS epic_quest_db;
 
+DROP TABLE quest;
+DROP TABLE question;
+DROP TABLE answer;
+
 CREATE DATABASE epic_quest_db;
 
 CREATE SCHEMA adventure_quest_schema;
@@ -15,6 +19,7 @@ CREATE TABLE "user"
 );
 
 CREATE TYPE difficulty AS ENUM ('EASY', 'MEDIUM', 'HARD');
+CREATE TYPE quest_status AS ENUM ('draft', 'published');
 
 CREATE TABLE quest
 (
@@ -24,6 +29,8 @@ CREATE TABLE quest
     quest_photo BYTEA        NOT NULL,
     difficulty  difficulty   NOT NULL,
     author      VARCHAR(128) NOT NULL,
+    status quest_status NOT NULL DEFAULT 'draft',
+
     UNIQUE (name, author)
 );
 

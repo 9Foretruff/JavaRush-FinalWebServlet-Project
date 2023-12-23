@@ -1,9 +1,8 @@
 package com.adventurequest.controller.servlet;
 
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
-import jakarta.servlet.RequestDispatcher;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,40 +16,47 @@ import java.io.IOException;
 @WebServlet("/changePassword")
 public class ChangePasswordServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChangePasswordServlet.class);
+
+    private static final String SUCCESS_JSP = "profile";
+    private static final String FAILED_JSP = "changing-password-failed";
+    private static final String ERROR_PAGE_JSP = "error-page";
+
     private final UserService userService = UserService.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        var session = req.getSession();
-        LOGGER.debug("User with IP address {} sent the data for changing password", remoteAddr);
+        try {
+            String username = UserSessionHelper.getUsername(req.getSession());
 
-        var user = (UserEntity) session.getAttribute("user");
-        String newPassword = req.getParameter("newPassword");
-        LOGGER.debug("Attempting to change password for user {} to new password ", user.getUsername());
-        RequestDispatcher requestDispatcher;
+            LOGGER.info("Change password data received from user {}", username);
 
-        if (newPassword.length() > 255) {
-            LOGGER.warn("Failed to change password for user {}", user.getUsername());
+            var user = UserSessionHelper.getUser(req.getSession());
+            String newPassword = req.getParameter("newPassword");
 
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-password-failed"));
-            requestDispatcher.forward(req, resp);
-            return;
-        }
+            if (!isPasswordLengthValid(newPassword)) {
+                LOGGER.warn("Failed to change password for user {} - password length exceeds 255 letters", username);
+                req.getRequestDispatcher(JspHelper.get("changing-password-failed")).forward(req, resp);
+                return;
+            }
 
-        var newUser = userService.changePassword(user, newPassword);
+            var newUser = userService.changePassword(user, newPassword);
 
-        if (newUser.isPresent()) {
-            LOGGER.info("Password changed successfully for user {}", newUser.get().getUsername());
-            session.setAttribute("user", newUser.get());
-
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("profile"));
-            requestDispatcher.forward(req, resp);
-        } else {
-            LOGGER.warn("Failed to change password for user {}", user.getUsername());
-
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("password-change-failed"));
-            requestDispatcher.forward(req, resp);
+            if (newUser.isPresent()) {
+                LOGGER.info("Password changed successfully for user: {}", username);
+                req.getSession().setAttribute("user", newUser.get());
+                req.getRequestDispatcher(JspHelper.get(SUCCESS_JSP)).forward(req, resp);
+            } else {
+                LOGGER.warn("Failed to change password for user: {}", username);
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
+            }
+        } catch (Exception exception) {
+            LOGGER.error("Exception while changing user password", exception);
+            req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }
+
+    private boolean isPasswordLengthValid(String password) {
+        return password.length() <= 255;
+    }
+
 }

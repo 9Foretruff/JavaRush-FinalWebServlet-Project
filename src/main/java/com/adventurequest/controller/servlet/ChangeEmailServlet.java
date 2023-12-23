@@ -1,9 +1,8 @@
 package com.adventurequest.controller.servlet;
 
-import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
-import jakarta.servlet.RequestDispatcher;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,31 +17,38 @@ import java.io.IOException;
 @WebServlet("/changeEmail")
 public class ChangeEmailServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChangeEmailServlet.class);
+
+    private static final String SUCCESS_JSP = "profile";
+    private static final String FAILED_JSP = "changing-email-failed";
+    private static final String ERROR_PAGE_JSP = "error-page";
+
     private final UserService userService = UserService.getInstance();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        var session = req.getSession();
-        LOGGER.debug("User with IP address {} sent the data for changing email", remoteAddr);
+        try {
+            String username = UserSessionHelper.getUsername(req.getSession());
 
-        var user = (UserEntity) session.getAttribute("user");
-        String newEmail = req.getParameter("newEmail");
-        LOGGER.debug("Attempting to change email for user {} to new email {}", user.getUsername(), newEmail);
+            LOGGER.info("Change email data received from user: {}", username);
 
-        var newUser = userService.changeEmail(user, newEmail);
-        RequestDispatcher requestDispatcher;
+            var user = UserSessionHelper.getUser(req.getSession());
+            String newEmail = req.getParameter("newEmail");
 
-        if (newUser.isPresent()) {
-            LOGGER.info("Email changed successfully for user {}", newUser.get().getUsername());
-            session.setAttribute("user", newUser.get());
+            LOGGER.debug("Received change email data - newEmail: {}, from user: {}", newEmail, username);
 
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("profile"));
-            requestDispatcher.forward(req, resp);
-        } else {
-            LOGGER.warn("Failed to change email for user {}", user.getUsername());
-            requestDispatcher = req.getRequestDispatcher(JspHelper.get("changing-email-failed"));
-            requestDispatcher.forward(req, resp);
+            var newUser = userService.changeEmail(user, newEmail);
+
+            if (newUser.isPresent()) {
+                LOGGER.info("Email changed successfully for user: {}", username);
+                req.getSession().setAttribute("user", newUser.get());
+                req.getRequestDispatcher(JspHelper.get(SUCCESS_JSP)).forward(req, resp);
+            } else {
+                LOGGER.warn("Failed to change email for user: {}", username);
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
+            }
+        } catch (Exception exception) {
+            LOGGER.error("Exception while changing user email", exception);
+            req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }
 }

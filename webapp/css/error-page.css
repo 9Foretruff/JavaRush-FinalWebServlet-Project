@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/start-page.png") no-repeat fixed;
+    background: url("../img/error-page.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -58,7 +58,7 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    background: linear-gradient(to right, rgba(54, 100, 250, 0.95), rgba(11, 191, 197, 0.95));
+    background: linear-gradient(to right, rgba(238, 0, 255, 0.96), rgba(255, 166, 0, 0.95));
     transform: scale(1.1);
     padding: 15px;
     border-radius: 8px;
@@ -155,7 +155,7 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
+    background: linear-gradient(to right, rgba(238, 0, 255, 0.96), rgba(255, 166, 0, 0.95));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -180,7 +180,7 @@ button:hover {
 }
 
 .register-button:hover {
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
+    background: linear-gradient(to right, rgba(238, 0, 255, 0.96), rgba(255, 166, 0, 0.95));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -228,7 +228,7 @@ button:hover {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
+    background: linear-gradient(to right, rgba(238, 0, 255, 0.96), rgba(255, 166, 0, 0.95));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -275,7 +275,7 @@ button:hover {
 
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgba(0, 140, 255, 0.6), rgb(0, 166, 255));
+    background: linear-gradient(to right, rgba(238, 0, 255, 0.96), rgba(255, 166, 0, 0.95));
     border-color: #fff;
 }
 

@@ -70,6 +70,20 @@ public class QuestDao implements Dao<String, QuestEntity> {
             throw new DatabaseAccessException("Error while finding all quests", e);
         }
     }
+    public List<QuestEntity> findAllPublished() {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
+            var resultSet = preparedStatement.executeQuery();
+            List<QuestEntity> quests = new ArrayList<>();
+            while (resultSet.next()) {
+                quests.add(buildQuest(resultSet));
+            }
+            return quests;
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding all quests", e);
+            throw new DatabaseAccessException("Error while finding all quests", e);
+        }
+    }
 
     @Override
     public boolean delete(String id) {

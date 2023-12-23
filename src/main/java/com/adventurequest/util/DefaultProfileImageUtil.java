@@ -2,7 +2,6 @@ package com.adventurequest.util;
 
 import com.adventurequest.util.exeption.ImageNullException;
 import com.adventurequest.util.exeption.NotFoundImageException;
-import org.apache.commons.lang3.ArrayUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
