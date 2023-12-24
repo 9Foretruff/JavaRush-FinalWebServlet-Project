@@ -38,4 +38,11 @@ public class QuestService {
         return questDao.findAll();
     }
 
+    public List<QuestEntity> findQuestsByAuthor(String author) {
+        return questDao.findByAuthor(author);
+    }
+
+    public Object findPublishedQuests() {
+        return questDao.findAllPublished();
+    }
 }

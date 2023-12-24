@@ -1,7 +1,9 @@
 package com.adventurequest.controller.servlet;
 
 import com.adventurequest.controller.servlet.exception.LogoutException;
+import com.adventurequest.model.entity.UserEntity;
 import com.adventurequest.util.JspHelper;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -17,31 +19,36 @@ import java.io.IOException;
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(LogoutServlet.class);
+    private static final String SUCCESS_JSP = "logout-success";
+    private static final String FAILED_JSP = "logout-failed";
+    private static final String ERROR_PAGE_JSP = "error-page";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            RequestDispatcher requestDispatcher;
+
             var remoteAddr = req.getRemoteAddr();
-            var user = req.getSession().getAttribute("user");
+            var user = UserSessionHelper.getUser(req.getSession());
             LOGGER.info("Logout request received from IP address: {}", remoteAddr);
 
             HttpSession session = req.getSession(false);
             if (session != null && user != null) {
-                LOGGER.info("Logging out user from IP address: {}", remoteAddr);
+                var username = UserSessionHelper.getUsername(req.getSession());
+                LOGGER.info("Logging out user: {}", username);
+
                 session.invalidate();
-                LOGGER.info("User successfully logged out");
-                requestDispatcher = req.getRequestDispatcher(JspHelper.get("logout-success"));
+
+                LOGGER.info("User: {} successfully logged out", username);
+                req.getRequestDispatcher(JspHelper.get(SUCCESS_JSP)).forward(req, resp);
             } else {
-                LOGGER.warn("No active session found for logout request from IP address: {}", remoteAddr);
-                LOGGER.warn("User failed logged out");
-                requestDispatcher = req.getRequestDispatcher(JspHelper.get("logout-failed"));
+                LOGGER.warn("Failed to log out , no active session found for logout request from IP address: {}", remoteAddr);
+                req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
             }
             LOGGER.debug("Forwarding user with IP address {} to result of logout", remoteAddr);
-            requestDispatcher.forward(req, resp);
         } catch (LogoutException exception) {
-            LOGGER.error("Error during logout", exception);
-            resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Internal Server Error");
+            LOGGER.error("Exception while logout", exception);
+            req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req,resp);
         }
     }
+
 }

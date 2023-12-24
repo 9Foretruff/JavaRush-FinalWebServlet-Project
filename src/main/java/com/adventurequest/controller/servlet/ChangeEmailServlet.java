@@ -51,4 +51,5 @@ public class ChangeEmailServlet extends HttpServlet {
             req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }
+
 }

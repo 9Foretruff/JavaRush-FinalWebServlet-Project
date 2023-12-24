@@ -1,0 +1,26 @@
+[32m2023-12-24 01:36:34.134 [http-nio-8080-exec-3] INFO  com.adventurequest.model.dao.UserDao - Found user by username :lol
+[m[32m2023-12-24 01:36:43.100 [http-nio-8080-exec-6] INFO  com.adventurequest.model.dao.UserDao - Found user by username :lol
+[m[32m2023-12-24 01:36:54.125 [http-nio-8080-exec-8] INFO  com.adventurequest.model.dao.UserDao - Found user by username :lol
+[m[32m2023-12-24 01:37:01.800 [http-nio-8080-exec-9] INFO  com.adventurequest.model.dao.UserDao - Found user by username :lol
+[m[32m2023-12-24 01:39:02.198 [http-nio-8080-exec-7] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 16:17:53.172 [http-nio-8080-exec-8] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 16:30:57.051 [http-nio-8080-exec-29] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:38:42.447 [http-nio-8080-exec-1] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:38:46.501 [http-nio-8080-exec-3] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:40:42.844 [http-nio-8080-exec-4] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:40:44.882 [http-nio-8080-exec-13] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:40:47.041 [http-nio-8080-exec-14] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:40:54.164 [http-nio-8080-exec-8] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:40:58.064 [http-nio-8080-exec-11] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:41:00.728 [http-nio-8080-exec-18] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:41:05.021 [http-nio-8080-exec-19] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:41:09.545 [http-nio-8080-exec-14] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:41:38.658 [http-nio-8080-exec-18] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:41:40.730 [http-nio-8080-exec-19] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 21:52:32.525 [http-nio-8080-exec-24] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-24 23:56:31.046 [http-nio-8080-exec-9] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-25 01:20:56.660 [http-nio-8080-exec-4] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m[32m2023-12-25 01:22:08.761 [http-nio-8080-exec-2] INFO  com.adventurequest.model.dao.UserDao - Found user by username :admin 
+[m[32m2023-12-25 01:22:16.762 [http-nio-8080-exec-10] INFO  com.adventurequest.model.dao.UserDao - Found user by username :admin 
+[m[32m2023-12-25 01:44:27.884 [http-nio-8080-exec-6] INFO  com.adventurequest.model.dao.UserDao - Found user by username :maks
+[m

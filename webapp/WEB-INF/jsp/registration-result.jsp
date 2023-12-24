@@ -12,7 +12,7 @@
 
 <body>
 <c:choose>
-    <c:when test="${sessionScope.registrationSuccessful eq 1}">
+    <c:when test="${sessionScope.registrationResult eq 1}">
         <h1 class="neon-title">Registration Successful</h1>
         <div class="container">
             <div class="login-table">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </c:when>
-    <c:when test="${sessionScope.registrationSuccessful eq 0}">
+    <c:when test="${sessionScope.registrationResult eq 0}">
         <h1 class="neon-title">Registration Failed</h1>
         <div class="container">
             <div class="login-table">
@@ -30,7 +30,7 @@
             </div>
         </div>
     </c:when>
-    <c:when test="${sessionScope.registrationSuccessful eq -1}">
+    <c:when test="${sessionScope.registrationResult eq -1}">
         <h1 class="neon-title">Registration Failed</h1>
         <div class="container">
             <div class="login-table">

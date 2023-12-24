@@ -1,7 +1,10 @@
 package com.adventurequest.controller.servlet;
 
+import com.adventurequest.model.service.AnswerService;
 import com.adventurequest.model.service.QuestService;
+import com.adventurequest.model.service.QuestionService;
 import com.adventurequest.util.JspHelper;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -16,22 +19,18 @@ import java.io.IOException;
 public class CreateQuestServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(CreateQuestServlet.class);
     private final QuestService questService = QuestService.getInstance();
+    private final QuestionService questionService = QuestionService.getInstance();
+    private final AnswerService answerService = AnswerService.getInstance();
+    private static final String CREATE_QUEST_JSP = "creation-quest-menu";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        var session = req.getSession();
-        LOGGER.debug("User with IP address {} get add-quest page", remoteAddr);
-        var allQuests = questService.findAll();
-        req.getSession().setAttribute("quests", allQuests);
-
-        var requestDispatcher = req.getRequestDispatcher(JspHelper.get("creation-quest-menu"));
-        requestDispatcher.forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        var username = UserSessionHelper.getUsername(req.getSession());
+        LOGGER.debug("User: {} get add-quest page", username);
+        req.getSession().setAttribute("myQuests", questService.findQuestsByAuthor(username));
+        //req.getSession().setAttribute("myQuestions", questionService.findQuestionsByAuthor());
+        //req.getSession().setAttribute("myAnswers", answerService.findAnswersByAuthor());
+        req.getRequestDispatcher(JspHelper.get(CREATE_QUEST_JSP)).forward(req, resp);
     }
 
 }

@@ -40,7 +40,7 @@
             <input type="submit" value="Show questions">
         </form>
         <ul>
-            <c:forEach var="quest" items="${MyQuestsions}">
+            <c:forEach var="quest" items="${myQuestions}">
                 <li>
                     <a href="${pageContext.request.contextPath}/question?id=${quest.id}"
                        class="neon-text">${quest.name}</a>
@@ -61,7 +61,7 @@
             <input type="submit" value="Show questions">
         </form>
         <ul>
-            <c:forEach var="quest" items="${answers}">
+            <c:forEach var="quest" items="${myAnswers}">
                 <li>
                     <a href="${pageContext.request.contextPath}/quest?id=${quest.id}"
                        class="neon-text">${quest.name}</a>

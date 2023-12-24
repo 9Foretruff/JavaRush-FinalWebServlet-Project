@@ -10,7 +10,7 @@
 <h1 class="neon-title">Logout Error</h1>
 <div class="container">
     <div class="login-table">
-        <p>There was an error during the logout process. Please try again.</p>
+        <p>Failed to log out , no active session found for logout request. Please try again.</p>
         <a href="${pageContext.request.contextPath}/login" class="register-button" >Login</a>
         <a href="${pageContext.request.contextPath}/registration" class="register-button" >Register</a>
     </div>

@@ -17,11 +17,13 @@ import java.io.IOException;
 public class RegistrationServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(RegistrationServlet.class);
     private final UserService userService = UserService.getInstance();
+    private static final String REGISTRATION_PAGE_JSP = "registration";
+    private static final String REGISTRATION_RESULT_JSP = "registration-result";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         LOGGER.debug("User with IP address {} visited the registration page", req.getRemoteAddr());
-        req.getRequestDispatcher(JspHelper.get("registration")).forward(req, resp);
+        req.getRequestDispatcher(JspHelper.get(REGISTRATION_PAGE_JSP)).forward(req, resp);
     }
 
     @Override
@@ -30,8 +32,8 @@ public class RegistrationServlet extends HttpServlet {
         var session = req.getSession();
         LOGGER.info("Registration data received from user with IP address {}", remoteAddr);
 
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
+        String username = req.getParameter("username").replace(" ", "");
+        String password = req.getParameter("password").replace(" ", "");
         String confirmPassword = req.getParameter("confirmPassword");
         String email = req.getParameter("email");
 
@@ -45,20 +47,20 @@ public class RegistrationServlet extends HttpServlet {
         switch (registrationResult) {
             case UserService.PASSWORDS_DO_NOT_MATCH -> {
                 LOGGER.warn("User with IP address {} attempted registration with different passwords", remoteAddr);
-                req.getSession().setAttribute("registrationSuccessful", UserService.PASSWORDS_DO_NOT_MATCH);
+                req.getSession().setAttribute("registrationResult", UserService.PASSWORDS_DO_NOT_MATCH);
             }
             case UserService.REGISTRATION_SUCCESSFUL -> {
                 LOGGER.info("User with IP address {} has successfully registered", remoteAddr);
-                req.getSession().setAttribute("registrationSuccessful", UserService.REGISTRATION_SUCCESSFUL);
+                req.getSession().setAttribute("registrationResult", UserService.REGISTRATION_SUCCESSFUL);
             }
             case UserService.REGISTRATION_FAILED -> {
                 LOGGER.warn("User with IP address {} did not register due to incorrect data", remoteAddr);
-                req.getSession().setAttribute("registrationSuccessful", UserService.REGISTRATION_FAILED);
+                req.getSession().setAttribute("registrationResult", UserService.REGISTRATION_FAILED);
             }
         }
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher(JspHelper.get("registration-result"));
         LOGGER.debug("Forwarding user with IP address {} to registration-result.jsp", remoteAddr);
-        dispatcher.forward(req, resp);
+        req.getRequestDispatcher(JspHelper.get(REGISTRATION_RESULT_JSP)).forward(req, resp);
+
     }
 }

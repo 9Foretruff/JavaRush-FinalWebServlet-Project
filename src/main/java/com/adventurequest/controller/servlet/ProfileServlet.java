@@ -1,7 +1,7 @@
 package com.adventurequest.controller.servlet;
 
 import com.adventurequest.util.JspHelper;
-import jakarta.servlet.RequestDispatcher;
+import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,13 +15,11 @@ import java.io.IOException;
 @WebServlet("/profile")
 public class ProfileServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProfileServlet.class);
+    private static final String PROFILE_PAGE_JSP = "profile";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var remoteAddr = req.getRemoteAddr();
-        LOGGER.debug("User with IP address {} get the profile page", remoteAddr);
-
-        RequestDispatcher requestDispatcher;
-        requestDispatcher = req.getRequestDispatcher(JspHelper.get("profile"));
-        requestDispatcher.forward(req, resp);
+        LOGGER.debug("User: {} get the profile page", UserSessionHelper.getUsername(req.getSession()));
+        req.getRequestDispatcher(JspHelper.get(PROFILE_PAGE_JSP)).forward(req, resp);
     }
 }

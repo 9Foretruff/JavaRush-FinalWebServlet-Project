@@ -11,6 +11,8 @@ public class QuestEntity {
     private DifficultyEnum difficulty;
     private String author;
 
+    private StatusEnum status;
+
     public QuestEntity(Long id, String name, String description, byte[] questPhoto, DifficultyEnum difficulty, String author) {
         this.id = id;
         this.name = name;
@@ -18,6 +20,16 @@ public class QuestEntity {
         this.questPhoto = questPhoto;
         this.difficulty = difficulty;
         this.author = author;
+    }
+
+    public QuestEntity(Long id, String name, String description, byte[] questPhoto, DifficultyEnum difficulty, String author, StatusEnum status) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.questPhoto = questPhoto;
+        this.difficulty = difficulty;
+        this.author = author;
+        this.status = status;
     }
 
     @Override
@@ -83,6 +95,14 @@ public class QuestEntity {
         this.author = author;
     }
 
+    public StatusEnum getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusEnum status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "QuestEntity{" +
@@ -92,6 +112,7 @@ public class QuestEntity {
                ", questPhoto=" + Arrays.toString(questPhoto) +
                ", difficulty=" + difficulty +
                ", author='" + author + '\'' +
+               ", status=" + status +
                '}';
     }
 }

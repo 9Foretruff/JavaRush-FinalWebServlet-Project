@@ -1,0 +1,10 @@
+[32m2023-12-24 21:40:51.767 [http-nio-8080-exec-15] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Change email data received from user: maks
+[m[34m2023-12-24 21:40:51.768 [http-nio-8080-exec-15] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Received change email data - newEmail: rokitkomaksim@gmail.com, from user: maks
+[m[33m2023-12-24 21:40:51.802 [http-nio-8080-exec-15] WARN  com.adventurequest.controller.servlet.ChangeEmailServlet - Failed to change email for user: maks
+[m[32m2023-12-24 21:40:57.988 [http-nio-8080-exec-11] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Change email data received from user: maks
+[m[34m2023-12-24 21:40:57.988 [http-nio-8080-exec-11] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Received change email data - newEmail: rrokitkomaksim@gmail.com, from user: maks
+[m[32m2023-12-24 21:40:58.027 [http-nio-8080-exec-11] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Email changed successfully for user: maks
+[m[32m2023-12-24 21:41:00.533 [http-nio-8080-exec-18] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Change email data received from user: maks
+[m[34m2023-12-24 21:41:00.533 [http-nio-8080-exec-18] DEBUG com.adventurequest.controller.servlet.ChangeEmailServlet - Received change email data - newEmail: rokitkomaksim@gmail.com, from user: maks
+[m[32m2023-12-24 21:41:00.687 [http-nio-8080-exec-18] INFO  com.adventurequest.controller.servlet.ChangeEmailServlet - Email changed successfully for user: maks
+[m

@@ -69,4 +69,5 @@ public class AddQuestionServlet extends HttpServlet {
             req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }
+
 }

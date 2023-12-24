@@ -19,7 +19,8 @@ CREATE TABLE "user"
 );
 
 CREATE TYPE difficulty AS ENUM ('EASY', 'MEDIUM', 'HARD');
-CREATE TYPE quest_status AS ENUM ('draft', 'published');
+CREATE TYPE quest_status AS ENUM ('DRAFT', 'PUBLISHED');
+
 
 CREATE TABLE quest
 (
@@ -29,7 +30,7 @@ CREATE TABLE quest
     quest_photo BYTEA        NOT NULL,
     difficulty  difficulty   NOT NULL,
     author      VARCHAR(128) NOT NULL,
-    status quest_status NOT NULL DEFAULT 'draft',
+    status quest_status NOT NULL DEFAULT 'DRAFT',
 
     UNIQUE (name, author)
 );

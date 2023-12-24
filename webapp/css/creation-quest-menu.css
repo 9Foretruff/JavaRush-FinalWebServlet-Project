@@ -6,7 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/creation-quest-menu.png") no-repeat fixed;
+    background: url("https://images8.alphacoders.com/133/1331544.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
 }
@@ -14,9 +14,9 @@ body {
 .neon-title {
     font-size: 52px;
     margin-top: 36px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
-    0 0 20px rgba(255, 255, 255, 1),
-    0 0 30px rgba(255, 255, 255, 1);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7),
+    0 0 20px rgba(255, 255, 255, 0.7),
+    0 0 30px rgba(255, 255, 255, 0.7);
 }
 
 .profile-link {
@@ -35,7 +35,7 @@ body {
 }
 
 .profile-link img:hover {
-    background: linear-gradient(to right, rgb(1, 182, 182), rgb(1, 81, 255));
+    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
     transform: scale(1.1);
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgb(1, 182, 182), rgb(1, 81, 255));
+    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -166,7 +166,7 @@ button:hover {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgb(1, 182, 182), rgb(1, 81, 255));
+    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
     transform: scale(1.1);
     border-color: #fff;
 }
@@ -190,8 +190,8 @@ button:hover {
 }
 
 .footer {
-    margin-top: 50px;
     padding: 20px;
+    margin-top: auto;
     background-color: rgba(68, 68, 68, 0.8);
     color: #fff;
     width: 100%;
@@ -209,7 +209,7 @@ h1, p, label, button, .footer {
 
 
 h1 {
-    background: linear-gradient(to right, rgb(1, 182, 182), rgb(1, 81, 255));
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
     transform: scale(1.1);
     padding: 15px;
     border-radius: 8px;
@@ -285,7 +285,7 @@ h1::before {
 }
 
 .add-quest-button:hover {
-    background: linear-gradient(to right, rgb(1, 182, 182), rgb(1, 81, 255));
+    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
     transform: scale(1.2);
     border-color: #ffffff;
 }

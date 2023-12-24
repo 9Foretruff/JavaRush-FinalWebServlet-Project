@@ -25,7 +25,7 @@
             <input type="password" id="confirmPassword" name="confirmPassword" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
 
             <button type="submit" class="register-button">Register</button>
             <a href="${pageContext.request.contextPath}/" class="register-button">Go Back to Home Page</a>

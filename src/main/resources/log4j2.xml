@@ -66,6 +66,11 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
+        <File name="CreateQuestInstructionServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\create_quest_instruction.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+
     </Appenders>
 
     <Loggers>
@@ -128,6 +133,10 @@
 
         <Logger name="com.adventurequest.controller.servlet.AddQuestServlet" level="debug">
             <AppenderRef ref="AddQuestServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.CreateQuestInstructionServlet" level="debug">
+            <AppenderRef ref="CreateQuestInstructionServlet"/>
         </Logger>
 
         <Root level="debug">

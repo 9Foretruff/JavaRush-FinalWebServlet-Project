@@ -35,7 +35,6 @@ public class QuestDao implements Dao<String, QuestEntity> {
                INSERT INTO adventure_quest_schema.quest(name, description, quest_photo, difficulty, author)
                VALUES (? , ? , ? , ? , ?)
             """;
-
     private static final String FIND_QUEST_BY_NAME_AND_AUTHOR_SQL = """
                 SELECT
                 id,
@@ -46,6 +45,30 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 author
                 FROM adventure_quest_schema.quest
                 WHERE name LIKE ? AND author LIKE ?
+            """;
+    private static final String FIND_QUEST_BY_AUTHOR_SQL = """
+                SELECT
+                id,
+                name,
+                description,
+                quest_photo,
+                difficulty,
+                author,
+                status
+                FROM adventure_quest_schema.quest
+                WHERE author LIKE ?
+            """;
+    private static final String FIND_ALL_PUBLISHED_SQL = """
+                SELECT
+                id,
+                name,
+                description,
+                quest_photo,
+                difficulty,
+                author,
+                status
+                FROM adventure_quest_schema.quest
+                WHERE status = 'PUBLISHED'
             """;
 
     private QuestDao() {
@@ -58,8 +81,8 @@ public class QuestDao implements Dao<String, QuestEntity> {
     @Override
     public List<QuestEntity> findAll() {
         try (var connection = ConnectionManager.get();
-             var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
-            var resultSet = preparedStatement.executeQuery();
+             var getAllQuestsStmt = connection.prepareStatement(FIND_ALL_SQL)) {
+            var resultSet = getAllQuestsStmt.executeQuery();
             List<QuestEntity> quests = new ArrayList<>();
             while (resultSet.next()) {
                 quests.add(buildQuest(resultSet));
@@ -70,18 +93,35 @@ public class QuestDao implements Dao<String, QuestEntity> {
             throw new DatabaseAccessException("Error while finding all quests", e);
         }
     }
-    public List<QuestEntity> findAllPublished() {
+
+    public List<QuestEntity> findByAuthor(String author) {
         try (var connection = ConnectionManager.get();
-             var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
-            var resultSet = preparedStatement.executeQuery();
+             var getQuestsByAuthorStmt = connection.prepareStatement(FIND_QUEST_BY_AUTHOR_SQL)) {
+            getQuestsByAuthorStmt.setObject(1, author);
+            var resultSet = getQuestsByAuthorStmt.executeQuery();
             List<QuestEntity> quests = new ArrayList<>();
             while (resultSet.next()) {
                 quests.add(buildQuest(resultSet));
             }
             return quests;
         } catch (SQLException e) {
-            LOGGER.error("Error while finding all quests", e);
-            throw new DatabaseAccessException("Error while finding all quests", e);
+            LOGGER.error("Error while finding quests by author", e);
+            throw new DatabaseAccessException("Error while finding quests by author", e);
+        }
+    }
+
+    public List<QuestEntity> findAllPublished() {
+        try (var connection = ConnectionManager.get();
+             var publishedQuests = connection.prepareStatement(FIND_ALL_PUBLISHED_SQL)) {
+            var resultSet = publishedQuests.executeQuery();
+            List<QuestEntity> quests = new ArrayList<>();
+            while (resultSet.next()) {
+                quests.add(buildQuest(resultSet));
+            }
+            return quests;
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding published quests", e);
+            throw new DatabaseAccessException("Error while finding published quests", e);
         }
     }
 
@@ -111,7 +151,7 @@ public class QuestDao implements Dao<String, QuestEntity> {
             save.setObject(1, entity.getName());
             save.setObject(2, entity.getDescription());
             save.setObject(3, entity.getQuestPhoto());
-            save.setObject(4, entity.getDifficulty() , Types.OTHER);
+            save.setObject(4, entity.getDifficulty(), Types.OTHER);
             save.setObject(5, entity.getAuthor());
             var executed = save.executeUpdate();
             return executed > 0;
