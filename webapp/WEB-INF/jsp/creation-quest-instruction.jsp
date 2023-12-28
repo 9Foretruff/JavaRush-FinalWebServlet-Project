@@ -4,7 +4,7 @@
 
 <head>
     <title>Instruction how to create quest</title>
-    <link rel="stylesheet" type="text/css" href="css/creation-quest-menu.css">
+    <link rel="stylesheet" type="text/css" href="css/creation-quest-instruction.css">
 </head>
 
 <body>

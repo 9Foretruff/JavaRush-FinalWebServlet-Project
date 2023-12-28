@@ -37,7 +37,6 @@ public class AddQuestionServlet extends HttpServlet {
         req.getRequestDispatcher(JspHelper.get(ADD_QUESTION_JSP)).forward(req, resp);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {

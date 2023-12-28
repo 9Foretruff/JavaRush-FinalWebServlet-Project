@@ -1,4 +1,6 @@
 package com.adventurequest.model.entity;
 
-public class StatusEnum {
+public enum StatusEnum {
+    DRAFT,
+    PUBLISHED
 }

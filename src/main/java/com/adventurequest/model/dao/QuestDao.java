@@ -2,6 +2,7 @@ package com.adventurequest.model.dao;
 
 import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.entity.QuestEntity;
+import com.adventurequest.model.entity.StatusEnum;
 import com.adventurequest.model.exeption.DatabaseAccessException;
 import com.adventurequest.util.ConnectionManager;
 import org.slf4j.Logger;
@@ -23,7 +24,8 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 description,
                 quest_photo,
                 difficulty,
-                author
+                author,
+                status
                 FROM adventure_quest_schema.quest
             """;
     private static final String DELETE_SQL = """
@@ -42,7 +44,8 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 description,
                 quest_photo,
                 difficulty,
-                author
+                author,
+                status
                 FROM adventure_quest_schema.quest
                 WHERE name LIKE ? AND author LIKE ?
             """;
@@ -168,7 +171,8 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 resultSet.getString("description"),
                 resultSet.getBytes("quest_photo"),
                 DifficultyEnum.valueOf(resultSet.getObject("difficulty", String.class)),
-                resultSet.getString("author")
+                resultSet.getString("author"),
+                StatusEnum.valueOf(resultSet.getObject("status",String.class))
         );
     }
 }

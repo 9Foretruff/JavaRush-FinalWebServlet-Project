@@ -38,8 +38,8 @@
             <h1 class="neon-text">Welcome, <%=username%>!</h1>
             <br>
 
-
-            <div class="center-wrapper">
+            <div class="login-table">
+                <div class="center-wrapper">
                 <div class="round-image neon-border">
                     <img src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
                 </div>
@@ -94,7 +94,7 @@
             <form action="${pageContext.request.contextPath}/logout" method="get">
                 <input type="submit" value="Log Out">
             </form>
-
+            </div>
         </td>
     </tr>
 </table>

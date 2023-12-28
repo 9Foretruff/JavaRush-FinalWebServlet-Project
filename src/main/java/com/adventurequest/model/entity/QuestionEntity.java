@@ -1,5 +1,7 @@
 package com.adventurequest.model.entity;
 
+import org.apache.commons.codec.binary.Base64;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -82,6 +84,10 @@ public class QuestionEntity {
 
     public void setIsLastQuestion(Boolean lastQuestion) {
         isLastQuestion = lastQuestion;
+    }
+
+    public String getBase64Image() {
+        return Base64.encodeBase64String(backgroundQuestionPhoto);
     }
 
     @Override

@@ -28,9 +28,10 @@ public class CreateQuestServlet extends HttpServlet {
         var username = UserSessionHelper.getUsername(req.getSession());
         LOGGER.debug("User: {} get add-quest page", username);
         req.getSession().setAttribute("myQuests", questService.findQuestsByAuthor(username));
-        //req.getSession().setAttribute("myQuestions", questionService.findQuestionsByAuthor());
+        req.getSession().setAttribute("myQuestions", questionService.findQuestionsByAuthor(username));
         //req.getSession().setAttribute("myAnswers", answerService.findAnswersByAuthor());
         req.getRequestDispatcher(JspHelper.get(CREATE_QUEST_JSP)).forward(req, resp);
+        
     }
 
 }

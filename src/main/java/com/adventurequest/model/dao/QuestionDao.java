@@ -55,6 +55,18 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
                 FROM adventure_quest_schema.question
                 WHERE is_last_question = true AND quest_id = ?
             """;
+    private static final String FIND_QUESTION_BY_AUTHOR_SQL = """
+                SELECT
+                question.id,
+                question.number_of_question,
+                question.quest_id,
+                question.text,
+                question.background_question_photo,
+                question.is_last_question
+                FROM adventure_quest_schema.question
+                JOIN adventure_quest_schema.quest quest ON quest.id = question.quest_id
+                WHERE author LIKE ?
+            """;
 
     private QuestionDao() {
     }
@@ -76,6 +88,22 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
         } catch (SQLException e) {
             LOGGER.error("Error while finding all questions", e);
             throw new DatabaseAccessException("Error while finding all questions", e);
+        }
+    }
+
+    public List<QuestionEntity> findByAuthor(String author) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(FIND_QUESTION_BY_AUTHOR_SQL)) {
+            preparedStatement.setObject(1, author);
+            var resultSet = preparedStatement.executeQuery();
+            List<QuestionEntity> questions = new ArrayList<>();
+            while (resultSet.next()) {
+                questions.add(buildQuestion(resultSet));
+            }
+            return questions;
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding questions by author", e);
+            throw new DatabaseAccessException("Error while finding questions by author", e);
         }
     }
 
@@ -106,11 +134,16 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
                 return false;
             }
             LOGGER.debug("Checking that is no last questions already with quest ID {}", entity.getQuestId());
-            if (entity.getIsLastQuestion()) {
-                check.setObject(1, entity.getQuestId());
-                var findLast = check.executeQuery();
-                if (findLast.next()){
+
+            check.setObject(1, entity.getQuestId());
+            var findLast = check.executeQuery();
+            if (findLast.next()) {
+                var questionEntity = buildQuestion(findLast);
+                if (entity.getIsLastQuestion()) {
                     LOGGER.debug("Last question already exists - returning");
+                    return false;
+                } else if (entity.getNumberOfQuestion() > questionEntity.getNumberOfQuestion()) {
+                    LOGGER.debug("Question before last question - returning");
                     return false;
                 }
             }

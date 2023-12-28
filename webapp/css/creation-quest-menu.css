@@ -35,7 +35,7 @@ body {
 }
 
 .profile-link img:hover {
-    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
     transform: scale(1.1);
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
     transform: scale(1.2);
     border-color: #ffffff;
 }
@@ -166,7 +166,7 @@ button:hover {
 }
 
 .social-media-bar img:hover {
-    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
     transform: scale(1.1);
     border-color: #fff;
 }
@@ -190,8 +190,8 @@ button:hover {
 }
 
 .footer {
+    margin-top: 30px;
     padding: 20px;
-    margin-top: auto;
     background-color: rgba(68, 68, 68, 0.8);
     color: #fff;
     width: 100%;
@@ -235,9 +235,9 @@ h1::before {
 .neon-border {
     border: 2px solid #fff;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 1),
-    0 0 20px rgba(255, 255, 255, 1),
-    0 0 30px rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgb(111, 253, 230),
+    0 0 20px rgb(89, 117, 236),
+    0 0 30px rgb(10, 28, 252);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -285,7 +285,56 @@ h1::before {
 }
 
 .add-quest-button:hover {
-    background: linear-gradient(to right, rgb(1, 52, 255), rgb(61, 141, 232));
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
     transform: scale(1.2);
     border-color: #ffffff;
+}
+
+.quests-list {
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.neon-title {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+}
+
+.quest-card {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+.quest-img {
+    position: relative;
+}
+
+.quest-img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1),
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.quest-id {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
 }

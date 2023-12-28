@@ -38,4 +38,8 @@ public class QuestionService {
     public List<QuestionEntity> findAll() {
         return questionDao.findAll();
     }
+
+    public List<QuestionEntity> findQuestionsByAuthor(String author) {
+        return questionDao.findByAuthor(author);
+    }
 }

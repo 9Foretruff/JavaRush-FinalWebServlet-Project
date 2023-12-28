@@ -8,6 +8,10 @@ CREATE DATABASE epic_quest_db;
 
 CREATE SCHEMA adventure_quest_schema;
 
+CREATE INDEX idx_question_questId ON question(quest_id);
+
+CREATE INDEX idx_quest_author ON quest(author);
+
 CREATE TABLE "user"
 (
     id           BIGSERIAL PRIMARY KEY,
@@ -29,8 +33,8 @@ CREATE TABLE quest
     description TEXT         NOT NULL,
     quest_photo BYTEA        NOT NULL,
     difficulty  difficulty   NOT NULL,
-    author      VARCHAR(128) NOT NULL,
-    status quest_status NOT NULL DEFAULT 'DRAFT',
+    author      VARCHAR(50)  NOT NULL,
+    status      quest_status NOT NULL DEFAULT 'DRAFT',
 
     UNIQUE (name, author)
 );

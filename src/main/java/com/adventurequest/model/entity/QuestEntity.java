@@ -2,6 +2,7 @@ package com.adventurequest.model.entity;
 
 import java.util.Arrays;
 import java.util.Objects;
+import org.apache.commons.codec.binary.Base64;
 
 public class QuestEntity {
     private Long id;
@@ -101,6 +102,10 @@ public class QuestEntity {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public String getBase64Image() {
+        return Base64.encodeBase64String(questPhoto);
     }
 
     @Override
