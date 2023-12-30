@@ -13,7 +13,7 @@
 <body>
 <h1 class="neon-title">Add Question</h1>
 <div class="container">
-    <form action="${pageContext.request.contextPath}/addQuestion" method="post" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/add-question" method="post" enctype="multipart/form-data">
         <div class="login-table">
             <label for="numberOfQuestion">Number of question:</label>
             <input type="number" id="numberOfQuestion" name="numberOfQuestion" maxlength="35" required>
@@ -36,7 +36,7 @@
             </select>
 
             <button type="submit" class="register-button">Create</button>
-            <a href="${pageContext.request.contextPath}/createQuest" class="register-button">Go Back</a>
+            <a href="${pageContext.request.contextPath}/create-quest" class="register-button">Go Back</a>
         </div>
     </form>
 </div>

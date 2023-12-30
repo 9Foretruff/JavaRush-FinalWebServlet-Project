@@ -38,15 +38,15 @@
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="ChangeEmailServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_email_servlet.log">
+        <File name="ChangeUserEmailServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_user_email_servlet.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="ChangePasswordServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_password_servlet.log">
+        <File name="ChangeUserPasswordServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_user_password_servlet.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
-        <File name="ChangePhotoServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_photo_servlet.log">
+        <File name="ChangeUserPhotoServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_user_photo_servlet.log">
             <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
         </File>
 
@@ -107,16 +107,16 @@
             <AppenderRef ref="LogOutServlet"/>
         </Logger>
 
-        <Logger name="com.adventurequest.controller.servlet.ChangeEmailServlet" level="debug">
-            <AppenderRef ref="ChangeEmailServlet"/>
+        <Logger name="com.adventurequest.controller.servlet.ChangeUserEmailServlet" level="debug">
+            <AppenderRef ref="ChangeUserEmailServlet"/>
         </Logger>
 
-        <Logger name="com.adventurequest.controller.servlet.ChangePasswordServlet" level="debug">
-            <AppenderRef ref="ChangePasswordServlet"/>
+        <Logger name="com.adventurequest.controller.servlet.ChangeUserPasswordServlet" level="debug">
+            <AppenderRef ref="ChangeUserPasswordServlet"/>
         </Logger>
 
-        <Logger name="com.adventurequest.controller.servlet.ChangePhotoServlet" level="debug">
-            <AppenderRef ref="ChangePhotoServlet"/>
+        <Logger name="com.adventurequest.controller.servlet.ChangeUserPhotoServlet" level="debug">
+            <AppenderRef ref="ChangeUserPhotoServlet"/>
         </Logger>
 
         <Logger name="com.adventurequest.controller.servlet.CreateQuestServlet" level="debug">

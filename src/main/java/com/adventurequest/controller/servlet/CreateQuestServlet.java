@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@WebServlet("/createQuest")
+@WebServlet("/create-quest")
 public class CreateQuestServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(CreateQuestServlet.class);
     private final QuestService questService = QuestService.getInstance();
@@ -29,9 +29,8 @@ public class CreateQuestServlet extends HttpServlet {
         LOGGER.debug("User: {} get add-quest page", username);
         req.getSession().setAttribute("myQuests", questService.findQuestsByAuthor(username));
         req.getSession().setAttribute("myQuestions", questionService.findQuestionsByAuthor(username));
-        //req.getSession().setAttribute("myAnswers", answerService.findAnswersByAuthor());
+        req.getSession().setAttribute("myAnswers", answerService.findAnswersByAuthor(username));
         req.getRequestDispatcher(JspHelper.get(CREATE_QUEST_JSP)).forward(req, resp);
-        
     }
 
 }

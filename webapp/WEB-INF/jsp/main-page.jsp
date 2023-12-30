@@ -22,7 +22,7 @@
     </div>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/createQuest" class="add-quest-button">Create quest</a>
+        <a href="${pageContext.request.contextPath}/create-quest" class="add-quest-button">Create quest</a>
     </div>
 
     <div class="quests-list">

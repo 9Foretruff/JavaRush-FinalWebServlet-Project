@@ -338,3 +338,25 @@ h1::before {
     line-height: 30px;
     font-weight: bold;
 }
+
+.quest-id2 {
+    position: absolute;
+    top: -35px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(to right, rgba(75, 157, 255, 0.8), rgba(83, 236, 236, 0.8));
+    color: #ffffff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+}
+.question-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+

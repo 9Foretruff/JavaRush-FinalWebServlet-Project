@@ -1,20 +1,20 @@
-[32m2023-12-24 01:36:42.988 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[34m2023-12-24 01:36:43.005 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - Attempting to change photo for user lol 
-[m[32m2023-12-24 01:36:43.059 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Photo changed successfully for user: lol
-[m[32m2023-12-24 01:36:54.043 [http-nio-8080-exec-8] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[34m2023-12-24 01:36:54.047 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - Attempting to change photo for user lol 
-[m[32m2023-12-24 01:36:54.087 [http-nio-8080-exec-8] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Photo changed successfully for user: lol
-[m[32m2023-12-24 01:37:01.708 [http-nio-8080-exec-9] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[34m2023-12-24 01:37:01.712 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - Attempting to change photo for user lol 
-[m[32m2023-12-24 01:37:01.760 [http-nio-8080-exec-9] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Photo changed successfully for user: lol
-[m[32m2023-12-24 01:37:27.291 [http-nio-8080-exec-2] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[31m2023-12-24 01:37:27.297 [http-nio-8080-exec-2] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:36:42.988 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[34m2023-12-24 01:36:43.005 [http-nio-8080-exec-6] DEBUG com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Attempting to change photo for user lol
+[m[32m2023-12-24 01:36:43.059 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Photo changed successfully for user: lol
+[m[32m2023-12-24 01:36:54.043 [http-nio-8080-exec-8] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[34m2023-12-24 01:36:54.047 [http-nio-8080-exec-8] DEBUG com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Attempting to change photo for user lol
+[m[32m2023-12-24 01:36:54.087 [http-nio-8080-exec-8] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Photo changed successfully for user: lol
+[m[32m2023-12-24 01:37:01.708 [http-nio-8080-exec-9] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[34m2023-12-24 01:37:01.712 [http-nio-8080-exec-9] DEBUG com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Attempting to change photo for user lol
+[m[32m2023-12-24 01:37:01.760 [http-nio-8080-exec-9] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Photo changed successfully for user: lol
+[m[32m2023-12-24 01:37:27.291 [http-nio-8080-exec-2] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[31m2023-12-24 01:37:27.297 [http-nio-8080-exec-2] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -51,14 +51,14 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 01:37:28.395 [http-nio-8080-exec-3] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[31m2023-12-24 01:37:28.396 [http-nio-8080-exec-3] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:37:28.395 [http-nio-8080-exec-3] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[31m2023-12-24 01:37:28.396 [http-nio-8080-exec-3] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -95,14 +95,14 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 01:37:29.300 [http-nio-8080-exec-4] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[31m2023-12-24 01:37:29.301 [http-nio-8080-exec-4] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:37:29.300 [http-nio-8080-exec-4] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[31m2023-12-24 01:37:29.301 [http-nio-8080-exec-4] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -139,14 +139,14 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 01:38:23.892 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[31m2023-12-24 01:38:23.893 [http-nio-8080-exec-5] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:38:23.892 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[31m2023-12-24 01:38:23.893 [http-nio-8080-exec-5] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -183,14 +183,14 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 01:38:24.901 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[31m2023-12-24 01:38:24.902 [http-nio-8080-exec-6] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:38:24.901 [http-nio-8080-exec-6] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[31m2023-12-24 01:38:24.902 [http-nio-8080-exec-6] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -227,14 +227,14 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 01:38:25.914 [http-nio-8080-exec-7] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: lol
-[m[31m2023-12-24 01:38:25.915 [http-nio-8080-exec-7] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:38:25.914 [http-nio-8080-exec-7] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: lol
+[m[31m2023-12-24 01:38:25.915 [http-nio-8080-exec-7] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -271,14 +271,14 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 01:39:14.903 [http-nio-8080-exec-8] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: maks
-[m[31m2023-12-24 01:40:33.706 [http-nio-8080-exec-8] ERROR com.adventurequest.controller.servlet.ChangePhotoServlet - Exception while changing user photo
+[32m2023-12-24 01:39:14.903 [http-nio-8080-exec-8] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: maks
+[m[31m2023-12-24 01:40:33.706 [http-nio-8080-exec-8] ERROR com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Exception while changing user photo
 [m java.lang.IllegalStateException: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException: the request was rejected because its size (2689310995) exceeds the configured maximum (20971520)
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2825) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getParts(Request.java:2685) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.Request.getPart(Request.java:2848) ~[catalina.jar:10.1.15]
 	at org.apache.catalina.connector.RequestFacade.getPart(RequestFacade.java:780) ~[catalina.jar:10.1.15]
-	at com.adventurequest.controller.servlet.ChangePhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
+	at com.adventurequest.controller.servlet.ChangeUserPhotoServlet.doPost(ChangePhotoServlet.java:42) [classes/:?]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) [servlet-api.jar:6.0]
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) [servlet-api.jar:6.0]
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205) [catalina.jar:10.1.15]
@@ -315,10 +315,13 @@ Caused by: org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededExceptio
 	at org.apache.tomcat.util.http.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:276) ~[tomcat-coyote.jar:10.1.15]
 	at org.apache.catalina.connector.Request.parseParts(Request.java:2784) ~[catalina.jar:10.1.15]
 	... 31 more
-[32m2023-12-24 21:41:04.910 [http-nio-8080-exec-19] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: maks
-[m[34m2023-12-24 21:41:04.927 [http-nio-8080-exec-19] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - Attempting to change photo for user maks 
-[m[32m2023-12-24 21:41:04.982 [http-nio-8080-exec-19] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Photo changed successfully for user: maks
-[m[32m2023-12-27 21:30:58.060 [http-nio-8080-exec-359] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Change photo data received from user: maks
-[m[34m2023-12-27 21:30:58.107 [http-nio-8080-exec-359] DEBUG com.adventurequest.controller.servlet.ChangePhotoServlet - Attempting to change photo for user maks 
-[m[32m2023-12-27 21:30:58.282 [http-nio-8080-exec-359] INFO  com.adventurequest.controller.servlet.ChangePhotoServlet - Photo changed successfully for user: maks
+[32m2023-12-24 21:41:04.910 [http-nio-8080-exec-19] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: maks
+[m[34m2023-12-24 21:41:04.927 [http-nio-8080-exec-19] DEBUG com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Attempting to change photo for user maks
+[m[32m2023-12-24 21:41:04.982 [http-nio-8080-exec-19] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Photo changed successfully for user: maks
+[m[32m2023-12-27 21:30:58.060 [http-nio-8080-exec-359] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: maks
+[m[34m2023-12-27 21:30:58.107 [http-nio-8080-exec-359] DEBUG com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Attempting to change photo for user maks
+[m[32m2023-12-27 21:30:58.282 [http-nio-8080-exec-359] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Photo changed successfully for user: maks
+[m[32m2023-12-29 01:27:29.281 [http-nio-8080-exec-3] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Change photo data received from user: maks
+[m[34m2023-12-29 01:27:29.322 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Attempting to change photo for user maks
+[m[32m2023-12-29 01:27:29.515 [http-nio-8080-exec-3] INFO  com.adventurequest.controller.servlet.ChangeUserPhotoServlet - Photo changed successfully for user: maks
 [m

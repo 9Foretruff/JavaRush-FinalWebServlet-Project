@@ -11,7 +11,7 @@
 <div class="container">
     <div class="login-table">
         <p>This answer is already exist or question with this id not found. Please try to create another one.</p>
-        <a href="${pageContext.request.contextPath}/addAnswer" class="register-button">Go back</a>
+        <a href="${pageContext.request.contextPath}/add-answer" class="register-button">Go back</a>
         <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to menu</a>
     </div>
 </div>

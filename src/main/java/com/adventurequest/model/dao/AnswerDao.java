@@ -1,6 +1,7 @@
 package com.adventurequest.model.dao;
 
 import com.adventurequest.model.entity.AnswerEntity;
+import com.adventurequest.model.entity.QuestEntity;
 import com.adventurequest.model.exeption.DatabaseAccessException;
 import com.adventurequest.util.ConnectionManager;
 import org.slf4j.Logger;
@@ -51,6 +52,17 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
                 FROM adventure_quest_schema.question
                 WHERE id = ?
             """;
+    private static final String FIND_ANSWERS_BY_AUTHOR_SQL = """
+                SELECT
+                author.id,
+                author.question_id,
+                author.text,
+                author.is_correct
+                FROM adventure_quest_schema.quest
+                JOIN adventure_quest_schema.question question on quest.id = question.quest_id
+                JOIN adventure_quest_schema.answer author on question.id = author.question_id
+                WHERE author LIKE ?
+            """;
 
     private AnswerDao() {
     }
@@ -72,6 +84,22 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
         } catch (SQLException e) {
             LOGGER.error("Error while finding all answers", e);
             throw new DatabaseAccessException("Error while finding all answers", e);
+        }
+    }
+
+    public List<AnswerEntity> findByAuthor(String author) {
+        try (var connection = ConnectionManager.get();
+             var getAnswersByAuthorStmt = connection.prepareStatement(FIND_ANSWERS_BY_AUTHOR_SQL)) {
+            getAnswersByAuthorStmt.setObject(1, author);
+            var resultSet = getAnswersByAuthorStmt.executeQuery();
+            List<AnswerEntity> answers = new ArrayList<>();
+            while (resultSet.next()) {
+                answers.add(buildAnswer(resultSet));
+            }
+            return answers;
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding answers by author", e);
+            throw new DatabaseAccessException("Error while finding answers by author", e);
         }
     }
 

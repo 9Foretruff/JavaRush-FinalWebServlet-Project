@@ -1,16 +1,8 @@
 DROP DATABASE IF EXISTS epic_quest_db;
 
-DROP TABLE quest;
-DROP TABLE question;
-DROP TABLE answer;
-
 CREATE DATABASE epic_quest_db;
 
 CREATE SCHEMA adventure_quest_schema;
-
-CREATE INDEX idx_question_questId ON question(quest_id);
-
-CREATE INDEX idx_quest_author ON quest(author);
 
 CREATE TABLE "user"
 (
@@ -35,7 +27,6 @@ CREATE TABLE quest
     difficulty  difficulty   NOT NULL,
     author      VARCHAR(50)  NOT NULL,
     status      quest_status NOT NULL DEFAULT 'DRAFT',
-
     UNIQUE (name, author)
 );
 
@@ -49,6 +40,10 @@ CREATE TABLE question
     is_last_question          BOOLEAN                                        NOT NULL,
     UNIQUE (number_of_question, quest_id)
 );
+
+CREATE INDEX idx_question_questId ON question (quest_id);
+
+CREATE INDEX idx_quest_author ON quest (author);
 
 CREATE TABLE answer
 (

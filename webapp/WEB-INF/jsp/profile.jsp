@@ -59,7 +59,7 @@
 
             <br>
             <h3>Change Password</h3>
-            <form action="changePassword" method="post">
+            <form action="change-user-password" method="post">
                 <label for="newPassword">New Password:</label>
                 <input type="password" id="newPassword" name="newPassword" required>
                 <input type="submit" value="Change Password">
@@ -68,7 +68,7 @@
             <br>
 
             <h3>Change Email</h3>
-            <form action="changeEmail" method="post">
+            <form action="change-user-email" method="post">
                 <label for="newEmail">New Email:</label>
                 <input type="email" id="newEmail" name="newEmail" required>
                 <input type="submit" value="Change Email">
@@ -78,7 +78,7 @@
             <br>
 
             <h3>Change Photo</h3>
-            <form action="uploadPhoto" method="post" enctype="multipart/form-data">
+            <form action="change-user-photo" method="post" enctype="multipart/form-data">
                 <label for="newPhoto">Upload Photo:</label>
                 <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required maxlength="10485760">
                 <input type="submit" value="Upload Photo">

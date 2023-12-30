@@ -11,7 +11,7 @@
 <div class="container">
     <div class="login-table">
         <p>Question successfully added</p>
-        <a href="${pageContext.request.contextPath}/createQuest" class="register-button">Go to creation menu</a>
+        <a href="${pageContext.request.contextPath}/create-quest" class="register-button">Go to creation menu</a>
         <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to menu</a>
     </div>
 </div>

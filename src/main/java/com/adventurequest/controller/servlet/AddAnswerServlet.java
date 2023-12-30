@@ -4,7 +4,6 @@ import com.adventurequest.model.service.AnswerService;
 import com.adventurequest.util.JspHelper;
 import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -14,12 +13,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@WebServlet("/addAnswer")
-@MultipartConfig(
-        fileSizeThreshold = 1024 * 1024 * 3,
-        maxFileSize = 1024 * 1024 * 10,
-        maxRequestSize = 1024 * 1024 * 20
-)
+@WebServlet("/add-answer")
 public class AddAnswerServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(AddAnswerServlet.class);
 

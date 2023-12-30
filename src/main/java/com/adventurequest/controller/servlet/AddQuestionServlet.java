@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@WebServlet("/addQuestion")
+@WebServlet("/add-question")
 @MultipartConfig(
         fileSizeThreshold = 1024 * 1024 * 3,
         maxFileSize = 1024 * 1024 * 10,

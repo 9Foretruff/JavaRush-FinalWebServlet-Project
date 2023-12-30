@@ -37,4 +37,7 @@ public class AnswerService {
         return answerDao.findAll();
     }
 
+    public List<AnswerEntity> findAnswersByAuthor(String author) {
+        return answerDao.findByAuthor(author);
+    }
 }

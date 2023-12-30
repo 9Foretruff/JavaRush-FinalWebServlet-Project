@@ -16,11 +16,11 @@
     <p>Firstly you need create quest on this page</p>
 
     <div class="login-table">
-            <a href="${pageContext.request.contextPath}/createQuest" class="register-button">Create here</a>
+            <a href="${pageContext.request.contextPath}/create-quest" class="register-button">Create here</a>
     </div>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/createQuest" class="add-quest-button">Create quest</a>
+        <a href="${pageContext.request.contextPath}/create-quest" class="add-quest-button">Create quest</a>
     </div>
 
 </div>

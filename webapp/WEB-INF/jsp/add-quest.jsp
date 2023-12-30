@@ -13,7 +13,7 @@
 <body>
 <h1 class="neon-title">Add Quest</h1>
 <div class="container">
-    <form action="${pageContext.request.contextPath}/addQuest" method="post" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/add-quest" method="post" enctype="multipart/form-data">
         <div class="login-table">
             <label for="questName">Name of quest (max length is 35):</label>
             <input type="text" id="questName" name="questName" maxlength="35" required>
@@ -34,7 +34,7 @@
             </select>
 
             <button type="submit" class="register-button">Create</button>
-            <a href="${pageContext.request.contextPath}/createQuest" class="register-button">Go Back</a>
+            <a href="${pageContext.request.contextPath}/create-quest" class="register-button">Go Back</a>
         </div>
     </form>
 </div>

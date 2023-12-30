@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-@WebServlet("/createQuestInstruction")
+@WebServlet("/create-quest-instruction")
 public class CreateQuestInstructionServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProfileServlet.class);
     private static final String CREATE_QUEST_INSTRUCTION_JSP = "creation-quest-instruction";

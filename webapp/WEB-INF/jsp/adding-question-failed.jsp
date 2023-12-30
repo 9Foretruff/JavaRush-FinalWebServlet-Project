@@ -11,7 +11,7 @@
 <div class="container">
     <div class="login-table">
         <p>This question is already exist or last question is already exist. Please try to create another one.</p>
-        <a href="${pageContext.request.contextPath}/addQuestion" class="register-button">Go back</a>
+        <a href="${pageContext.request.contextPath}/add-question" class="register-button">Go back</a>
         <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to menu</a>
     </div>
 </div>
