@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+
+        <Console name="LogToConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </Console>
+
+        <File name="LoginServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\login.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="RegistrationServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\registration.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="UserService" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\user_service.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="UserDao" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\user_dao.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="QuestMenuServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\quest_menu_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="ProfileServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\profile_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="AuthorizationFilter" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\authorization_Filter.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="LogOutServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\log_out_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="ChangeUserEmailServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_user_email_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="ChangeUserPasswordServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_user_password_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="ChangeUserPhotoServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\change_user_photo_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="CreateQuestServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\create_quest_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="AddAnswerServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\add_answer_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="AddQuestionServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\add_question_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="AddQuestServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\add_quest_servlet.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+        <File name="CreateQuestInstructionServlet" fileName="C:\Users\mi200\IdeaProjects\JavaRush-FinalWebServlet-Project\logs\create_quest_instruction.log">
+            <PatternLayout pattern="%highlight{%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n}{FATAL=red, ERROR=red, WARN=yellow, INFO=green, DEBUG=blue, TRACE=blue}"/>
+        </File>
+
+
+    </Appenders>
+
+    <Loggers>
+
+        <Logger name="com.adventurequest.controller.servlet.RegistrationServlet" level="debug">
+            <AppenderRef ref="RegistrationServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.LoginServlet" level="debug">
+            <AppenderRef ref="LoginServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.model.service.UserService" level="debug">
+            <AppenderRef ref="UserService"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.model.dao.UserDao" level="debug">
+            <AppenderRef ref="UserDao"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.QuestMenuServlet" level="debug">
+            <AppenderRef ref="QuestMenuServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.ProfileServlet" level="debug">
+            <AppenderRef ref="ProfileServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.filter.AuthorizationFilter" level="debug">
+            <AppenderRef ref="AuthorizationFilter"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.LogoutServlet" level="debug">
+            <AppenderRef ref="LogOutServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.ChangeUserEmailServlet" level="debug">
+            <AppenderRef ref="ChangeUserEmailServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.ChangeUserPasswordServlet" level="debug">
+            <AppenderRef ref="ChangeUserPasswordServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.ChangeUserPhotoServlet" level="debug">
+            <AppenderRef ref="ChangeUserPhotoServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.CreateQuestServlet" level="debug">
+            <AppenderRef ref="CreateQuestServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.AddAnswerServlet" level="debug">
+            <AppenderRef ref="AddAnswerServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.AddQuestionServlet" level="debug">
+            <AppenderRef ref="AddQuestionServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.AddQuestServlet" level="debug">
+            <AppenderRef ref="AddQuestServlet"/>
+        </Logger>
+
+        <Logger name="com.adventurequest.controller.servlet.CreateQuestInstructionServlet" level="debug">
+            <AppenderRef ref="CreateQuestInstructionServlet"/>
+        </Logger>
+
+        <Root level="debug">
+            <AppenderRef ref="LogToConsole"/>
+        </Root>
+
+    </Loggers>
+</Configuration>
