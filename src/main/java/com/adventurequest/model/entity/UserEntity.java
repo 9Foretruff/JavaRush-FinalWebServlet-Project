@@ -1,5 +1,7 @@
 package com.adventurequest.model.entity;
 
+import org.apache.commons.codec.binary.Base64;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -82,6 +84,9 @@ public class UserEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getBase64Image() {
+        return Base64.encodeBase64String(photo);
     }
 
     @Override

@@ -12,22 +12,21 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-
-@WebServlet("/quest-info")
-public class QuestInfoServlet extends HttpServlet {
-    private static final Logger LOGGER = LoggerFactory.getLogger(QuestInfoServlet.class);
+@WebServlet("/preview-quest")
+public class PreviewQuestServlet extends HttpServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PreviewQuestServlet.class);
     private final QuestService questService = QuestService.getInstance();
-    private static final String QUEST_INFO_PAGE_JSP = "quest-info";
+    private static final String PREVIEW_QUEST_JSP = "preview-quest";
     private static final String QUEST_NOT_FOUND_JSP = "quest-not-found";
     private static final String ERROR_PAGE_JSP = "error-page";
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var username = UserSessionHelper.getUsername(req.getSession());
+        var questId = req.getParameter("questId");
         try {
-            LOGGER.debug("User: {} get the quest info page", username);
+            LOGGER.debug("User: {} get the preview quest page with id: {}", username , questId);
 
-            var questId = req.getParameter("questId");
             var quest = questService.findQuestById(Long.valueOf(questId));
 
             if (quest.isEmpty()) {
@@ -37,13 +36,13 @@ public class QuestInfoServlet extends HttpServlet {
             }
 
             LOGGER.info("Found quest with ID {}, setting it as session attribute", questId);
-            req.getSession().setAttribute("quest", quest.get());
+            req.getSession().setAttribute("previewQuest", quest.get());
 
-            LOGGER.info("Forwarding user {} to quest info page", username);
-            req.getRequestDispatcher(JspHelper.get(QUEST_INFO_PAGE_JSP)).forward(req, resp);
+            LOGGER.info("Forwarding user {} to preview quest page", username);
+            req.getRequestDispatcher(JspHelper.get(PREVIEW_QUEST_JSP)).forward(req, resp);
 
         } catch (Exception exception) {
-            LOGGER.error("Error while getting quest info for user {}", username, exception);
+            LOGGER.error("Error while getting quest preview page by user: {}", username, exception);
             req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }

@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class AnswerDao implements Dao<String, AnswerEntity> {
     private static final AnswerDao INSTANCE = new AnswerDao();
@@ -63,6 +64,15 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
                 JOIN adventure_quest_schema.answer author on question.id = author.question_id
                 WHERE author LIKE ?
             """;
+    private static final String FIND_ANSWER_BY_ID_SQL = """
+                SELECT
+                id,
+                question_id,
+                text,
+                is_correct
+                FROM adventure_quest_schema.answer
+                WHERE id = ?
+            """;
 
     private AnswerDao() {
     }
@@ -74,8 +84,8 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
     @Override
     public List<AnswerEntity> findAll() {
         try (var connection = ConnectionManager.get();
-             var preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
-            var resultSet = preparedStatement.executeQuery();
+             var getAllAnswersStmt = connection.prepareStatement(FIND_ALL_SQL)) {
+            var resultSet = getAllAnswersStmt.executeQuery();
             List<AnswerEntity> answers = new ArrayList<>();
             while (resultSet.next()) {
                 answers.add(buildAnswer(resultSet));
@@ -103,12 +113,31 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
         }
     }
 
+    public Optional<AnswerEntity> findById(Long id) {
+        try (var connection = ConnectionManager.get();
+             var getAnswerByIdStmt = connection.prepareStatement(FIND_ANSWER_BY_ID_SQL)) {
+            getAnswerByIdStmt.setObject(1, id);
+            var resultSet = getAnswerByIdStmt.executeQuery();
+
+            if (resultSet.next()) {
+                LOGGER.info("Found answer by id: {}", id);
+                return Optional.of(buildAnswer(resultSet));
+            }
+
+            return Optional.empty();
+
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding answer by id", e);
+            throw new DatabaseAccessException("Error while finding answer by id", e);
+        }
+    }
+
     @Override
     public boolean delete(String id) {
         try (var connection = ConnectionManager.get();
-             var preparedStatement = connection.prepareStatement(DELETE_SQL)) {
-            preparedStatement.setObject(1, id);
-            return preparedStatement.executeUpdate() > 0;
+             var deleteAnswerByIdStmt = connection.prepareStatement(DELETE_SQL)) {
+            deleteAnswerByIdStmt.setObject(1, id);
+            return deleteAnswerByIdStmt.executeUpdate() > 0;
         } catch (SQLException e) {
             LOGGER.error("Failed to delete answer with id = {} due to database error", id, e);
             throw new DatabaseAccessException("Error while deleting answer", e);
@@ -121,10 +150,10 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
              var save = connection.prepareStatement(SAVE_SQL);
              var findAnswer = connection.prepareStatement(FIND_ANSWER_BY_QUESTION_ID_AND_TEXT_SQL);
              var findQuestion = connection.prepareStatement(FIND_QUESTION_BY_ID)) {
-            findQuestion.setObject(1,entity.getQuestionId());
+            findQuestion.setObject(1, entity.getQuestionId());
             var question = findQuestion.executeQuery();
             LOGGER.debug("Checking if question with id : {} exists", entity.getQuestionId());
-            if (!question.next()){
+            if (!question.next()) {
                 LOGGER.debug("Question not exists - returning");
                 return false;
             }

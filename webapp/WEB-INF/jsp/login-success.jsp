@@ -14,7 +14,9 @@
 <div class="container">
     <div class="login-table">
         <p>Login success.</p>
-        <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to main page</a>
+        <form action="${pageContext.request.contextPath}/menu" method="get" class="neon-table">
+            <button type="submit" class="add-quest-button">Go to main page</button>
+        </form>
     </div>
 </div>
 

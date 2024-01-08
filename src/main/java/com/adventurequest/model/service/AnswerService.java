@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public class AnswerService {
     private static final AnswerService INSTANCE = new AnswerService();
@@ -21,7 +22,7 @@ public class AnswerService {
         return INSTANCE;
     }
 
-    public boolean addAnswer(Integer questionId, String text,Boolean isCorrect) {
+    public boolean addAnswer(Integer questionId, String text, Boolean isCorrect) {
         AnswerEntity answer = new AnswerEntity(null, questionId, text, isCorrect);
         var save = answerDao.save(answer);
         if (save) {
@@ -39,5 +40,9 @@ public class AnswerService {
 
     public List<AnswerEntity> findAnswersByAuthor(String author) {
         return answerDao.findByAuthor(author);
+    }
+
+    public Optional<AnswerEntity> findAnswerById(Long id) {
+        return answerDao.findById(id);
     }
 }

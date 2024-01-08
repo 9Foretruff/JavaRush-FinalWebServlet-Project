@@ -1,12 +1,12 @@
 package com.adventurequest.model.service;
 
 import com.adventurequest.model.dao.QuestionDao;
-import com.adventurequest.model.entity.QuestEntity;
 import com.adventurequest.model.entity.QuestionEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public class QuestionService {
@@ -42,4 +42,9 @@ public class QuestionService {
     public List<QuestionEntity> findQuestionsByAuthor(String author) {
         return questionDao.findByAuthor(author);
     }
+
+    public Optional<QuestionEntity> findQuestionById(Long id){
+        return questionDao.findById(id);
+    }
+
 }

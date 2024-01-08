@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class QuestionDao implements Dao<String, QuestionEntity> {
     private static final QuestionDao INSTANCE = new QuestionDao();
@@ -67,6 +68,17 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
                 JOIN adventure_quest_schema.quest quest ON quest.id = question.quest_id
                 WHERE author LIKE ?
             """;
+    private static final String FIND_QUESTION_BY_ID_SQL = """
+                SELECT
+                id,
+                number_of_question,
+                quest_id,
+                text,
+                background_question_photo,
+                is_last_question
+                FROM adventure_quest_schema.question
+                WHERE id = ?
+            """;
 
     private QuestionDao() {
     }
@@ -101,6 +113,25 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
                 questions.add(buildQuestion(resultSet));
             }
             return questions;
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding questions by author", e);
+            throw new DatabaseAccessException("Error while finding questions by author", e);
+        }
+    }
+
+    public Optional<QuestionEntity> findById(Long id) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(FIND_QUESTION_BY_ID_SQL)) {
+            preparedStatement.setObject(1, id);
+            var resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                LOGGER.info("Found question with id :{}", id);
+                return Optional.of(buildQuestion(resultSet));
+            }
+
+            return Optional.empty();
+
         } catch (SQLException e) {
             LOGGER.error("Error while finding questions by author", e);
             throw new DatabaseAccessException("Error while finding questions by author", e);

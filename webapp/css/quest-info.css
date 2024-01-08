@@ -21,7 +21,7 @@ h1, p, label, button, .footer {
 h1 {
     transform: scale(1.2);
     background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
-    border-color: rgba(255, 255, 255,0.6); /* То же самое для цвета границы */
+    border-color: rgba(255, 255, 255, 0.6); /* То же самое для цвета границы */
 
     padding: 15px;
     width: 25%;
@@ -372,9 +372,46 @@ button:hover {
     pointer-events: none;
 }
 
+.question-text {
+    text-align: center;
+    padding: 0;
+    max-width: 250px;
+    display: inline-block;
+}
+
+.question-text p {
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
 .form-container {
     width: 310px;
     border: 1px solid #fff;
     border-radius: 10px;
     padding: 20px;
+}
+
+textarea {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #555;
+    border-radius: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    text-align: center;
+    font-size: 18px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+    margin: 8px 0;
 }

@@ -26,7 +26,6 @@ public class LogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-
             var remoteAddr = req.getRemoteAddr();
             var user = UserSessionHelper.getUser(req.getSession());
             LOGGER.info("Logout request received from IP address: {}", remoteAddr);

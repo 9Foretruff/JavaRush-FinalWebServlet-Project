@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public class QuestService {
     private static final QuestService INSTANCE = new QuestService();
@@ -22,8 +23,8 @@ public class QuestService {
         return INSTANCE;
     }
 
-    public boolean addQuest(String name, String description, byte[] quest_photo, DifficultyEnum difficulty , String author) {
-        QuestEntity quest = new QuestEntity(null,name,description,quest_photo,difficulty,author);
+    public boolean addQuest(String name, String description, byte[] quest_photo, DifficultyEnum difficulty, String author) {
+        QuestEntity quest = new QuestEntity(null, name, description, quest_photo, difficulty, author);
         var save = questDao.save(quest);
         if (save) {
             LOGGER.info("Quest with name {} added successfully.", name);
@@ -42,7 +43,15 @@ public class QuestService {
         return questDao.findByAuthor(author);
     }
 
-    public Object findPublishedQuests() {
-        return questDao.findAllPublished();
+    public List<QuestEntity> findPublishedQuestsWithPage(Long page) {
+        Long offset = 0L;
+        if (page > 1) {
+            offset = page * 10 - 10;
+        }
+        return questDao.findPublishedWithOffset(offset);
+    }
+
+    public Optional<QuestEntity> findQuestById(Long id) {
+        return questDao.findById(id);
     }
 }

@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class QuestDao implements Dao<String, QuestEntity> {
     private static final QuestDao INSTANCE = new QuestDao();
@@ -61,7 +62,7 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 FROM adventure_quest_schema.quest
                 WHERE author LIKE ?
             """;
-    private static final String FIND_ALL_PUBLISHED_SQL = """
+    private static final String FIND_PUBLISHED_QUEST_WITH_PAGE_SQL = """
                 SELECT
                 id,
                 name,
@@ -72,6 +73,20 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 status
                 FROM adventure_quest_schema.quest
                 WHERE status = 'PUBLISHED'
+                OFFSET ?
+                LIMIT 10
+            """;
+    private static final String FIND_BY_ID_SQL = """
+                SELECT
+                id,
+                name,
+                description,
+                quest_photo,
+                difficulty,
+                author,
+                status
+                FROM adventure_quest_schema.quest
+                WHERE id = ?
             """;
 
     private QuestDao() {
@@ -97,6 +112,25 @@ public class QuestDao implements Dao<String, QuestEntity> {
         }
     }
 
+    public Optional<QuestEntity> findById(Long id) {
+        try (var connection = ConnectionManager.get();
+             var getQuestByIdStmt = connection.prepareStatement(FIND_BY_ID_SQL)) {
+            getQuestByIdStmt.setObject(1, id);
+            var resultSet = getQuestByIdStmt.executeQuery();
+
+            if (resultSet.next()) {
+                LOGGER.info("Found quest by id: {}", id);
+                return Optional.of(buildQuest(resultSet));
+            }
+
+            return Optional.empty();
+
+        } catch (SQLException e) {
+            LOGGER.error("Error while finding quest by id: {} ", id, e);
+            throw new DatabaseAccessException("Error while finding quest by id", e);
+        }
+    }
+
     public List<QuestEntity> findByAuthor(String author) {
         try (var connection = ConnectionManager.get();
              var getQuestsByAuthorStmt = connection.prepareStatement(FIND_QUEST_BY_AUTHOR_SQL)) {
@@ -113,9 +147,10 @@ public class QuestDao implements Dao<String, QuestEntity> {
         }
     }
 
-    public List<QuestEntity> findAllPublished() {
+    public List<QuestEntity> findPublishedWithOffset(Long offset) {
         try (var connection = ConnectionManager.get();
-             var publishedQuests = connection.prepareStatement(FIND_ALL_PUBLISHED_SQL)) {
+             var publishedQuests = connection.prepareStatement(FIND_PUBLISHED_QUEST_WITH_PAGE_SQL)) {
+            publishedQuests.setObject(1,offset);
             var resultSet = publishedQuests.executeQuery();
             List<QuestEntity> quests = new ArrayList<>();
             while (resultSet.next()) {
@@ -172,7 +207,7 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 resultSet.getBytes("quest_photo"),
                 DifficultyEnum.valueOf(resultSet.getObject("difficulty", String.class)),
                 resultSet.getString("author"),
-                StatusEnum.valueOf(resultSet.getObject("status",String.class))
+                StatusEnum.valueOf(resultSet.getObject("status", String.class))
         );
     }
 }

@@ -1,6 +1,3 @@
-<%@ page import="com.adventurequest.model.service.UserService" %>
-<%@ page import="com.adventurequest.model.entity.UserEntity" %>
-<%@ page import="java.util.Base64" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -12,19 +9,6 @@
     <link rel="stylesheet" type="text/css" href="css/profile.css">
 </head>
 <body>
-<%
-    UserEntity userFromSession = (UserEntity) request.getSession().getAttribute("user");
-    UserService userService = UserService.getInstance();
-    UserEntity user = userService.getUserByUsername(userFromSession.getUsername()).orElse(new UserEntity(null, null, null, null, null, null));
-    byte[] photoBytes = user.getPhoto();
-    String password = user.getPassword();
-    Long id = user.getId();
-    String username = user.getUsername();
-    String email = user.getEmail();
-    String ipAddress = request.getRemoteAddr();
-    Long gamesPlayed = user.getGamesPlayed();
-    String base64Encoded = Base64.getEncoder().encodeToString(photoBytes);
-%>
 
 <h1 class="neon-title">Profile</h1>
 <br>
@@ -35,65 +19,82 @@
     <tr>
         <td>
             <br>
-            <h1 class="neon-text">Welcome, <%=username%>!</h1>
+            <h1 class="neon-text">Welcome, ${sessionScope.user.username}!</h1>
             <br>
 
             <div class="login-table">
                 <div class="center-wrapper">
-                <div class="round-image neon-border">
-                    <img src="data:image/jpeg;base64, <%=base64Encoded %>" alt="User Photo" width="100" height="100">
+                    <div class="round-image neon-border">
+                        <img src="data:image/jpeg;base64, ${sessionScope.user.getBase64Image()}" alt="User Photo"
+                             width="100" height="100">
+                    </div>
                 </div>
-            </div>
-            <br>
+                <br>
 
-            <div class="user-data">
-                <ul class="neon-table">
-                    <li><strong>id:</strong> <c:out value="<%=id%>"/></li>
-                    <li><strong>Username:</strong> <c:out value="<%=username%>"/></li>
-                    <li><strong>Password:</strong> <c:out value="<%=password%>"/></li>
-                    <li><strong>Email:</strong> <c:out value="<%=email%>"/></li>
-                    <li><strong>IP Address:</strong> <c:out value="<%=ipAddress%>"/></li>
-                    <li><strong>Games Played:</strong> <c:out value="<%=gamesPlayed%>"/></li>
-                </ul>
-            </div>
+                <div class="user-data">
+                    <ul class="neon-table">
 
-            <br>
-            <h3>Change Password</h3>
-            <form action="change-user-password" method="post">
-                <label for="newPassword">New Password:</label>
-                <input type="password" id="newPassword" name="newPassword" required>
-                <input type="submit" value="Change Password">
-            </form>
-            <br>
-            <br>
+                        <li><strong>Id:</strong> ${sessionScope.user.id}</li>
 
-            <h3>Change Email</h3>
-            <form action="change-user-email" method="post">
-                <label for="newEmail">New Email:</label>
-                <input type="email" id="newEmail" name="newEmail" required>
-                <input type="submit" value="Change Email">
-            </form>
+                        <li><strong>Username:</strong> ${sessionScope.user.username}</li>
 
-            <br>
-            <br>
+                        <li><strong>Password:</strong> ${sessionScope.user.password}</li>
 
-            <h3>Change Photo</h3>
-            <form action="change-user-photo" method="post" enctype="multipart/form-data">
-                <label for="newPhoto">Upload Photo:</label>
-                <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required maxlength="10485760">
-                <input type="submit" value="Upload Photo">
-            </form>
+                        <li><strong>Email:</strong> ${sessionScope.user.email}</li>
 
-            <br>
-            <br>
+                        <li><strong>IP Address:</strong> <%= request.getRemoteAddr() %>
+                        </li>
 
-            <form action="${pageContext.request.contextPath}/menu" method="get">
-                <input type="submit" value="Go Back">
-            </form>
+                        <li><strong>Games Played:</strong> ${sessionScope.user.gamesPlayed}</li>
 
-            <form action="${pageContext.request.contextPath}/logout" method="get">
-                <input type="submit" value="Log Out">
-            </form>
+                    </ul>
+                </div>
+
+                <br>
+
+                <div class="form-container">
+                    <h3>Change Password</h3>
+                    <form action="change-user-password" method="post">
+                        <label for="newPassword">New Password:</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                        <input type="submit" value="Change Password">
+                    </form>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="form-container">
+                    <h3>Change Email</h3>
+                    <form action="change-user-email" method="post">
+                        <label for="newEmail">New Email:</label>
+                        <input type="email" id="newEmail" name="newEmail" required>
+                        <input type="submit" value="Change Email">
+                    </form>
+                </div>
+
+                <br>
+                <br>
+
+                <div class="form-container">
+                    <h3>Change Photo</h3>
+                    <form action="change-user-photo" method="post" enctype="multipart/form-data">
+                        <label for="newPhoto">New Photo:</label>
+                        <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required maxlength="10485760">
+                        <input type="submit" value="Upload Photo">
+                    </form>
+                </div>
+
+                <br>
+                <br>
+
+                <form action="${pageContext.request.contextPath}/menu" method="get">
+                    <input type="submit" value="Go Back">
+                </form>
+
+                <form action="${pageContext.request.contextPath}/logout" method="get">
+                    <input type="submit" value="Log Out">
+                </form>
             </div>
         </td>
     </tr>

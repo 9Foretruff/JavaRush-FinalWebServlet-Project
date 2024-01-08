@@ -34,7 +34,7 @@
         <h1 class="neon-title">Registration Failed</h1>
         <div class="container">
             <div class="login-table">
-                <p>Passwords "${sessionScope.password}" and "${sessionScope.confirmPassword}" do not match. Please try again.</p>
+                <p>Passwords do not match. Please try again.</p>
                 <a href="${pageContext.request.contextPath}/registration" class="register-button">Go Back</a>
             </div>
         </div>

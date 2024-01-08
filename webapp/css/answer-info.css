@@ -6,32 +6,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: url("../img/add-quest.png") no-repeat fixed;
+    background: url("../img/profile-background.png") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-}
-
-.container {
-    width: 50%;
-    background-color: rgba(51, 51, 51, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    text-align: center;
-    margin-top: 15vh;
-    position: relative;
-}
-
-.container::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-    border: 2px solid #fff;
-    border-radius: 8px;
-    pointer-events: none;
 }
 
 h1, p, label, button, .footer {
@@ -42,13 +19,19 @@ h1, p, label, button, .footer {
 }
 
 h1 {
-    transform: scale(1.16);
-    background: linear-gradient(to right, rgb(0, 119, 255), rgb(1, 164, 144));
+    transform: scale(1.2);
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
+    border-color: rgba(255, 255, 255,0.6); /* То же самое для цвета границы */
+
     padding: 15px;
+    width: 25%;
     border-radius: 8px;
     font-size: 24px;
     border: 2px solid #ffffff;
     position: relative;
+    margin: auto; /* Center the element horizontally */
+    margin-bottom: 20px; /* Adjust the margin-bottom as needed */
+    text-align: center; /* Center the text within the h1 element */
 }
 
 h1::before {
@@ -63,25 +46,40 @@ h1::before {
     pointer-events: none;
 }
 
-p {
-    margin-top: 20px;
-    font-size: 18px;
+.neon-title,
+.neon-text,
+.neon-table li {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1);
 }
 
-.login-table {
-    margin-top: 30px;
-    margin-bottom: 10px;
+.neon-table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 50%;
+    align-items: center; /* Центрирование содержимого по вертикали */
+    text-align: center; /* Центрирование текста в ячейке */
+}
+
+.neon-table td {
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: relative;
+}
+
+.user-data {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    opacity: 0.9;
-    background-color: rgba(51, 51, 51, 0.8);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 }
 
-.login-table::before {
+.neon-table td::before {
     content: '';
     position: absolute;
     top: -12px;
@@ -93,11 +91,49 @@ p {
     pointer-events: none;
 }
 
+h2, h3, p, label, button {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1),
+    0 0 20px rgba(255, 255, 255, 1),
+    0 0 30px rgba(255, 255, 255, 1);
+}
+
+h2 {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 24px;
+    border: 2px solid #fff;
+    position: relative;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-top: 10px;
+    font-size: 16px;
+}
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
 }
 
 label {
@@ -113,10 +149,10 @@ input {
     border-radius: 15px;
 }
 
-button {
+button, input[type="submit"] {
     margin-top: 10px;
     padding: 10px 20px;
-    background-color: rgba(232, 67, 147, 0.6);
+    background-color: rgba(255, 255, 255, 0.3);
     color: #fff;
     border: 2px solid #ffffff;
     border-radius: 8px;
@@ -126,48 +162,15 @@ button {
 }
 
 /* Добавим стили для изменения цвета при наведении на кнопку Login */
-button:hover {
+button:hover, input[type="submit"]:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgba(222, 222, 222, 0.8), rgba(166, 166, 166, 0.8)); /* Градієнт з прозорістю */
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
 }
 
 .button-link {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-}
-
-.register-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: linear-gradient(to right, rgba(86, 86, 86, 0.8), rgba(176, 176, 176, 0.8));
-    transform: scale(1);
-    color: #fff;
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-label[for="newPhoto"],
-input[type="file"] {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-}
-
-input[type="file"] {
-    border: none;
-    background-color: rgba(86, 86, 86, 0.8);
-    color: #fff;
-    cursor: pointer;
-    width: 60%; /* Пропорційно обмежте ширину поля вводу, якщо потрібно */
-}
-
-.register-button:hover {
-    transform: scale(1.16);
-    background: linear-gradient(to right, rgb(0, 119, 255), rgb(1, 164, 144));
 }
 
 .social-media-window {
@@ -188,6 +191,29 @@ input[type="file"] {
     border: 2px solid #fff;
     border-radius: 8px;
     pointer-events: none;
+}
+
+.center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-image {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+
+.neon-border {
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+}
+
+.round-image.neon-border img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .social-media-bar {
@@ -214,6 +240,8 @@ input[type="file"] {
 
 .social-media-bar img:hover {
     transform: scale(1.2);
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
+    border-color: #fff;
 }
 
 .social-media-bar img::before {
@@ -253,14 +281,12 @@ input[type="file"] {
 }
 
 button:hover {
-    background-color: #ffffff;
     border-color: #ffffff;
 }
 
-/* Добавляем стиль для иконок социальных сетей при наведении */
 .social-media-bar img:hover {
     transform: scale(1.2);
-    background: linear-gradient(to right, rgb(0, 119, 255), rgb(1, 164, 144));
+    background: linear-gradient(to right, rgb(9, 107, 255), rgb(3, 203, 252));
     border-color: #fff;
 }
 
@@ -279,6 +305,7 @@ button:hover {
 .neon-title {
     font-size: 52px;
     margin-top: 36px;
+    color: white;
     text-shadow: 0 0 10px rgba(255, 255, 255, 1),
     0 0 20px rgba(255, 255, 255, 1),
     0 0 30px rgba(255, 255, 255, 1);
@@ -295,23 +322,80 @@ button:hover {
     font-size: 20px;
 }
 
-form {
+.container {
+    width: 50%;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    margin-top: 15vh;
+    position: relative;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.login-table {
+    width: 500px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0.9;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.login-table::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.question-text {
     text-align: center;
+    padding: 0;
+    max-width: 250px;
+    display: inline-block;
 }
 
-label {
-    margin-top: 10px;
-    font-size: 16px;
-    display: block;
-    text-align: left;
+.question-text p {
+    margin: 0;
+    overflow-wrap: break-word;
 }
 
-input,
-textarea,
-select {
+.form-container {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-container {
+    width: 310px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+textarea {
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
@@ -321,33 +405,17 @@ select {
     box-sizing: border-box;
 }
 
-input[type="file"],
 select {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-input[type="file"] {
-    border: none;
-    background-color: rgba(86, 86, 86, 0.8);
-    color: #fff;
-    cursor: pointer;
-}
-
-select {
-    appearance: none;
-    padding-right: 30px;
-    background: rgba(86, 86, 86, 0.8);
-    color: #fff;
-    cursor: pointer;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fff;
     text-align: center;
-}
-
-select::after {
-    content: '\25BC';
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
     font-size: 18px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+
+    margin: 8px 0;
 }

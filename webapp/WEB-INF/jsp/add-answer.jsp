@@ -13,7 +13,7 @@
 <body>
 <h1 class="neon-title">Add Answer</h1>
 <div class="container">
-    <form action="${pageContext.request.contextPath}/add-answer" method="post" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/add-answer" method="post" enctype="application/x-www-form-urlencoded">
         <div class="login-table">
             <label for="questionId">Question id:</label>
             <input type="number" id="questionId" name="questionId" maxlength="35" required>

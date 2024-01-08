@@ -13,8 +13,7 @@
     <br>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/create-quest-instruction" class="add-quest-button">Instruction how to
-            create quest</a>
+        <a href="${pageContext.request.contextPath}/create-quest-instruction" class="add-quest-button">Instruction how to create quest</a>
     </div>
 
 
@@ -25,17 +24,18 @@
     <div class="quests-list">
         <h2 class="neon-title">Your quests</h2>
 
-        <c:forEach var="quest" items="${myQuests}">
+        <c:forEach var="quest" items="${sessionScope.myQuests}">
 
             <div class="quest-card">
                 <p>Quest photo</p>
                 <div class="quest-img ">
                     <div class="quest-id2 neon-border">
-                            Id
+                        Id
                     </div>
-                    <img src="data:image/jpeg;base64,${quest.getBase64Image()}" alt="Quests Photo" width="100" height="100">
+                    <img src="data:image/jpeg;base64,${quest.getBase64Image()}" alt="Quests Photo" width="100"
+                         height="100">
                     <div class="quest-id neon-border">
-                         ${quest.id}
+                            ${quest.id}
                     </div>
                 </div>
 
@@ -55,6 +55,8 @@
 
             </div>
 
+            <br>
+            <br>
         </c:forEach>
 
     </div>
@@ -74,7 +76,7 @@
         <h2 class="neon-title">Your questions</h2>
         <form action="/show-questions-for-quest" method="post" class="neon-table">
             <label for="newQuestion">Show question for quest with id:</label>
-            <input type="text" id="newQuestion" name="newQuestion">
+            <input type="number" id="newQuestion" name="newQuestion">
         </form>
         <br>
         <form action="${pageContext.request.contextPath}/show-all-questions">
@@ -82,7 +84,7 @@
         </form>
         <br>
         <br>
-        <c:forEach var="question" items="${myQuestions}">
+        <c:forEach var="question" items="${sessionScope.myQuestions}">
 
             <div class="quest-card">
                 <p>Background photo</p>
@@ -102,12 +104,15 @@
                     <p>Question text:${question.text}</p>
                 </div>
 
-                <form action="${pageContext.request.contextPath}/question-info">
-                    <input type="hidden" name="questId" value="${question.id}">
+                <form action="${pageContext.request.contextPath}/question-info" method="get">
+                    <input type="hidden" name="questionId" value="${question.id}">
                     <button type="submit" class="add-quest-button">See all information and edit</button>
                 </form>
 
             </div>
+
+            <br>
+            <br>
 
         </c:forEach>
     </div>
@@ -126,33 +131,64 @@
     <div class="quests-list">
         <h2 class="neon-title">Your answers</h2>
         <form action="show-answers-for-quest" method="post" class="neon-table">
-            <label for="newAnswer">Show answers for quest with id:</label>
-            <input type="text" id="newAnswer" name="newAnswer">
-            <input type="submit" value="Show questions">
+            <label for="questId">Show answers for quest with id:</label>
+            <input type="number" id="questId" name="questId">
         </form>
-            <c:forEach var="answer" items="${myAnswers}">
-                <div class="quest-card">
-                    <div class="quest-img">
-                        <div class="quest-id2 neon-border">
-                            Id
+        <br>
+        <form action="${pageContext.request.contextPath}/show-all-answers">
+            <button type="submit" class="add-quest-button">Show all answers</button>
+        </form>
+        <br>
+        <br>
+        <c:forEach var="answer" items="${sessionScope.myAnswers}">
+            <div class="quest-card">
+                <br>
+                <br>
+                <c:choose>
+
+
+                    <c:when test="${answer.isCorrect}">
+                        <div class="quest-img">
+                            <div class="quest-id2 neon-border">
+                                Id
+                            </div>
+                            <img src="img/login-success-mark.png" alt="Quests Photo" width="100"
+                                 height="100">
+                            <div class="quest-id neon-border">${answer.id}</div>
                         </div>
-                        <img src="img/answer-default-photo.png" alt="Quests Photo" width="100"
-                             height="100">
-                        <div class="quest-id neon-border">${answer.id}</div>
-                    </div>
+                    </c:when>
 
-                    <p>Question id: ${answer.questionId}</p>
-                    <p>Is correct: ${answer.isCorrect}</p>
+                    <c:otherwise>
+                        <div class="quest-img">
+                            <div class="quest-id2 neon-border">
+                                Id
+                            </div>
+                            <img src="img/login-failed-mark.png" alt="Quests Photo" width="100"
+                                 height="100">
+                            <div class="quest-id neon-border">${answer.id}</div>
+                        </div>
+                    </c:otherwise>
 
+                </c:choose>
 
-                    <form action="${pageContext.request.contextPath}/answer-info">
-                        <input type="hidden" name="questId" value="${answer.id}">
-                        <button type="submit" class="add-quest-button">See all information and edit</button>
-                    </form>
-
+                <p>Question id: ${answer.questionId}</p>
+                <p>Is correct: ${answer.isCorrect}</p>
+                <div class="question-text">
+                    <p>Answer text:${answer.text}</p>
                 </div>
 
-            </c:forEach>
+
+                <form action="${pageContext.request.contextPath}/answer-info">
+                    <input type="hidden" name="answerId" value="${answer.id}">
+                    <button type="submit" class="add-quest-button">See all information and edit</button>
+                </form>
+
+            </div>
+
+            <br>
+            <br>
+
+        </c:forEach>
     </div>
 
     <div class="login-table">
