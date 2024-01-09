@@ -1,6 +1,0 @@
-[34m2024-01-09 18:41:16.316 [http-nio-8080-exec-3] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
-[m[34m2024-01-09 18:49:51.337 [http-nio-8080-exec-2] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 visited the registration page
-[m[32m2024-01-09 18:50:07.572 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.RegistrationServlet - Registration data received from user with IP address 0:0:0:0:0:0:0:1
-[m[32m2024-01-09 18:50:07.894 [http-nio-8080-exec-5] INFO  com.adventurequest.controller.servlet.RegistrationServlet - User with IP address 0:0:0:0:0:0:0:1 has successfully registered
-[m[34m2024-01-09 18:50:07.894 [http-nio-8080-exec-5] DEBUG com.adventurequest.controller.servlet.RegistrationServlet - Forwarding user with IP address 0:0:0:0:0:0:0:1 to registration-result.jsp
-[m
