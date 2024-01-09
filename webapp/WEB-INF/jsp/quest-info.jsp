@@ -55,7 +55,7 @@
 
                 <div class="form-container">
                     <h3>Change Name Of Quest</h3>
-                    <form action="change-quest-name" method="post">
+                    <form action="${pageContext.request.contextPath}/change-quest-name" method="post">
 
                         <label for="newName">New name of quest:</label>
 
@@ -71,7 +71,7 @@
 
                 <div class="form-container">
                     <h3>Change Description</h3>
-                    <form action="change-quest-description" method="post">
+                    <form action="${pageContext.request.contextPath}/change-quest-description" method="post">
 
                         <label for="newDescription">New Description:</label>
 
@@ -90,7 +90,7 @@
 
                     <h3>Change Difficulty</h3>
 
-                    <form action="change-quest-difficulty" method="post">
+                    <form action="${pageContext.request.contextPath}/change-quest-difficulty" method="post">
 
                         <label for="newDifficulty">New Difficulty:</label>
 
@@ -113,7 +113,7 @@
 
                     <h3>Change Status</h3>
 
-                    <form action="change-quest-status" method="post">
+                    <form action="${pageContext.request.contextPath}/change-quest-status" method="post">
 
                         <label for="newStatus">New Status:</label>
 
@@ -134,7 +134,7 @@
                 <div class="form-container">
 
                     <h3>Change Quest Photo</h3>
-                    <form action="change-quest-photo" method="post" enctype="multipart/form-data">
+                    <form action="${pageContext.request.contextPath}/change-quest-photo" method="post" enctype="multipart/form-data">
                         <label for="newPhoto">New Photo:</label>
                         <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required
                                maxlength="10485760">

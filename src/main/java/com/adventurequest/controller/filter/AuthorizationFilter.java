@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.Optional;
 
-@WebFilter(urlPatterns = {"/menu", "/profile","/change-email","/change-photo","/change-password","/create-quest","/add-answer","/add-question","/add-quest","/quest-instruction"})
+@WebFilter(urlPatterns = {"/menu", "/profile","/change-email","/change-photo","/change-password","/create-quest","/add-question","/add-quest","/create-quest-instruction","/quest-info","/question-info","/answer-info","/preview-quest"})
 public class AuthorizationFilter implements Filter {
     private static final Logger LOGGER = LoggerFactory.getLogger(AuthorizationFilter.class);
     private final UserService userService = UserService.getInstance();

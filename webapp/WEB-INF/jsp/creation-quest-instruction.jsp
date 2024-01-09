@@ -13,15 +13,17 @@
     <h1 class="neon-title">This is instructions how to make your own quests</h1>
     <br>
 
-    <p>Firstly you need create quest on this page</p>
+    <p>Video guide</p>
 
     <div class="login-table">
-            <a href="${pageContext.request.contextPath}/create-quest" class="register-button">Create here</a>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ORWeWr7bZyM?si=Wms-B9nvACKNgqu3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <div class="login-table">
-        <a href="${pageContext.request.contextPath}/create-quest" class="add-quest-button">Create quest</a>
+        <a href="${pageContext.request.contextPath}/create-quest" class="add-quest-button">Go back</a>
     </div>
+
+
 
 </div>
 
