@@ -37,7 +37,7 @@ public class QuestInfoServlet extends HttpServlet {
             }
 
             LOGGER.info("Found quest with ID {}, setting it as session attribute", questId);
-            req.getSession().setAttribute("quest", quest.get());
+            req.getSession().setAttribute("questInfo", quest.get());
 
             LOGGER.info("Forwarding user {} to quest info page", username);
             req.getRequestDispatcher(JspHelper.get(QUEST_INFO_PAGE_JSP)).forward(req, resp);

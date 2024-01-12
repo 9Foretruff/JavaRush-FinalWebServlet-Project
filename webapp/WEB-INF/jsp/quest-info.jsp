@@ -25,7 +25,7 @@
                 <p>Quest photo</p>
                 <div class="center-wrapper">
                     <div class="round-image neon-border">
-                        <img src="data:image/jpeg;base64, ${sessionScope.quest.getBase64Image()}" alt="User Photo"
+                        <img src="data:image/jpeg;base64, ${sessionScope.questInfo.getBase64Image()}" alt="User Photo"
                              width="100" height="100">
                     </div>
                 </div>
@@ -34,18 +34,18 @@
                 <div class="user-data">
                     <ul class="neon-table">
 
-                        <li><strong>Id:</strong> ${sessionScope.quest.id}</li>
+                        <li><strong>Id:</strong> ${sessionScope.questInfo.id}</li>
 
-                        <li><strong>Name of quest:</strong> ${sessionScope.quest.name}</li>
+                        <li><strong>Name of quest:</strong> ${sessionScope.questInfo.name}</li>
 
-                        <li><strong>Difficulty:</strong> ${sessionScope.quest.difficulty}</li>
+                        <li><strong>Difficulty:</strong> ${sessionScope.questInfo.difficulty}</li>
 
-                        <li><strong>Author:</strong> ${sessionScope.quest.author}</li>
+                        <li><strong>Author:</strong> ${sessionScope.questInfo.author}</li>
 
-                        <li><strong>Status:</strong> ${sessionScope.quest.status}</li>
+                        <li><strong>Status:</strong> ${sessionScope.questInfo.status}</li>
 
                         <div class="question-text">
-                            <li><strong>Description:</strong> ${sessionScope.quest.description}</li>
+                            <li><strong>Description:</strong> ${sessionScope.questInfo.description}</li>
                         </div>
 
                     </ul>
@@ -56,6 +56,8 @@
                 <div class="form-container">
                     <h3>Change Name Of Quest</h3>
                     <form action="${pageContext.request.contextPath}/change-quest-name" method="post">
+
+                        <input type="hidden" name="questId" value="${sessionScope.questInfo.id}">
 
                         <label for="newName">New name of quest:</label>
 
@@ -72,6 +74,8 @@
                 <div class="form-container">
                     <h3>Change Description</h3>
                     <form action="${pageContext.request.contextPath}/change-quest-description" method="post">
+
+                        <input type="hidden" name="questId" value="${sessionScope.questInfo.id}">
 
                         <label for="newDescription">New Description:</label>
 

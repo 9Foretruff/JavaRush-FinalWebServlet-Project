@@ -8,6 +8,7 @@ import com.adventurequest.util.ConnectionManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -88,6 +89,16 @@ public class QuestDao implements Dao<String, QuestEntity> {
                 FROM adventure_quest_schema.quest
                 WHERE id = ?
             """;
+    private static final String CHANGE_NAME_SQL = """
+                UPDATE adventure_quest_schema.quest
+                SET name = ?
+                WHERE id = ? AND author = ?
+            """;
+    private static final String CHANGE_DESCRIPTION_SQL = """
+                UPDATE adventure_quest_schema.quest
+                SET description = ?
+                WHERE id = ?
+            """;
 
     private QuestDao() {
     }
@@ -150,7 +161,7 @@ public class QuestDao implements Dao<String, QuestEntity> {
     public List<QuestEntity> findPublishedWithOffset(Long offset) {
         try (var connection = ConnectionManager.get();
              var publishedQuests = connection.prepareStatement(FIND_PUBLISHED_QUEST_WITH_PAGE_SQL)) {
-            publishedQuests.setObject(1,offset);
+            publishedQuests.setObject(1, offset);
             var resultSet = publishedQuests.executeQuery();
             List<QuestEntity> quests = new ArrayList<>();
             while (resultSet.next()) {
@@ -172,6 +183,41 @@ public class QuestDao implements Dao<String, QuestEntity> {
         } catch (SQLException e) {
             LOGGER.error("Failed to delete quest with id = {} due to database error", id, e);
             throw new DatabaseAccessException("Error while deleting quest", e);
+        }
+    }
+
+    public boolean changeName(Long questId, String newName, String author) {
+        try (var connection = ConnectionManager.get();
+             var findQuest = connection.prepareStatement(FIND_QUEST_BY_NAME_AND_AUTHOR_SQL);
+             var changeName = connection.prepareStatement(CHANGE_NAME_SQL)) {
+            findQuest.setObject(1, newName);
+            findQuest.setObject(2, author);
+            var resultSet = findQuest.executeQuery();
+
+            if (resultSet.next()) {
+                return false;
+            }
+
+            changeName.setObject(1, newName);
+            changeName.setObject(2, questId);
+            changeName.setObject(3, author);
+            return changeName.executeUpdate() > 0;
+        } catch (SQLException e) {
+            LOGGER.error("Error while changing quest name", e);
+            throw new DatabaseAccessException("Error while changing quest name", e);
+        }
+    }
+
+    public boolean changeDescription(Long questId, String newDescription) {
+        try (var connection = ConnectionManager.get();
+             var changeDescription = connection.prepareStatement(CHANGE_DESCRIPTION_SQL)) {
+
+            changeDescription.setObject(1, newDescription);
+            changeDescription.setObject(2, questId);
+            return changeDescription.executeUpdate() > 0;
+        } catch (SQLException e) {
+            LOGGER.error("Error while changing quest description", e);
+            throw new DatabaseAccessException("Error while changing quest description", e);
         }
     }
 

@@ -54,4 +54,12 @@ public class QuestService {
     public Optional<QuestEntity> findQuestById(Long id) {
         return questDao.findById(id);
     }
+
+    public boolean changeQuestName(Long questId, String newName , String author) {
+        return questDao.changeName(questId, newName , author);
+    }
+
+    public boolean changeQuestDescription(Long questId, String newDescription) {
+        return questDao.changeDescription(questId,newDescription);
+    }
 }

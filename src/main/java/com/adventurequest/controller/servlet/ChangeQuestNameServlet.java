@@ -1,7 +1,6 @@
 package com.adventurequest.controller.servlet;
 
 import com.adventurequest.model.service.QuestService;
-import com.adventurequest.model.service.UserService;
 import com.adventurequest.util.JspHelper;
 import com.adventurequest.util.UserSessionHelper;
 import jakarta.servlet.ServletException;
@@ -15,11 +14,12 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 
 @WebServlet("/change-quest-name")
-public class ChangeQuestName extends HttpServlet {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ChangeQuestName.class);
+public class ChangeQuestNameServlet extends HttpServlet {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ChangeQuestNameServlet.class);
 
-    private static final String SUCCESS_URL = "/profile";
-    private static final String FAILED_JSP = "changing-email-failed";
+    private static final String SUCCESS_URL = "/quest-info?questId=";
+    private static final String MENU_URL = "/menu";
+    private static final String FAILED_JSP = "changing-quest-name-failed";
     private static final String ERROR_PAGE_JSP = "error-page";
 
     private final QuestService questService = QuestService.getInstance();
@@ -29,25 +29,24 @@ public class ChangeQuestName extends HttpServlet {
         try {
             String username = UserSessionHelper.getUsername(req.getSession());
 
-            LOGGER.info("Change user email data received from user: {}", username);
+            LOGGER.info("Change quest name data received from user: {}", username);
 
-            var user = UserSessionHelper.getUser(req.getSession());
-            String newEmail = req.getParameter("newEmail");
+            Long questId = Long.valueOf(req.getParameter("questId"));
+            var newName = req.getParameter("newName");
 
-            LOGGER.debug("Received change email data - newEmail: {}, from user: {}", newEmail, username);
+            LOGGER.debug("Received change quest name data - newName: {}, from user: {}", newName, username);
 
-            var newUser = userService.changeEmail(user, newEmail);
+            var resultOfChanging = questService.changeQuestName(questId, newName, username);
 
-            if (newUser.isPresent()) {
-                LOGGER.info("Email changed successfully for user: {}", username);
-                req.getSession().setAttribute("user", newUser.get());
-                resp.sendRedirect(req.getContextPath() + SUCCESS_URL);
+            if (resultOfChanging) {
+                LOGGER.info("Name changed successfully for quest with id: {}", questId);
+                resp.sendRedirect(req.getContextPath() + SUCCESS_URL + questId);
             } else {
-                LOGGER.warn("Failed to change email for user: {}", username);
+                LOGGER.warn("Failed to change name for quest with id: {}", questId);
                 req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
             }
         } catch (Exception exception) {
-            LOGGER.error("Exception while changing user email", exception);
+            LOGGER.error("Exception while changing quest name", exception);
             req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }

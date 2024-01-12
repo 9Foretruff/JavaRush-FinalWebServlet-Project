@@ -26,7 +26,7 @@
                 <p>Background photo</p>
                 <div class="center-wrapper">
                     <div class="round-image neon-border">
-                        <img src="data:image/jpeg;base64, ${sessionScope.question.getBase64Image()}" alt="User Photo"
+                        <img src="data:image/jpeg;base64, ${sessionScope.questionInfo.getBase64Image()}" alt="User Photo"
                              width="100" height="100">
                     </div>
                 </div>
@@ -35,17 +35,17 @@
                 <div class="user-data">
                     <ul class="neon-table">
 
-                        <li><strong>Id:</strong> ${sessionScope.question.id}</li>
+                        <li><strong>Id:</strong> ${sessionScope.questionInfo.id}</li>
 
-                        <li><strong>Number of question:</strong> ${sessionScope.question.numberOfQuestion}</li>
+                        <li><strong>Number of question:</strong> ${sessionScope.questionInfo.numberOfQuestion}</li>
 
-                        <li><strong>Quest id:</strong> ${sessionScope.question.questId}</li>
+                        <li><strong>Quest id:</strong> ${sessionScope.questionInfo.questId}</li>
 
                         <div class="question-text">
-                            <li><strong>Text:</strong> ${sessionScope.question.text}</li>
+                            <li><strong>Text:</strong> ${sessionScope.questionInfo.text}</li>
                         </div>
 
-                        <li><strong>Is last question:</strong> ${sessionScope.question.isLastQuestion}</li>
+                        <li><strong>Is last question:</strong> ${sessionScope.questionInfo.isLastQuestion}</li>
 
                     </ul>
                 </div>

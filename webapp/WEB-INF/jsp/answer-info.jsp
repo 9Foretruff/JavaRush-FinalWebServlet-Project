@@ -26,7 +26,7 @@
                 <div class="center-wrapper">
                     <c:choose>
 
-                        <c:when test="${sessionScope.answer.isCorrect}">
+                        <c:when test="${sessionScope.answerInfo.isCorrect}">
                             <div class="round-image neon-border">
                                 <img src="img/login-success-mark.png" alt="Quests Photo" width="100" height="100">
                             </div>
@@ -45,15 +45,15 @@
                 <div class="user-data">
                     <ul class="neon-table">
 
-                        <li><strong>Id:</strong> ${sessionScope.answer.id}</li>
+                        <li><strong>Id:</strong> ${sessionScope.answerInfo.id}</li>
 
-                        <li><strong>Question id:</strong> ${sessionScope.answer.questionId}</li>
+                        <li><strong>Question id:</strong> ${sessionScope.answerInfo.questionId}</li>
 
                         <div class="question-text">
-                            <li><strong>Text:</strong> ${sessionScope.answer.text}</li>
+                            <li><strong>Text:</strong> ${sessionScope.answerInfo.text}</li>
                         </div>
 
-                        <li><strong>Is correct:</strong> ${sessionScope.answer.isCorrect}</li>
+                        <li><strong>Is correct:</strong> ${sessionScope.answerInfo.isCorrect}</li>
 
                     </ul>
                 </div>

@@ -37,7 +37,7 @@ public class AnswerInfoServlet extends HttpServlet {
             }
 
             LOGGER.info("Found answer with ID {}, setting it as session attribute", answerId);
-            req.getSession().setAttribute("answer", answer.get());
+            req.getSession().setAttribute("answerInfo", answer.get());
 
             LOGGER.info("Forwarding user {} to answer info page", username);
             req.getRequestDispatcher(JspHelper.get(ANSWER_INFO_PAGE_JSP)).forward(req, resp);
