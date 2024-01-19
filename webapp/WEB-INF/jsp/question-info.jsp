@@ -37,7 +37,7 @@
 
                         <li><strong>Id:</strong> ${sessionScope.questionInfo.id}</li>
 
-                        <li><strong>Number of question:</strong> ${sessionScope.questionInfo.numberOfQuestion}</li>
+                        <li><strong>Question number:</strong> ${sessionScope.questionInfo.questionNumber}</li>
 
                         <li><strong>Quest id:</strong> ${sessionScope.questionInfo.questId}</li>
 
@@ -54,9 +54,9 @@
 
                 <div class="form-container">
                     <h3>Change Number Of Question</h3>
-                    <form action="change-question-number" method="post">
-                        <label for="newNumberOfQuestion">New Number Of Question:</label>
-                        <input type="number" id="newNumberOfQuestion" name="newNumberOfQuestion" required>
+                    <form action="/change-question-number" method="post">
+                        <label for="newQuestionNumber">New Number Of Question:</label>
+                        <input type="number" id="newQuestionNumber" name="newQuestionNumber" required>
                         <input type="submit" value="Change">
                     </form>
                 </div>
@@ -66,7 +66,7 @@
 
                 <div class="form-container">
                     <h3>Change Quest Id</h3>
-                    <form action="change-question-quest-id" method="post">
+                    <form action="/change-question-quest-id" method="post">
                         <label for="newQuestId">New Quest Id:</label>
                         <input type="number" id="newQuestId" name="newQuestId" required>
                         <input type="submit" value="Change">
@@ -78,7 +78,7 @@
 
                 <div class="form-container">
                     <h3>Change Text</h3>
-                    <form action="change-question-text/" method="post">
+                    <form action="/change-question-text" method="post">
                         <label for="newText">New Text:</label>
 
                         <textarea id="newText" name="newText" rows="4" cols="100" required></textarea>
@@ -94,7 +94,7 @@
 
                     <h3>Change Is Last Question</h3>
 
-                    <form action="change-quest-difficulty" method="post">
+                    <form action="/change-quest-difficulty" method="post">
 
                         <label for="newStatus">New Status:</label>
 
@@ -114,7 +114,7 @@
 
                 <div class="form-container">
                     <h3>Change Background Photo</h3>
-                    <form action="change-question-photo" method="post" enctype="multipart/form-data">
+                    <form action="/change-question-photo" method="post" enctype="multipart/form-data">
                         <label for="newBackgroundPhoto">New Photo:</label>
                         <input type="file" id="newBackgroundPhoto" name="newBackgroundPhoto" accept="image/*" required
                                maxlength="10485760">

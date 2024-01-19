@@ -11,8 +11,8 @@
 <div class="container">
     <div class="login-table">
         <p>You already have quest with this name or you are trying to change not your quest. Please try again.</p>
-        <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to menu</a>
         <a href="${pageContext.request.contextPath}/quest-info?questId=${sessionScope.questInfo.id}" class="register-button">Go back</a>
+        <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to menu</a>
     </div>
 </div>
 </body>

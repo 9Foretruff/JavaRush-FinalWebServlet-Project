@@ -202,20 +202,19 @@ button:hover, input[type="submit"]:hover {
 .round-image {
     border-radius: 50%;
     overflow: hidden;
-    width: 100px; /* Задайте необходимую ширину и высоту для изображения */
+    width: 100px;
     height: 100px;
 }
 
-/* Стиль для неоновой подсветки */
+
 .neon-border {
     box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
 }
 
-/* Объедините стили для круглого изображения и неоновой подсветки */
 .round-image.neon-border img {
-    width: 100%; /* Чтобы изображение занимало всю площадь круга */
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* Чтобы изображение сохраняло пропорции и полностью покрывало круг */
+    object-fit: cover;
 }
 
 .social-media-bar {

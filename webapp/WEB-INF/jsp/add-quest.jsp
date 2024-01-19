@@ -15,8 +15,8 @@
 <div class="container">
     <form action="${pageContext.request.contextPath}/add-quest" method="post" enctype="multipart/form-data">
         <div class="login-table">
-            <label for="questName">Name of quest (max length is 35):</label>
-            <input type="text" id="questName" name="questName" maxlength="35" required>
+            <label for="questName">Name of quest (max length is 25):</label>
+            <input type="text" id="questName" name="questName" maxlength="25" required>
 
             <label for="questDescription">Description of quest:</label>
             <textarea id="questDescription" name="questDescription" rows="4" cols="100" required></textarea>

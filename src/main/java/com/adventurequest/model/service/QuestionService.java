@@ -23,14 +23,14 @@ public class QuestionService {
         return INSTANCE;
     }
 
-    public boolean addQuestion(Integer numberOfQuestion, Long questId, String text, byte[] backgroundQuestionPhoto, Boolean isLastQuestion) {
-        QuestionEntity quest = new QuestionEntity(null, numberOfQuestion, questId, text, backgroundQuestionPhoto, isLastQuestion);
+    public boolean addQuestion(Integer question_number, Long questId, String text, byte[] backgroundQuestionPhoto, Boolean isLastQuestion) {
+        QuestionEntity quest = new QuestionEntity(null, question_number, questId, text, backgroundQuestionPhoto, isLastQuestion);
         var save = questionDao.save(quest);
         if (save) {
-            LOGGER.info("Question with number of question {} and quest id {} added successfully.", numberOfQuestion, questId);
+            LOGGER.info("Question with question number {} and quest id {} added successfully.", question_number, questId);
             return ADDING_QUESTION_SUCCESSFUL;
         } else {
-            LOGGER.warn("Question with number of question {} and quest id {} already exists.", numberOfQuestion, questId);
+            LOGGER.warn("Question with question number {} and quest id {} already exists.", question_number, questId);
             return ADDING_QUESTION_FAILED;
         }
     }

@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Create quest menu</title>
@@ -74,8 +74,8 @@
     <h1 class="neon-title">Create question</h1>
     <div class="quests-list">
         <h2 class="neon-title">Your questions</h2>
-        <form action="/show-questions-for-quest" method="post" class="neon-table">
-            <label for="newQuestion">Show question for quest with id:</label>
+        <form action="${pageContext.request.contextPath}/menu" method="post" class="neon-table">
+            <label for="newQuestion">Show questions for quest with id:</label>
             <input type="number" id="newQuestion" name="newQuestion">
         </form>
         <br>
@@ -97,7 +97,7 @@
                     <div class="quest-id neon-border">${question.id}</div>
                 </div>
 
-                <p>Number of question:${question.numberOfQuestion}</p>
+                <p>Number of question:${question.questionNumber}</p>
                 <p>Quest id: ${question.questId}</p>
                 <p>Is last question: ${question.isLastQuestion}</p>
                 <div class="question-text">

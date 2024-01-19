@@ -18,7 +18,7 @@ public class ChangeUserPasswordServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChangeUserPasswordServlet.class);
 
     private static final String SUCCESS_URL = "/profile";
-    private static final String FAILED_JSP = "changing-password-failed";
+    private static final String FAILED_JSP = "changing-user-password-failed";
     private static final String ERROR_PAGE_JSP = "error-page";
 
     private final UserService userService = UserService.getInstance();

@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Failed to change quest description</title>
+    <title>Failed to change quest status</title>
     <link rel="stylesheet" type="text/css" href="css/email-change-failed.css">
 </head>
 <body>
-<h1 class="neon-title">Failed to change quest description</h1>
+<h1 class="neon-title">Failed to change quest status</h1>
 <div class="container">
     <div class="login-table">
-        <p>Failed to change quest description. Please try again.</p>
+        <p>Failed to change quest status. Please try again.</p>
         <a href="${pageContext.request.contextPath}/quest-info?questId=${sessionScope.questInfo.id}" class="register-button">Go back</a>
         <a href="${pageContext.request.contextPath}/menu" class="register-button">Go to menu</a>
     </div>

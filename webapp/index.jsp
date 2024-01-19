@@ -19,13 +19,13 @@
     <div class="login-table">
         <form action="${pageContext.request.contextPath}/login" method="post">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username" maxlength="25" required>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" maxlength="25" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" maxlength="25" required>
 
             <button type="submit">Log in</button>
             <a href="${pageContext.request.contextPath}/registration" class="register-button">Register here</a>

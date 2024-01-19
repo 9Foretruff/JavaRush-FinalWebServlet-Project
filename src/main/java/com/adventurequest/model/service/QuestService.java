@@ -3,6 +3,8 @@ package com.adventurequest.model.service;
 import com.adventurequest.model.dao.QuestDao;
 import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.entity.QuestEntity;
+import com.adventurequest.model.entity.StatusEnum;
+import jakarta.servlet.http.Part;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -55,11 +57,24 @@ public class QuestService {
         return questDao.findById(id);
     }
 
-    public boolean changeQuestName(Long questId, String newName , String author) {
-        return questDao.changeName(questId, newName , author);
+    public boolean changeQuestName(Long questId, String newName, String author) {
+        return questDao.changeName(questId, newName, author);
     }
 
     public boolean changeQuestDescription(Long questId, String newDescription) {
-        return questDao.changeDescription(questId,newDescription);
+        return questDao.changeDescription(questId, newDescription);
+    }
+
+    public boolean changeQuestDifficulty(Long questId, DifficultyEnum newDifficulty) {
+        return questDao.changeDifficulty(questId, newDifficulty);
+    }
+
+    public boolean changeQuestStatus(Long questId, StatusEnum newStatus) {
+        return questDao.changeStatus(questId, newStatus);
+    }
+
+    public boolean changeQuestPhoto(Long questId, Part newPhoto) {
+        return questDao.changePhoto(questId, newPhoto);
+
     }
 }

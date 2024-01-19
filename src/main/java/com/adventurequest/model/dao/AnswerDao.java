@@ -45,7 +45,7 @@ public class AnswerDao implements Dao<String, AnswerEntity> {
     private static final String FIND_QUESTION_BY_ID = """
                 SELECT
                 id,
-                number_of_question,
+                question_number,
                 quest_id,
                 text,
                 background_question_photo,

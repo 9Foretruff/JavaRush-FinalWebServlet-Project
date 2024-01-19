@@ -25,7 +25,7 @@ public class ChangeUserPhotoServlet extends HttpServlet {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChangeUserPhotoServlet.class);
 
     private static final String SUCCESS_URL = "/profile";
-    private static final String FAILED_JSP = "changing-photo-failed";
+    private static final String FAILED_JSP = "changing-user-photo-failed";
     private static final String ERROR_PAGE_JSP = "error-page";
     private static final int MAX_FILE_SIZE = 10 * 1024 * 1024;
 

@@ -7,15 +7,15 @@ import java.util.Objects;
 
 public class QuestionEntity {
     private Long id;
-    private Integer numberOfQuestion;
+    private Integer questionNumber;
     private Long questId;
     private String text;
     private byte[] backgroundQuestionPhoto;
     private Boolean isLastQuestion;
 
-    public QuestionEntity(Long id, Integer numberOfQuestion, Long questId, String text, byte[] backgroundQuestionPhoto, Boolean isLastQuestion) {
+    public QuestionEntity(Long id, Integer questionNumber, Long questId, String text, byte[] backgroundQuestionPhoto, Boolean isLastQuestion) {
         this.id = id;
-        this.numberOfQuestion = numberOfQuestion;
+        this.questionNumber = questionNumber;
         this.questId = questId;
         this.text = text;
         this.backgroundQuestionPhoto = backgroundQuestionPhoto;
@@ -45,12 +45,12 @@ public class QuestionEntity {
         this.id = id;
     }
 
-    public Integer getNumberOfQuestion() {
-        return numberOfQuestion;
+    public Integer getQuestionNumber() {
+        return questionNumber;
     }
 
-    public void setNumberOfQuestion(Integer numberOfQuestion) {
-        this.numberOfQuestion = numberOfQuestion;
+    public void setQuestionNumber(Integer questionNumber) {
+        this.questionNumber = questionNumber;
     }
 
     public Long getQuestId() {
@@ -94,7 +94,7 @@ public class QuestionEntity {
     public String toString() {
         return "QuestionEntity{" +
                "id=" + id +
-               ", numberOfQuestion=" + numberOfQuestion +
+               ", questionNumber=" + questionNumber +
                ", questId=" + questId +
                ", text='" + text + '\'' +
                ", backgroundQuestionPhoto=" + Arrays.toString(backgroundQuestionPhoto) +

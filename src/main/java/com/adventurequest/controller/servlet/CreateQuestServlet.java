@@ -26,7 +26,7 @@ public class CreateQuestServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         var username = UserSessionHelper.getUsername(req.getSession());
-        LOGGER.debug("User: {} get add-quest page", username);
+        LOGGER.debug("User: {} get creation-quest page", username);
         req.getSession().setAttribute("myQuests", questService.findQuestsByAuthor(username));
         req.getSession().setAttribute("myQuestions", questionService.findQuestionsByAuthor(username));
         req.getSession().setAttribute("myAnswers", answerService.findAnswersByAuthor(username));

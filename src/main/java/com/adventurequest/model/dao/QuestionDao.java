@@ -18,7 +18,7 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
     private static final String FIND_ALL_SQL = """
                 SELECT
                 id,
-                number_of_question,
+                question_number,
                 quest_id,
                 text,
                 background_question_photo,
@@ -31,24 +31,24 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
                 WHERE id = ?
             """;
     private static final String SAVE_SQL = """
-                INSERT INTO adventure_quest_schema.question(number_of_question, quest_id, text, background_question_photo, is_last_question)
+                INSERT INTO adventure_quest_schema.question(question_number, quest_id, text, background_question_photo, is_last_question)
                 VALUES (? , ? , ? , ? , ?)
             """;
     private static final String FIND_QUESTION_BY_NUMBER_OF_QUESTION_AND_QUESTION_ID_SQL = """
                 SELECT
                 id,
-                number_of_question,
+                question_number,
                 quest_id,
                 text,
                 background_question_photo,
                 is_last_question
                 FROM adventure_quest_schema.question
-                WHERE number_of_question = ? AND  quest_id = ?
+                WHERE question_number = ? AND  quest_id = ?
             """;
     private static final String CHECK_IF_QUESTION_HAVE_FINAL_QUESTION = """
                 SELECT
                 id,
-                number_of_question,
+                question_number,
                 quest_id,
                 text,
                 background_question_photo,
@@ -59,7 +59,7 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
     private static final String FIND_QUESTION_BY_AUTHOR_SQL = """
                 SELECT
                 question.id,
-                question.number_of_question,
+                question.question_number,
                 question.quest_id,
                 question.text,
                 question.background_question_photo,
@@ -71,7 +71,7 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
     private static final String FIND_QUESTION_BY_ID_SQL = """
                 SELECT
                 id,
-                number_of_question,
+                question_number,
                 quest_id,
                 text,
                 background_question_photo,
@@ -156,10 +156,10 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
              var save = connection.prepareStatement(SAVE_SQL);
              var findQuestion = connection.prepareStatement(FIND_QUESTION_BY_NUMBER_OF_QUESTION_AND_QUESTION_ID_SQL);
              var check = connection.prepareStatement(CHECK_IF_QUESTION_HAVE_FINAL_QUESTION)) {
-            findQuestion.setObject(1, entity.getNumberOfQuestion());
+            findQuestion.setObject(1, entity.getQuestionNumber());
             findQuestion.setObject(2, entity.getQuestId());
             var question = findQuestion.executeQuery();
-            LOGGER.debug("Checking if question already exists with number {} and quest ID {}", entity.getNumberOfQuestion(), entity.getQuestId());
+            LOGGER.debug("Checking if question already exists with number {} and quest ID {}", entity.getQuestionNumber(), entity.getQuestId());
             if (question.next()) {
                 LOGGER.debug("Question already exists - returning");
                 return false;
@@ -173,12 +173,12 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
                 if (entity.getIsLastQuestion()) {
                     LOGGER.debug("Last question already exists - returning");
                     return false;
-                } else if (entity.getNumberOfQuestion() > questionEntity.getNumberOfQuestion()) {
+                } else if (entity.getQuestionNumber() > questionEntity.getQuestionNumber()) {
                     LOGGER.debug("Question before last question - returning");
                     return false;
                 }
             }
-            save.setObject(1, entity.getNumberOfQuestion());
+            save.setObject(1, entity.getQuestionNumber());
             save.setObject(2, entity.getQuestId());
             save.setObject(3, entity.getText());
             save.setObject(4, entity.getBackgroundQuestionPhoto());
@@ -194,7 +194,7 @@ public class QuestionDao implements Dao<String, QuestionEntity> {
     private QuestionEntity buildQuestion(ResultSet resultSet) throws SQLException {
         return new QuestionEntity(
                 resultSet.getLong("id"),
-                resultSet.getInt("number_of_question"),
+                resultSet.getInt("question_number"),
                 resultSet.getLong("quest_id"),
                 resultSet.getString("text"),
                 resultSet.getBytes("background_question_photo"),

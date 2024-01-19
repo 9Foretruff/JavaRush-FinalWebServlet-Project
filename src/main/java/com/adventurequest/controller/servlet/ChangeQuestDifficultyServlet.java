@@ -1,5 +1,6 @@
 package com.adventurequest.controller.servlet;
 
+import com.adventurequest.model.entity.DifficultyEnum;
 import com.adventurequest.model.service.QuestService;
 import com.adventurequest.util.JspHelper;
 import com.adventurequest.util.UserSessionHelper;
@@ -28,24 +29,24 @@ public class ChangeQuestDifficultyServlet extends HttpServlet {
         try {
             String username = UserSessionHelper.getUsername(req.getSession());
 
-            LOGGER.info("Change quest name data received from user: {}", username);
+            LOGGER.info("Change quest difficulty data received from user: {}", username);
 
             Long questId = Long.valueOf(req.getParameter("questId"));
-            var newName = req.getParameter("newName");
+            var newDifficulty = DifficultyEnum.valueOf(req.getParameter("newDifficulty"));
 
-            LOGGER.debug("Received change quest name data - newName: {}, from user: {}", newName, username);
+            LOGGER.debug("Received change quest difficulty data - newDifficulty: {}, from user: {}", newDifficulty, username);
 
-            var resultOfChanging = questService.changeQuestName(questId, newName, username);
+            var resultOfChanging = questService.changeQuestDifficulty(questId, newDifficulty);
 
             if (resultOfChanging) {
-                LOGGER.info("Name changed successfully for quest with id: {}", questId);
+                LOGGER.info("Difficulty changed successfully for quest with id: {}", questId);
                 resp.sendRedirect(req.getContextPath() + SUCCESS_URL + questId);
             } else {
-                LOGGER.warn("Failed to change name for quest with id: {}", questId);
+                LOGGER.warn("Failed to change difficulty for quest with id: {}", questId);
                 req.getRequestDispatcher(JspHelper.get(FAILED_JSP)).forward(req, resp);
             }
         } catch (Exception exception) {
-            LOGGER.error("Exception while changing quest name", exception);
+            LOGGER.error("Exception while changing quest difficulty", exception);
             req.getRequestDispatcher(JspHelper.get(ERROR_PAGE_JSP)).forward(req, resp);
         }
     }

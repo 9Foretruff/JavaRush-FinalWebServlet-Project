@@ -61,7 +61,7 @@
 
                         <label for="newName">New name of quest:</label>
 
-                        <input type="text" id="newName" name="newName" required>
+                        <input type="text" id="newName" name="newName" maxlength="25" required>
 
                         <input type="submit" value="Change">
 
@@ -96,6 +96,8 @@
 
                     <form action="${pageContext.request.contextPath}/change-quest-difficulty" method="post">
 
+                        <input type="hidden" name="questId" value="${sessionScope.questInfo.id}">
+
                         <label for="newDifficulty">New Difficulty:</label>
 
                         <select id="newDifficulty" name="newDifficulty" required>
@@ -119,11 +121,13 @@
 
                     <form action="${pageContext.request.contextPath}/change-quest-status" method="post">
 
+                        <input type="hidden" name="questId" value="${sessionScope.questInfo.id}">
+
                         <label for="newStatus">New Status:</label>
 
                         <select id="newStatus" name="newStatus" required>
-                            <option value="easy">Draft</option>
-                            <option value="medium">Published</option>
+                            <option value="DRAFT">Draft</option>
+                            <option value="PUBLISHED">Published</option>
                         </select>
 
                         <input type="submit" value="Change">
@@ -139,9 +143,9 @@
 
                     <h3>Change Quest Photo</h3>
                     <form action="${pageContext.request.contextPath}/change-quest-photo" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="questId" value="${sessionScope.questInfo.id}">
                         <label for="newPhoto">New Photo:</label>
-                        <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required
-                               maxlength="10485760">
+                        <input type="file" id="newPhoto" name="newPhoto" accept="image/*" required maxlength="10485760">
                         <input type="submit" value="Upload Photo">
                     </form>
 

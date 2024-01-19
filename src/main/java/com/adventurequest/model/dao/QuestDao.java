@@ -5,9 +5,12 @@ import com.adventurequest.model.entity.QuestEntity;
 import com.adventurequest.model.entity.StatusEnum;
 import com.adventurequest.model.exeption.DatabaseAccessException;
 import com.adventurequest.util.ConnectionManager;
+import jakarta.servlet.http.Part;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -97,6 +100,21 @@ public class QuestDao implements Dao<String, QuestEntity> {
     private static final String CHANGE_DESCRIPTION_SQL = """
                 UPDATE adventure_quest_schema.quest
                 SET description = ?
+                WHERE id = ?
+            """;
+    private static final String CHANGE_DIFFICULTY_SQL = """
+                UPDATE adventure_quest_schema.quest
+                SET difficulty = ?
+                WHERE id = ?
+            """;
+    private static final String CHANGE_STATUS_SQL = """
+                UPDATE adventure_quest_schema.quest
+                SET status = ?
+                WHERE id = ?
+            """;
+    private static final String CHANGE_PHOTO_SQL = """
+                UPDATE adventure_quest_schema.quest
+                SET quest_photo = ?
                 WHERE id = ?
             """;
 
@@ -212,12 +230,50 @@ public class QuestDao implements Dao<String, QuestEntity> {
         try (var connection = ConnectionManager.get();
              var changeDescription = connection.prepareStatement(CHANGE_DESCRIPTION_SQL)) {
 
-            changeDescription.setObject(1, newDescription);
+            changeDescription.setObject(1, newDescription, Types.OTHER);
             changeDescription.setObject(2, questId);
             return changeDescription.executeUpdate() > 0;
         } catch (SQLException e) {
             LOGGER.error("Error while changing quest description", e);
             throw new DatabaseAccessException("Error while changing quest description", e);
+        }
+    }
+
+    public boolean changeDifficulty(Long questId, DifficultyEnum newDifficulty) {
+        try (var connection = ConnectionManager.get();
+             var changeDescription = connection.prepareStatement(CHANGE_DIFFICULTY_SQL)) {
+            changeDescription.setObject(1, newDifficulty, Types.OTHER);
+            changeDescription.setObject(2, questId);
+            return changeDescription.executeUpdate() > 0;
+        } catch (SQLException e) {
+            LOGGER.error("Error while changing quest difficulty", e);
+            throw new DatabaseAccessException("Error while changing quest difficulty", e);
+        }
+    }
+
+    public boolean changeStatus(Long questId, StatusEnum newStatus) {
+        try (var connection = ConnectionManager.get();
+             var changeDescription = connection.prepareStatement(CHANGE_STATUS_SQL)) {
+            changeDescription.setObject(1, newStatus, Types.OTHER);
+            changeDescription.setObject(2, questId);
+            return changeDescription.executeUpdate() > 0;
+        } catch (SQLException e) {
+            LOGGER.error("Error while changing quest status", e);
+            throw new DatabaseAccessException("Error while changing quest status", e);
+        }
+    }
+
+    public boolean changePhoto(Long questId, Part newPhoto) {
+        try (var connection = ConnectionManager.get();
+             var changePhoto = connection.prepareStatement(CHANGE_PHOTO_SQL)) {
+            changePhoto.setObject(1, newPhoto.getInputStream().readAllBytes());
+            changePhoto.setObject(2, questId);
+            return changePhoto.executeUpdate() > 0;
+        } catch (SQLException e) {
+            LOGGER.error("Error while changing quest photo", e);
+            throw new DatabaseAccessException("Error while changing quest photo", e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

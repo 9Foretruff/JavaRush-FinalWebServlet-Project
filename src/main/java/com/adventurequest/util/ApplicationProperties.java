@@ -16,7 +16,7 @@ public final class ApplicationProperties {
     }
 
     private static void loadProperty() {
-        try (var resourceAsStream = ApplicationProperties.class.getClassLoader().getResourceAsStream("application.properties");) {
+        try (var resourceAsStream = ApplicationProperties.class.getClassLoader().getResourceAsStream("application.properties")) {
             PROPERTIES.load(resourceAsStream);
         } catch (IOException exception) {
             throw new LoadPropertyException("Exception while loading property",exception);

@@ -56,7 +56,7 @@
                     <h3>Change Password</h3>
                     <form action="change-user-password" method="post">
                         <label for="newPassword">New Password:</label>
-                        <input type="password" id="newPassword" name="newPassword" required>
+                        <input type="password" id="newPassword" name="newPassword" maxlength="25" required>
                         <input type="submit" value="Change Password">
                     </form>
                 </div>
@@ -68,7 +68,7 @@
                     <h3>Change Email</h3>
                     <form action="change-user-email" method="post">
                         <label for="newEmail">New Email:</label>
-                        <input type="email" id="newEmail" name="newEmail" required>
+                        <input type="email" id="newEmail" name="newEmail" maxlength="25" required>
                         <input type="submit" value="Change Email">
                     </form>
                 </div>
